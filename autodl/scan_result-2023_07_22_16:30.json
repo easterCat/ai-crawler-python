@@ -1,0 +1,699 @@
+[
+  {
+    "url": "http://region-31.seetacloud.com:26642",
+    "models": [
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:45763",
+    "models": [
+      "*.pt *.safetensors",
+      "*.ckpt *.safetensors",
+      "*.safetensors"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:56849",
+    "models": [
+      "braBeautifulRealistic_v40.safetensors [9c03252bea]",
+      "CamelliaMix_2.5D.safetensors [44eccf4d61]",
+      "chilled_remix_v1Fp16vae.safetensors [573e338acc]",
+      "chilloutmix_NiPrunedFp32Fix.safetensors [fc2511737a]",
+      "majicmixRealistic_v6.safetensors [e4a30e4607]",
+      "revAnimated_v121.safetensors [f57b21e57b]",
+      "yden_v20.safetensors [d17ace4d35]",
+      "美漫icomix_V02Pruned.safetensors [76b00ee812]",
+      "Save in .safetensors format",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:43653",
+    "models": [
+      "万能.safetensors [099e07547a]",
+      "Save in .safetensors format",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:29331",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors [d819c8be6b]",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors [01b259805e]",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "AnythingV5_v5PrtRE.safetensors"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:50716",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:46558",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:48508",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:48789",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:46817",
+    "models": [
+      "圣门御用.safetensors [099e07547a]",
+      "Save in .safetensors format",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:31348",
+    "models": [
+      "majicmixRealistic_v4.safetensors [d819c8be6b]",
+      "anything-v4.5-pruned.safetensors [6e430eb514]"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:39136",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:21214",
+    "models": [
+      "大颗寿司.safetensors [099e07547a]",
+      "淘宝集散库-全彩动漫CG模型.safetensors [5320e79965]",
+      "vae-ft-mse-840000-ema-pruned.safetensors",
+      "Save in .safetensors format",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:49351",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "cetusMix_Whalefall2.safetensors [876b4c7ba5]",
+      "darkSushi25D25D_v30.safetensors [465e0b5aa4]",
+      "toonyou_beta5Unstable.safetensors [86fca15160]",
+      "vae-ft-mse-840000-ema-pruned.safetensors"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:36184",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:55770",
+    "models": [
+      "abyssorangemix2_Hard.safetensors",
+      "AbyssOrangeMix2_sfw.safetensors",
+      "anything-v4.5.safetensors",
+      "AnythingV5_v5PrtRE.safetensors",
+      "anytwam11Mixedmodel_anytwam11.safetensors",
+      "AOM3A1B_orangemixs.safetensors",
+      "AOM3A3.safetensors",
+      "Counterfeit-V2.5.safetensors",
+      "Counterfeit-V3.0.safetensors [db6cd0a62d]",
+      "MeinaPastelV5.safetensors",
+      "MeinaV10.safetensors [77b7dc4ef0]",
+      "OldFish_v10.safetensors",
+      "TMND-Mix_v1.0.safetensors",
+      "ClearVAE_V2.3.safetensors",
+      "ClearVAE_Main.safetensors",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:56980",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "CounterfeitV30_v30.safetensors [cbfba64e66]",
+      "vae-ft-mse-840000-ema-pruned.safetensors",
+      "Save in .safetensors format",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:41609",
+    "models": [
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:34273",
+    "models": [
+      "Anything/AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "bra/bra_v5.safetensors",
+      "chilloutMix/chilloutmix_NiPrunedFp32Fix.safetensors",
+      "majicMixFantasy/majicmixFantasy_v20.safetensors",
+      "majicMixRealistic/majicmixRealistic_v5.safetensors",
+      "majicMixRealistic/majicMIXrealistic_v6.safetensors [e4a30e4607]",
+      "RealisticVision/Realistic_Vision_V4.0.safetensors [ab0de91e50]",
+      "vae-ft-mse-840000-ema-pruned.safetensors",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:30133",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:24063",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:39666",
+    "models": [
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:58112",
+    "models": [
+      "ageless_v10/ageless_v10.safetensors",
+      "brabeautiful-realistic-asians-v5/bra_v5.safetensors",
+      "DarkSushi2.5D/darkSushiMixMix_darker.safetensors [309b7eba55]",
+      "decoder_fp16.safetensors/decoder_fp16.safetensors [18f7cefa03]",
+      "Flat-2DAnimerge/flat2DAnimerge_v10.safetensors",
+      "GhostMix-V1.2/GhostMix-V1.2.safetensors",
+      "majicmixRealistic_v6/majicmixRealistic_v6.safetensors [e4a30e4607]",
+      "Realistic_Vision_V1.4/Realistic_Vision_V1.4.safetensors",
+      "revAnimated_v122/revAnimated_v122.safetensors",
+      "v2-1_512-ema-pruned.safetensors",
+      "vae-ft-mse-840000-ema-pruned.safetensors",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:24105",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "chilloutmix_NiPrunedFp32Fix.safetensors [fc2511737a]",
+      "Disney Pixar Cartoon type B_v1.0.safetensors",
+      "Flower dress_v1.0.safetensors [d8aa8babc7]",
+      "majicmixRealistic_v4.safetensors [d819c8be6b]",
+      "majicmixRealistic_v6.safetensors [e4a30e4607]",
+      "meinamix_meinaV8 (1).safetensors",
+      "realisticVisionV40_v40VAE.safetensors [e9d3cedc4b]",
+      "xxmix9realistic_v26.safetensors [b394832bf0]",
+      "vae-ft-mse-840000-ema-pruned.safetensors"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:26966",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:44753",
+    "models": [
+      "AARG_RenderMix_v1.0.safetensors [c6d188a25a]",
+      "AnythingV5Ink_inkNovae.safetensors [4035a21e3f]",
+      "AnythingV5Ink_v5PrtRE.safetensors [7f96a1a9ca]",
+      "chilloutmix_NiPrunedFp32Fix.safetensors [fc2511737a]",
+      "maimixsr_notesVAEBaked.safetensors [ae4460bddc]",
+      "majicmixRealistic_v6.safetensors [e4a30e4607]",
+      "realisticVisionV20_v20.safetensors [e6415c4892]",
+      "墨幽人造人_v1020.safetensors [d2465a84f0]",
+      "限时独占︱墨幽人造人_v1010修剪.safetensors [dfab1a6123]",
+      "vae-ft-mse-840000-ema-pruned.safetensors",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:28023",
+    "models": [
+      "meinamix_meinaV10.safetensors [77b7dc4ef0]",
+      "大颗寿司 小小非版本bf16 剪枝.safetensors [e3fa1e5ad7]",
+      "（A+）fmix_v10.safetensors [7eb696e0ad]",
+      "（很牛的真人模）protogenV22Anime_22.safetensors [b4d453442a]",
+      "（看美女用吧）perfectGirl_v10.safetensors [bc9d4ea264]",
+      "clearvae_main.safetensors",
+      "vae-ft-mse-840000-ema-pruned.safetensors",
+      "ClearVAE_V2.2.safetensors",
+      "nai_vae.safetensors",
+      "/root/autodl-tmp/stable-diffusion-webui/extensions/sd-webui-additional-networks/models/lora/A-Mecha-REN[color_theme,mecha musume, mechanical parts, robot joints,headgear,full armor].safetensors",
+      "/root/autodl-tmp/stable-diffusion-webui/extensions/sd-webui-additional-networks/models/lora/Sleep-10.safetensors",
+      "/root/autodl-tmp/stable-diffusion-webui/extensions/sd-webui-additional-networks/models/lora/baiyi-lora-v1.5-32dim-18ep.safetensors",
+      "/root/autodl-tmp/stable-diffusion-webui/extensions/sd-webui-additional-networks/models/lora/fashigirl-v5.5-lora-naivae-64dim.safetensors",
+      "/root/autodl-tmp/stable-diffusion-webui/extensions/sd-webui-additional-networks/models/lora/fashionGirl_v45.safetensors",
+      "/root/autodl-tmp/stable-diffusion-webui/extensions/sd-webui-additional-networks/models/lora/keqing_lion_optimizer_dim64_loraModel_5e-3noise_token1_4-3-2023.safetensors",
+      "/root/autodl-tmp/stable-diffusion-webui/extensions/sd-webui-additional-networks/models/lora/koreanDollLikenesss_v10.safetensors",
+      "/root/autodl-tmp/stable-diffusion-webui/extensions/sd-webui-additional-networks/models/lora/shojo少女.safetensors",
+      "/root/autodl-tmp/stable-diffusion-webui/extensions/sd-webui-additional-networks/models/lora/twoPersonLoraLoraUpdate_sisterAndLittle.safetensors",
+      "/root/autodl-tmp/stable-diffusion-webui/extensions/sd-webui-additional-networks/models/lora/twoPersonLoraLora_fatherv3.safetensors",
+      "/root/autodl-tmp/stable-diffusion-webui/extensions/sd-webui-additional-networks/models/lora/yae_miko.safetensors",
+      "/root/autodl-tmp/stable-diffusion-webui/extensions/sd-webui-additional-networks/models/lora/地雷系jirai_v2.safetensors",
+      "/root/autodl-tmp/stable-diffusion-webui/extensions/sd-webui-additional-networks/models/lora/壁咚kabedon.safetensors",
+      "/root/autodl-tmp/stable-diffusion-webui/extensions/sd-webui-additional-networks/models/lora/女脸CM-mix_V1lora.safetensors",
+      "/root/autodl-tmp/stable-diffusion-webui/extensions/sd-webui-additional-networks/models/lora/完美世界-石昊（男）.safetensors",
+      "/root/autodl-tmp/stable-diffusion-webui/extensions/sd-webui-additional-networks/models/lora/御姐.safetensors",
+      "/root/autodl-tmp/stable-diffusion-webui/extensions/sd-webui-additional-networks/models/lora/御姐5.safetensors",
+      "/root/autodl-tmp/stable-diffusion-webui/extensions/sd-webui-additional-networks/models/lora/探头peeking_out_upper_body_pruned.safetensors",
+      "/root/autodl-tmp/stable-diffusion-webui/extensions/sd-webui-additional-networks/models/lora/眼罩面具BlindMask_v1.safetensors",
+      "/root/autodl-tmp/stable-diffusion-webui/extensions/sd-webui-additional-networks/models/lora/穿搭ruanmei_2.safetensors",
+      "Save in .safetensors format",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:51775",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:26361",
+    "models": [
+      "2mix3Sakura_v10Sakura.safetensors [743f786b0c]",
+      "abyssorangemix2SFW_abyssorangemix2Sfw.safetensors [b644d850c9]",
+      "anything-v5-PrtRE.safetensors [7f96a1a9ca]",
+      "cctv25d_v10.safetensors [a18d57c507]",
+      "darkSushiMixMix_225D.safetensors [cca17b08da]",
+      "Space_Beautymix_V1.0.safetensors [df4499211b]",
+      "Save in .safetensors format",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:37250",
+    "models": [
+      "Save in .safetensors format",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:37339",
+    "models": [
+      "beautifulRealistic_brav5.safetensors [ac68270450]",
+      "beautifulRealistic_brav5x0.5+nobleMixFix_v30x0.5.safetensors [9374f70bb7]",
+      "chilloutmix.IP29.safetensors",
+      "darksushi225D.fUnW.safetensors [cca17b08da]",
+      "darksushicolorful.x5yj.safetensors [969673ad74]",
+      "E88B8DE78E.OUWd.safetensors [d43707ae73]",
+      "Flyingsnow.safetensors [29625de2ff]",
+      "GuFeng2.safetensors [1f4fd50267]",
+      "GuFeng.safetensors [60f0c0eb55]",
+      "GuoFeng2.safetensors [3257896d4b]",
+      "GuoFeng3.2.safetensors [2537d1a815]",
+      "GuoFeng3.3.safetensors [4078eb4174]",
+      "GuoFeng3.4-1-0.2.safetensors [64c82a6c5d]",
+      "GuoFeng3.4-1-0.21.safetensors [8188242d9b]",
+      "GuoFeng3.4-2-0.1.safetensors [30ef7656fc]",
+      "GuoFeng3.4.safetensors [a83e25fe5b]",
+      "GuoFengDunHuang-1-0.1.safetensors [3020158bed]",
+      "GuoFengDunHuang-1-0.11.safetensors [cd6284ac60]",
+      "GuoFengDunHuang-1-0.12.safetensors [3109e8b64a]",
+      "GuoFengRealMix1.1-2.safetensors [714accd988]",
+      "GuoFengRealMix1.1.safetensors [a440378c2f]",
+      "GuoFengRealMix1.5.safetensors [92e90fb89b]",
+      "GuoFengRealMix2.1.safetensors [f2d86317b1]",
+      "GuoFengRealMix2.safetensors [a9a319f85b]",
+      "GuoFengRealMix-2-0.11.safetensors [152432d851]",
+      "GuoFengRealMix-2-0.12-1228-0869-0054.safetensors [152432d851]",
+      "GuoFengRealMix-2-0.12.safetensors",
+      "LovelyDunHuangReal-1-0.1.safetensors [b04c7c47f7]",
+      "LovelyReal-1-0.1.safetensors [b9e016fcd6]",
+      "LovelyWorld.safetensors [b9fa0a66ca]",
+      "M2150Fp16.FsqZ.safetensors [364a13041d]",
+      "majicmixRealv6Fp16.rEwl.safetensors [e4a30e4607]",
+      "neverendingDreamNED_v122BakedVae.safetensors",
+      "nobleMixFix_v30.safetensors [8d4b8eab0d]",
+      "Nullstyle_v20.safetensors [c1d961233a]",
+      "nuMix1.1.safetensors",
+      "nuMix.safetensors [334ca90101]",
+      "OMix-1-0.21.safetensors [910e46bd8b]",
+      "OMix-1-0.22.safetensors [4ae32e4080]",
+      "OMix-1-0.23.safetensors [d2e5e8392d]",
+      "OMix.safetensors [6161723471]",
+      "RealTest-1-0.1.safetensors [83fb48f5c9]",
+      "remedyV10.jSgO.safetensors [d24034ffba]",
+      "rundiffusionFX.MlDz.safetensors [ad1a10552b]",
+      "vae-ft-mse-840000-ema-pruned.safetensors",
+      "LovelyDunHuangReal-1-0.1.safetensors",
+      "LovelyReal-1-0.1.safetensors",
+      "LovelyWorld.safetensors",
+      "E88B8DE78E.OUWd.safetensors",
+      "Flyingsnow.safetensors",
+      "M2150Fp16.FsqZ.safetensors",
+      "nobleMixFix_v30.safetensors",
+      "GuFeng.safetensors",
+      "nuMix.safetensors",
+      "GuFeng2.safetensors",
+      "GuoFeng2.safetensors",
+      "Nullstyle_v20.safetensors",
+      "OMix-1-0.21.safetensors",
+      "GuoFeng3.2.safetensors",
+      "OMix-1-0.22.safetensors",
+      "OMix-1-0.23.safetensors",
+      "GuoFeng3.3.safetensors",
+      "GuoFengDunHuang-1-0.11.safetensors",
+      "OMix.safetensors",
+      "GuoFeng3.4-1-0.2.safetensors",
+      "GuoFengDunHuang-1-0.12.safetensors",
+      "GuoFeng3.4-1-0.21.safetensors",
+      "GuoFengRealMix-2-0.11.safetensors",
+      "GuoFengRealMix1.1.safetensors",
+      "RealTest-1-0.1.safetensors",
+      "GuoFeng3.4-2-0.1.safetensors",
+      "beautifulRealistic_brav5.safetensors",
+      "GuoFeng3.4.safetensors",
+      "remedyV10.jSgO.safetensors",
+      "GuoFengRealMix1.5.safetensors",
+      "GuoFengDunHuang-1-0.1.safetensors",
+      "GuoFengRealMix1.1-2.safetensors",
+      "GuoFengRealMix-2-0.12-1228-0869-0054.safetensors",
+      "GuoFengRealMix2.1.safetensors",
+      "GuoFengRealMix2.safetensors",
+      "beautifulRealistic_brav5x0.5+nobleMixFix_v30x0.5.safetensors",
+      "darksushi225D.fUnW.safetensors",
+      "darksushicolorful.x5yj.safetensors",
+      "majicmixRealv6Fp16.rEwl.safetensors",
+      "rundiffusionFX.MlDz.safetensors",
+      "Save in .safetensors format",
+      "/root/autodl-tmp/stable-diffusion-webui/models/Lora/GuoFengDunHuang-1-0.1.safetensors",
+      "/root/autodl-tmp/stable-diffusion-webui/models/Lora/GuoFengDunHuang-1-0.11.safetensors",
+      "/root/autodl-tmp/stable-diffusion-webui/models/Lora/GuoFengDunHuang-1-0.12.safetensors",
+      "/root/autodl-tmp/stable-diffusion-webui/models/Stable-diffusion/GuoFengDunHuang-1-0.1.safetensors",
+      "/root/autodl-tmp/stable-diffusion-webui/models/Stable-diffusion/GuoFengDunHuang-1-0.11.safetensors",
+      "/root/autodl-tmp/stable-diffusion-webui/models/Stable-diffusion/GuoFengDunHuang-1-0.12.safetensors",
+      "3dmmV12.A3va.safetensors",
+      "aki000006.jPGF.safetensors",
+      "animeoutlinev416.7YOP.safetensors",
+      "animetarotv51.DwDZ.safetensors",
+      "backlighting.6ejT.safetensors",
+      "bg.xXGy.safetensors",
+      "blindboxV1Mix.vlCr.safetensors",
+      "c4d.AjWk.safetensors",
+      "chinaGoddess000006.axzL.safetensors",
+      "Chinese style_20230607154437-000017.safetensors",
+      "Chinese-style-illustration-v2.safetensors",
+      "chinese20style.etmy.safetensors",
+      "chineseStyleLoraV10.YGmk.safetensors",
+      "Chineseswordswoman.safetensors",
+      "cs_1680.safetensors",
+      "cyberhanfuV1.XkvP.safetensors",
+      "danwgfwl01.T9mI.safetensors",
+      "detailed_eye-10.safetensors",
+      "dream.sXYd.safetensors",
+      "dreamwave20v2l.guCl.safetensors",
+      "dunhuang_v20.safetensors",
+      "dunhuangv21.eijL.safetensors",
+      "dunhuangV3.safetensors",
+      "E5B7A5E7AC94E794Bbv2.wcVc.safetensors",
+      "E78E84E8BF9CE4BB99E5A2.nz8w.safetensors",
+      "E7BE8EE69D9CE88E8E.KMYU.safetensors",
+      "E8B598E5A9BFE88B8FE6AA80.A2lp.safetensors",
+      "epiNoiseoffset2.Vkot.safetensors",
+      "filmvelvia2.wqHF.safetensors",
+      "filmvelvia2cs.wqHF.safetensors",
+      "foxgirl20honghongV05.leF2.safetensors",
+      "foxgirlTushansusuV05.QvKz.safetensors",
+      "gachasplash4.UUn6.safetensors",
+      "ghostdom.safetensors",
+      "GuoFeng3.2_Lora_big_light.safetensors",
+      "GuoFengDunHuang-1-0.13.safetensors",
+      "hanfuV30.xoOD.safetensors",
+      "iridescentarmored.G8TI.safetensors",
+      "kkPapercutV1.pZiH.safetensors",
+      "lightcoatcg.9Kzm.safetensors",
+      "lightningvfxv1.SRbj.safetensors",
+      "LightPastel.safetensors",
+      "long000020.b4pk.safetensors",
+      "lowra.Rw8z.1.safetensors",
+      "lowra.Rw8z.safetensors",
+      "lp.gN0o.safetensors",
+      "mecha_mjstyle.safetensors",
+      "moreDetails.5pEa.safetensors",
+      "moxinv1.khzz.safetensors",
+      "nijicute.T58s.safetensors",
+      "old_20230628174331-000006.safetensors",
+      "paseerE79A84E7A59EE8AF9D.PGek.safetensors",
+      "phoenix_v1.0.safetensors",
+      "qianjinghui.safetensors",
+      "qing.YsyM.safetensors",
+      "shanzhagao128dimEpoch.m2pK.safetensors",
+      "shukezoumaV11.8D7t.safetensors",
+      "silhouette.2pNA.safetensors",
+      "StarryShade.safetensors",
+      "sweetlolitaV10.mTB8.safetensors",
+      "warframe_v1-000012.safetensors",
+      "weijinHanfu.1VYB.safetensors",
+      "wumo2.svrt.safetensors",
+      "xrs20.ROD3.safetensors",
+      "yzym.dFC6.safetensors",
+      "仙侠道.safetensors",
+      "国风GuoFeng3.2_Lora.safetensors",
+      "完美世界-石昊.safetensors",
+      "少年歌行-唐莲.safetensors",
+      "少年歌行-萧瑟.safetensors",
+      "少年歌行-赵玉真.safetensors",
+      "斗罗大陆-唐三.safetensors",
+      "机械风暴丨MG_jixie_v1.0.safetensors",
+      "粉色机甲少女_v1.0.safetensors",
+      "露华浓midjourneyportrait.safetensors",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:26788",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors [d819c8be6b]",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors [01b259805e]",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "AnythingV5_v5PrtRE.safetensors"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:24770",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:29536",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:32015",
+    "models": [
+      "epicrealism_pureEvolutionV3.safetensors [52484e6845]",
+      "majicmixReverie_v10.safetensors",
+      "meinamix_meinaV10.safetensors",
+      "mistoonAnime_v20.safetensors",
+      "moonfilm_filmGrain10.safetensors [88ea5a84a3]",
+      "rpg_V4.safetensors [e04b020012]"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:35256",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:47382",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:29818",
+    "models": [
+      "Save in .safetensors format",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:47714",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:21500",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:49267",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:27461",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:54498",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]"
+    ]
+  }
+]

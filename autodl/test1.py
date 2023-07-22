@@ -1,4 +1,5 @@
 import asyncio
+import re
 
 import aiohttp
 
@@ -17,10 +18,16 @@ async def main():
     async with aiohttp.ClientSession() as session:
         async with session.get('http://region-3.seetacloud.com:38575/', headers=headers) as response:
             print("Status:", response.status)
-            print("Content-type:", response.headers['content-type'])
-
-            html = await response.text()
-            print("Body:", html[:15], "...")
+            if 200 <= response.status < 300:
+                print("Content-type:", response.headers['content-type'])
+                html = await response.text()
+                pattern = re.compile(r'(?<=")[^"]*\.safetensors[\s\[\]a-z0-9]*(?=")')
+                result = pattern.findall(html)
+                temp = []
+                for item in result:
+                    if item not in temp:
+                        temp.append(item)
+                print(temp)
 
 
 asyncio.run(main())
