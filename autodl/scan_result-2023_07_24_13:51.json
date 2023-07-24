@@ -1,0 +1,161 @@
+[
+  {
+    "url": "http://region-42.seetacloud.com:33743",
+    "models": [
+      "EtherRealMix_EtherRealMixv1.safetensors [bfcaa69ad9]",
+      "Save in .safetensors format",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-42.seetacloud.com:55614",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors",
+      "vae-ft-mse-840000-ema-pruned.safetensors",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-42.seetacloud.com:39791",
+    "models": [
+      "anythingqingmix25D_v30.safetensors [5178bf4b9b]",
+      "ND-成熟二次元.safetensors [3baa512068]",
+      "男模-deepboys25D_v30.safetensors [8eccdfe4b6]",
+      "男漫画-wolfboys2D_v20.safetensors [199ddbf5e7]",
+      "Save in .safetensors format",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-42.seetacloud.com:29378",
+    "models": [
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-42.seetacloud.com:59641",
+    "models": [
+      "ce!.safetensors [f684aff4b4]",
+      "cocotifacute_v10.safetensors",
+      "colormagination_v10.safetensors [02ed198257]",
+      "colormagination_v20-vae.safetensors [6d8d9314e9]",
+      "colormagination_v20.safetensors [1bed8584e8]",
+      "colorTEST1.1.safetensors [81afc27021]",
+      "colorTEST1.3.safetensors [a5f27335ed]",
+      "Cuteyuki-EchoDimension-fp16.safetensors [9ae3794ce7]",
+      "Cuteyukimix-NeoChapter-klVAE.safetensors [3e03f7da37]",
+      "Cuteyukimix-NeoChapter.safetensors [6ee4f31532]",
+      "cuteyukimix_X.safetensors [4468e2a74a]",
+      "dreamshaper_7.safetensors",
+      "IrisMix-v2.safetensors [ac00aa8763]",
+      "IrisMix-v3.safetensors [10837fb541]",
+      "momoko-fp16.safetensors [8b7ad9e059]",
+      "momokofp16-fp16-no-ema.safetensors [3eb598f321]",
+      "momokofp16.safetensors",
+      "momokoS-fix-n.safetensors [be8902cddd]",
+      "momokoS-fp16-fp16-no-ema-clip-fix.safetensors",
+      "momokoS-fp16-no-ema.safetensors [fc2ee7faf0]",
+      "momokoS-fp16.safetensors [d77922554c]",
+      "momokoS.safetensors [f85fd4d926]",
+      "proRest91-fp16-no-ema.safetensors [c5ec30de26]",
+      "proRest91-fp16-no-emax_1-alpha_+IrisMix-v3xalpha_0.2_0.2_0.2_0.2_0.2_0.2_0.2_0.2_0.2_0.2_0.2_0.2_0.2_0.2_0.2_0.2_0.2_0.2_0.2_0.2_0.2_0.2_0.2_0.2_0.2_0.2_.safetensors [f3b5c5f83c]",
+      "proRest91.safetensors [8139be251f]",
+      "UHMIX0.6-test-0.4分支-fp16.safetensors [947ce52196]",
+      "Save in .safetensors format",
+      "AllFoursFromAboveV1.safetensors",
+      "ce!.safetensors",
+      "colormagination_v10.safetensors",
+      "colormagination_v20-vae.safetensors",
+      "colormagination_v20.safetensors",
+      "colorTEST1.1.safetensors",
+      "colorTEST1.3.safetensors",
+      "Cuteyuki-EchoDimension-fp16.safetensors",
+      "Cuteyukimix-NeoChapter-klVAE.safetensors",
+      "Cuteyukimix-NeoChapter.safetensors",
+      "cuteyukimix_X.safetensors",
+      "GZC.safetensors",
+      "IrisMix-v2.safetensors",
+      "IrisMix-v3.safetensors",
+      "momoko-fp16.safetensors",
+      "momokofp16-fp16-no-ema.safetensors",
+      "momokoS-fix-n.safetensors",
+      "momokoS-fp16-1916.safetensors",
+      "momokoS-fp16-no-ema.safetensors",
+      "momokoS-fp16.safetensors",
+      "momokoS.safetensors",
+      "proRest91-fp16-no-ema.safetensors",
+      "proRest91-fp16-no-emax_1-alpha_+IrisMix-v3xalpha_0.2_0.2_0.2_0.2_0.2_0.2_0.2_0.2_0.2_0.2_0.2_0.2_0.2_0.2_0.2_0.2_0.2_0.2_0.2_0.2_0.2_0.2_0.2_0.2_0.2_0.2_.safetensors",
+      "proRest91.safetensors",
+      "UHMIX0.6-test-0.4分支-fp16.safetensors",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-42.seetacloud.com:15542",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "realisticVisionV40_v40VAE.safetensors [e9d3cedc4b]",
+      "vae-ft-mse-840000-ema-pruned.safetensors"
+    ]
+  },
+  {
+    "url": "http://region-42.seetacloud.com:38030",
+    "models": [
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-42.seetacloud.com:31197",
+    "models": [
+      "CNrealistic_MIXv21_V21.safetensors [0ab1cacb56]",
+      "xxmix9realistic_v40.safetensors [18ed2b6c48]",
+      "Save in .safetensors format",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-42.seetacloud.com:11601",
+    "models": [
+      "chilloutmix_NiPrunedFp32Fix.safetensors [fc2511737a]",
+      "dreamshaper.safetensors [9e63083ae0]",
+      "INDOOR_lHl_INDOOR_lHl v1.0.safetensors",
+      "IP DESIGN _ 3D化模型_V1.1.safetensors",
+      "majicMIX realistic_v6.safetensors [e4a30e4607]",
+      "qteamixQ_fp16.safetensors",
+      "全网首发｜AWPainting 1.1_v1.1.safetensors [e7aab5067d]",
+      "全网首发｜AWPortrait 1.1_v1.1.safetensors",
+      "真实系：deliberate_v2.safetensors [9aba26abdf]",
+      "Save in .safetensors format"
+    ]
+  },
+  {
+    "url": "http://region-42.seetacloud.com:28771",
+    "models": [
+      "chilloutmix_NiPrunedFp32Fix.safetensors [fc2511737a]",
+      "darkSushiMixMix_brighterPruned.safetensors [099e07547a]",
+      "vae-ft-mse-840000-ema-pruned.safetensors",
+      "Save in .safetensors format",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-42.seetacloud.com:18630",
+    "models": [
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-42.seetacloud.com:58882",
+    "models": [
+      "二次元_meinamix_meinaV11.safetensors [54ef3e3610]",
+      "二次元_NoxPrimeMix.safetensors [882d710b22]",
+      "二次元｜ cutekawaii_v1.0.safetensors [68419cfb3f]",
+      "二次元｜anything-v5-PrtRE.safetensors [7f96a1a9ca]",
+      "二次元｜AWPainting 1.1_v1.1.safetensors [e7aab5067d]",
+      "可爱化3D_IP DESIGN V1.1.safetensors [7d77e2c55f]",
+      "vae-ft-mse-840000-ema-pruned.safetensors",
+      "钟离︱zhongli_v1.0.safetensors",
+      "Only show .safetensors format models"
+    ]
+  }
+]

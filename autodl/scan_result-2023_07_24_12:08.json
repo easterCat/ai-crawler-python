@@ -1,0 +1,120 @@
+[
+  {
+    "url": "http://region-8.seetacloud.com:36649",
+    "models": [
+      "oukaGufeng_s1.safetensors [8a502df32b]",
+      "古风oukaGufeng_s1.safetensors [8a502df32b]",
+      "大颗寿司.safetensors [099e07547a]",
+      "淘宝集散库-全彩动漫CG模型.safetensors [7d77b181d8]",
+      "vae-ft-mse-840000-ema-pruned.safetensors",
+      "Save in .safetensors format",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-8.seetacloud.com:45245",
+    "models": [
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-8.seetacloud.com:40283",
+    "models": [
+      "anything-v5-PrtRE.safetensors [7f96a1a9ca]",
+      "darkSushiMixMix_brighterPruned.safetensors [099e07547a]",
+      "deepboys25D_v30.safetensors [8eccdfe4b6]",
+      "simplyBeautiful_v10.safetensors [cb7391be97]",
+      "vae-ft-mse-840000-ema-pruned.safetensors",
+      "Save in .safetensors format",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-8.seetacloud.com:37882",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "DreamShaper_7_pruned.safetensors [ed989d673d]",
+      "majicmixRealistic_v6.safetensors [e4a30e4607]",
+      "vae-ft-mse-840000-ema-pruned.safetensors",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-8.seetacloud.com:35233",
+    "models": [
+      "2.8D真人.safetensors [32c4949218]",
+      "(动漫2.5D)精细动漫人脸FaceBomb.safetensors [aad629159b]",
+      "(动漫风)Meina.safetensors [30953ab0de]",
+      "(真实2.8D)国风3 Guofeng3_v32Light.safetensors [f42edd43aa]",
+      "(真实相片级)亚洲人braBeautifulRealistic_v40.safetensors [9c03252bea]",
+      "abyssorangemix3AOM3_aom3a1b.safetensors [5493a0ec49]",
+      "control_v1p_sd15_brightness.safetensors [9161c38252]",
+      "diffusion_pytorch_model.safetensors [8c10457d10]",
+      "meinamix_meinaV11.safetensors [54ef3e3610]",
+      "无尽的现实（真人）.safetensors [c8e955ca8d]",
+      "Save in .safetensors format",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-8.seetacloud.com:13300",
+    "models": [
+      "darkSushiMixMix_colorful.safetensors [969673ad74]",
+      "OldUnrule_unrule.safetensors [f1a245e4ac]",
+      "自融专属.safetensors [099e07547a]",
+      "vae-ft-mse-840000-ema-pruned.safetensors",
+      "Save in .safetensors format",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-8.seetacloud.com:51006",
+    "models": [
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "cakemix_v40.safetensors [fb53a2f327]",
+      "Counterfeit-V3.0_fp16.safetensors [cbfba64e66]",
+      "majicmixRealistic_v4.safetensors [d819c8be6b]",
+      "meinamix_meinaV8.safetensors [30953ab0de]",
+      "meinapastel_V4.safetensors [771c8fd970]",
+      "NyanMix.safetensors [303166bf7f]",
+      "oukaGufeng_s1.safetensors",
+      "pastelboys2D_v20.safetensors [c986eaff35]",
+      "revAnimated_v122.safetensors [4199bcdd14]",
+      "vae-ft-mse-840000-ema-pruned.safetensors",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-8.seetacloud.com:48722",
+    "models": [
+      "meinaalter_v2.safetensors [1faafdd131]",
+      "meinamix_meinaV9.safetensors [eac6c08a19]",
+      "meinapastel_V4.safetensors [771c8fd970]",
+      "meinaunreal_v3.safetensors",
+      "NyanMix.safetensors [303166bf7f]",
+      "schoolAnime_schoolAnime.safetensors [36b0e74c02]",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-8.seetacloud.com:30897",
+    "models": [
+      "Save in .safetensors format",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-8.seetacloud.com:42786",
+    "models": [
+      "CounterfeitV30_v30.safetensors [cbfba64e66]",
+      "darkSushiMixMix_colorful.safetensors [969673ad74]",
+      "dreamshaper_631BakedVae.safetensors [2336dbf342]",
+      "majicmixRealistic_v6.safetensors [e4a30e4607]",
+      "realisticVisionV20_v20NoVAE.safetensors [e6415c4892]",
+      "revAnimated_v122.safetensors [4199bcdd14]",
+      "vae-ft-mse-840000-ema-pruned.safetensors",
+      "Save in .safetensors format",
+      "Only show .safetensors format models"
+    ]
+  }
+]

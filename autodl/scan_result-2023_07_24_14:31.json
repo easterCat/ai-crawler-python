@@ -1,0 +1,58 @@
+[
+  {
+    "url": "http://region-102.seetacloud.com:19220",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "Basil_mix_fixed.safetensors [0ff127093f]",
+      "chilloutmix_NiPrunedFp32Fix.safetensors [fc2511737a]",
+      "rmadaMergeSD21768_v70.safetensors [b346aa1648]",
+      "rundiffusionFX25D_v10.safetensors",
+      "rundiffusionFX_v10.safetensors [ad1a10552b]",
+      "sdxl_10-step00000050.safetensors [32264a3d61]",
+      "v1-5-pruned-emaonly.safetensors [6ce0161689]",
+      "v2-1_768-ema-pruned.safetensors [dcd690123c]",
+      "vae-ft-mse-840000-ema-pruned.safetensors",
+      "Save in .safetensors format",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-102.seetacloud.com:36818",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ckpt/majicmixRealistic_v6.safetensors/majicmixRealistic_v6.safetensors",
+      "models/ckpt/AnythingV5_v5PrtRE.safetensors",
+      "models/controlnet/control_v11e_sd15_ip2p_fp16.safetensors",
+      "models/controlnet/control_v11e_sd15_shuffle_fp16.safetensors",
+      "models/controlnet/control_v11f1e_sd15_tile_fp16.safetensors",
+      "models/controlnet/control_v11f1p_sd15_depth_fp16.safetensors",
+      "models/controlnet/control_v11p_sd15_canny_fp16.safetensors",
+      "models/controlnet/control_v11p_sd15_inpaint_fp16.safetensors",
+      "models/controlnet/control_v11p_sd15_lineart_fp16.safetensors",
+      "models/controlnet/control_v11p_sd15_mlsd_fp16.safetensors",
+      "models/controlnet/control_v11p_sd15_normalbae_fp16.safetensors",
+      "models/controlnet/control_v11p_sd15_openpose_fp16.safetensors",
+      "models/controlnet/control_v11p_sd15_scribble_fp16.safetensors",
+      "models/controlnet/control_v11p_sd15_seg_fp16.safetensors",
+      "models/controlnet/control_v11p_sd15_softedge_fp16.safetensors",
+      "models/controlnet/control_v11p_sd15s2_lineart_anime_fp16.safetensors",
+      "models/embeddings/easy_negative.safetensors",
+      "models/lycoris/InsPX.safetensors",
+      "models/vae/vae-ft-mse-840000-ema-pruned.safetensors",
+      "vae-ft-mse-840000-ema-pruned.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]"
+    ]
+  },
+  {
+    "url": "http://region-102.seetacloud.com:30634",
+    "models": [
+      "347.safetensors",
+      "aid304_640260.safetensors [3420b98f6c]",
+      "aid304_959544.safetensors",
+      "aid305_52728.safetensors",
+      "Save in .safetensors format",
+      "aid304_640260.safetensors",
+      "Only show .safetensors format models"
+    ]
+  }
+]
