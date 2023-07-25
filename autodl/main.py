@@ -12,10 +12,10 @@ from tqdm import tqdm
 # BASE_URL = 'region-8'
 # BASE_URL = 'region-9'
 # BASE_URL = 'region-31'
-BASE_URL = 'region-41'
+# BASE_URL = 'region-41'
 # BASE_URL = 'region-42'
 # BASE_URL = 'region-101'
-# BASE_URL = 'region-102'
+BASE_URL = 'region-102'
 
 online = []
 
@@ -34,9 +34,7 @@ async def scan_port(session, port, progress_bar):
                         temp.append(item)
                 if 'Stable' in html:
                     online.append({"url": url, "models": temp})
-    except aiohttp.ClientError:
-        pass
-    except asyncio.TimeoutError:
+    except (aiohttp.ClientError, asyncio.TimeoutError):
         pass
     except Exception:
         pass
@@ -46,8 +44,8 @@ async def scan_port(session, port, progress_bar):
 async def main():
     ports_to_scan = range(10000, 65536)
     total_tasks = len(ports_to_scan)
-    progress_bar = tqdm(total=total_tasks, desc="Scanning Ports", unit="port")
-    timeout = aiohttp.ClientTimeout(total=40 * 60)
+    progress_bar = tqdm(total=total_tasks, desc="扫描完的端口数", unit="端口")
+    timeout = aiohttp.ClientTimeout(total=60 * 60)
 
     async with aiohttp.ClientSession(timeout=timeout) as session:
         tasks = [scan_port(session, port, progress_bar) for port in ports_to_scan]
@@ -65,3 +63,4 @@ if __name__ == "__main__":
     loop = asyncio.get_event_loop()
     loop.run_until_complete(main())
     loop.close()
+    # asyncio.run(main())

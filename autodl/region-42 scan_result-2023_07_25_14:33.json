@@ -1,33 +1,41 @@
 [
   {
-    "url": "http://region-42.seetacloud.com:33743",
+    "url": "http://region-42.seetacloud.com:28771",
     "models": [
-      "EtherRealMix_EtherRealMixv1.safetensors [bfcaa69ad9]",
+      "chilloutmix_NiPrunedFp32Fix.safetensors [fc2511737a]",
+      "darkSushiMixMix_brighterPruned.safetensors [099e07547a]",
+      "vae-ft-mse-840000-ema-pruned.safetensors",
       "Save in .safetensors format",
       "Only show .safetensors format models"
     ]
   },
   {
-    "url": "http://region-42.seetacloud.com:55614",
+    "url": "http://region-42.seetacloud.com:31197",
     "models": [
-      "AnythingV5_v5PrtRE.safetensors",
+      "CNrealistic_MIXv21_V21.safetensors [0ab1cacb56]",
+      "xxmix9realistic_v40.safetensors [18ed2b6c48]",
+      "Save in .safetensors format",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-42.seetacloud.com:53255",
+    "models": []
+  },
+  {
+    "url": "http://region-42.seetacloud.com:55921",
+    "models": [
+      "abyssorangemix3AOM3_aom3a1b.safetensors [5493a0ec49]",
+      "deliberate_v2.safetensors [9aba26abdf]",
+      "leosamsMoonfilm_filmGrain20.safetensors [21d021e9da]",
+      "majicmixRealistic_v6.safetensors [e4a30e4607]",
+      "真人模型chilloutmix.safetensors [fc2511737a]",
       "vae-ft-mse-840000-ema-pruned.safetensors",
       "Only show .safetensors format models"
     ]
   },
   {
-    "url": "http://region-42.seetacloud.com:39791",
-    "models": [
-      "anythingqingmix25D_v30.safetensors [5178bf4b9b]",
-      "ND-成熟二次元.safetensors [3baa512068]",
-      "男模-deepboys25D_v30.safetensors [8eccdfe4b6]",
-      "男漫画-wolfboys2D_v20.safetensors [199ddbf5e7]",
-      "Save in .safetensors format",
-      "Only show .safetensors format models"
-    ]
-  },
-  {
-    "url": "http://region-42.seetacloud.com:29378",
+    "url": "http://region-42.seetacloud.com:18630",
     "models": [
       "Only show .safetensors format models"
     ]
@@ -91,6 +99,14 @@
     ]
   },
   {
+    "url": "http://region-42.seetacloud.com:33743",
+    "models": [
+      "EtherRealMix_EtherRealMixv1.safetensors [bfcaa69ad9]",
+      "Save in .safetensors format",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
     "url": "http://region-42.seetacloud.com:15542",
     "models": [
       "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
@@ -99,62 +115,49 @@
     ]
   },
   {
-    "url": "http://region-42.seetacloud.com:38030",
+    "url": "http://region-42.seetacloud.com:43069",
     "models": [
-      "Only show .safetensors format models"
-    ]
-  },
-  {
-    "url": "http://region-42.seetacloud.com:31197",
-    "models": [
-      "CNrealistic_MIXv21_V21.safetensors [0ab1cacb56]",
-      "xxmix9realistic_v40.safetensors [18ed2b6c48]",
-      "Save in .safetensors format",
-      "Only show .safetensors format models"
-    ]
-  },
-  {
-    "url": "http://region-42.seetacloud.com:11601",
-    "models": [
-      "chilloutmix_NiPrunedFp32Fix.safetensors [fc2511737a]",
-      "dreamshaper.safetensors [9e63083ae0]",
-      "INDOOR_lHl_INDOOR_lHl v1.0.safetensors",
-      "IP DESIGN _ 3D化模型_V1.1.safetensors",
-      "majicMIX realistic_v6.safetensors [e4a30e4607]",
-      "qteamixQ_fp16.safetensors",
-      "全网首发｜AWPainting 1.1_v1.1.safetensors [e7aab5067d]",
-      "全网首发｜AWPortrait 1.1_v1.1.safetensors",
-      "真实系：deliberate_v2.safetensors [9aba26abdf]",
-      "Save in .safetensors format"
-    ]
-  },
-  {
-    "url": "http://region-42.seetacloud.com:28771",
-    "models": [
-      "chilloutmix_NiPrunedFp32Fix.safetensors [fc2511737a]",
-      "darkSushiMixMix_brighterPruned.safetensors [099e07547a]",
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "推文大模型v1.safetensors",
       "vae-ft-mse-840000-ema-pruned.safetensors",
-      "Save in .safetensors format",
-      "Only show .safetensors format models"
-    ]
-  },
-  {
-    "url": "http://region-42.seetacloud.com:18630",
-    "models": [
       "Only show .safetensors format models"
     ]
   },
   {
     "url": "http://region-42.seetacloud.com:58882",
     "models": [
-      "二次元_meinamix_meinaV11.safetensors [54ef3e3610]",
       "二次元_NoxPrimeMix.safetensors [882d710b22]",
       "二次元｜ cutekawaii_v1.0.safetensors [68419cfb3f]",
-      "二次元｜anything-v5-PrtRE.safetensors [7f96a1a9ca]",
       "二次元｜AWPainting 1.1_v1.1.safetensors [e7aab5067d]",
-      "可爱化3D_IP DESIGN V1.1.safetensors [7d77e2c55f]",
+      "写实︱墨幽人造人_v1010.safetensors [ef70d92c71]",
       "vae-ft-mse-840000-ema-pruned.safetensors",
       "钟离︱zhongli_v1.0.safetensors",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-42.seetacloud.com:59620",
+    "models": [
+      "0.4(AbyssOrangeMix2_hard) + 0.6(宫下的).safetensors [f6232bf022]",
+      "ClearVAE_V2.3.safetensors"
+    ]
+  },
+  {
+    "url": "http://region-42.seetacloud.com:46332",
+    "models": [
+      "beautifulRealistic_brav5.safetensors",
+      "beautifulRealistic_brav5_2.safetensors [ac68270450]",
+      "majicmixRealistic_v6.safetensors [e4a30e4607]",
+      "meinaunreal_v41.safetensors [613844c3d2]",
+      "Save in .safetensors format",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-42.seetacloud.com:55614",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors",
+      "vae-ft-mse-840000-ema-pruned.safetensors",
       "Only show .safetensors format models"
     ]
   }

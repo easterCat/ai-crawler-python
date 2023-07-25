@@ -103,9 +103,6 @@ async def scan_port(port: int, target: str, session: ClientSession, job: Progres
         pass
     except ClientError:
         pass
-    except TimeoutError:
-        print(f'http://{target}:{port}')
-        pass
     except Exception:
         pass
     finally:
