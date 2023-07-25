@@ -1,0 +1,535 @@
+[
+  {
+    "url": "http://region-31.seetacloud.com:55348",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:22856",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:38801",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:40710",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:57458",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:28756",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:20062",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:25564",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:23116",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:43854",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:20700",
+    "models": [
+      "StableDiffusion-checkpoints/braBeautifulRealistic_brav5.safetensors [ac68270450]",
+      "StableDiffusion-checkpoints/chilloutmix_NiPrunedFp32Fix.safetensors [fc2511737a]",
+      "vae-ft-mse-840000-ema-pruned.safetensors",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:41360",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:54956",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:47737",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:49745",
+    "models": []
+  },
+  {
+    "url": "http://region-31.seetacloud.com:55795",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:41769",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:55770",
+    "models": [
+      "abyssorangemix2_Hard.safetensors",
+      "AbyssOrangeMix2_sfw.safetensors",
+      "anything-v4.5.safetensors",
+      "AnythingV5_v5PrtRE.safetensors",
+      "anytwam11Mixedmodel_anytwam11.safetensors",
+      "AOM3A1B_orangemixs.safetensors",
+      "AOM3A3.safetensors",
+      "Counterfeit-V2.5.safetensors",
+      "Counterfeit-V3.0.safetensors [db6cd0a62d]",
+      "MeinaPastelV5.safetensors",
+      "MeinaV10.safetensors [77b7dc4ef0]",
+      "OldFish_v10.safetensors",
+      "TMND-Mix_v1.0.safetensors",
+      "ClearVAE_V2.3.safetensors",
+      "ClearVAE_Main.safetensors",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:34312",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:42101",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:28461",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:36238",
+    "models": [
+      "anything-v5-PrtRE.safetensors [7f96a1a9ca]",
+      "darkSushiMixMix_brighterPruned.safetensors [099e07547a]",
+      "vae-ft-mse-840000-ema-pruned.safetensors",
+      "Save in .safetensors format",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:51690",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:31015",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:45763",
+    "models": [
+      "*.pt *.safetensors",
+      "*.ckpt *.safetensors",
+      "*.safetensors"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:29331",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors [d819c8be6b]",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors [01b259805e]",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "AnythingV5_v5PrtRE.safetensors"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:26642",
+    "models": [
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:24835",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:21850",
+    "models": [
+      "大颗寿司.safetensors [099e07547a]",
+      "淘宝集散库-全彩动漫CG模型.safetensors",
+      "vae-ft-mse-840000-ema-pruned.safetensors",
+      "Save in .safetensors format",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:38477",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:36440",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:56849",
+    "models": [
+      "braBeautifulRealistic_v40.safetensors [9c03252bea]",
+      "CamelliaMix_2.5D.safetensors [44eccf4d61]",
+      "chilled_remix_v1Fp16vae.safetensors [573e338acc]",
+      "chilloutmix_NiPrunedFp32Fix.safetensors [fc2511737a]",
+      "majicmixRealistic_v6.safetensors [e4a30e4607]",
+      "revAnimated_v121.safetensors [f57b21e57b]",
+      "yden_v20.safetensors [d17ace4d35]",
+      "美漫icomix_V02Pruned.safetensors [76b00ee812]",
+      "Save in .safetensors format",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:35876",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:50556",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:26653",
+    "models": [
+      "末日风格.safetensors [099e07547a]",
+      "VIP001.safetensors",
+      "Save in .safetensors format",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:21273",
+    "models": [
+      "coffeemix_v20.safetensors [e2f6e0733a]",
+      "白羊团队专属.safetensors [099e07547a]",
+      "Save in .safetensors format",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:49661",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:39725",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:40802",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]",
+      "Only show .safetensors format models"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:26788",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors [d819c8be6b]",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors [01b259805e]",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "AnythingV5_v5PrtRE.safetensors"
+    ]
+  },
+  {
+    "url": "http://region-31.seetacloud.com:24501",
+    "models": [
+      "AnythingV5_v5PrtRE.safetensors [7f96a1a9ca]",
+      "ligneClaireAnime_v1.safetensors",
+      "lively_v10.safetensors",
+      "majicmixRealistic_v4.safetensors",
+      "oukaNiji5V1_v10-fp16.safetensors",
+      "wintermoonmix_A.safetensors",
+      "anything-v4.5-pruned.safetensors [6e430eb514]",
+      "wintermoonmix_A.safetensors [01b259805e]",
+      "Only show .safetensors format models"
+    ]
+  }
+]

@@ -12,10 +12,10 @@ from tqdm import tqdm
 # BASE_URL = 'region-8'
 # BASE_URL = 'region-9'
 # BASE_URL = 'region-31'
-# BASE_URL = 'region-41'
+BASE_URL = 'region-41'
 # BASE_URL = 'region-42'
 # BASE_URL = 'region-101'
-BASE_URL = 'region-102'
+# BASE_URL = 'region-102'
 
 online = []
 
@@ -37,6 +37,8 @@ async def scan_port(session, port, progress_bar):
     except aiohttp.ClientError:
         pass
     except asyncio.TimeoutError:
+        pass
+    except Exception:
         pass
     progress_bar.update(1)
 
