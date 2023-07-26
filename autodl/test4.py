@@ -25,13 +25,12 @@ async def main():
             with open(f"./{json_file}", 'r') as f:
                 f_data = json.load(f)
                 for item in f_data:
-                    requests_url = item
+                    requests_url = ''
                     if 'url' in item:
                         requests_url = item['url']
-
                     requests_urls.append(requests_url)
 
-    timeout = aiohttp.ClientTimeout(total=20 * 60)
+    timeout = aiohttp.ClientTimeout(total=10 * 60)
 
     async with aiohttp.ClientSession(timeout=timeout) as session:
         print('-----------当前可用域名------------')

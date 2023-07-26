@@ -15,52 +15,90 @@ from tqdm import tqdm
 # BASE_URL = 'region-41'
 # BASE_URL = 'region-42'
 # BASE_URL = 'region-101'
-BASE_URL = 'region-102'
+# BASE_URL = 'region-102'
 
 online = []
 
+servers = [
+    "region-3",
+    "region-4",
+    "region-8",
+    "region-9",
+    "region-31",
+    "region-41",
+    "region-42",
+    "region-101",
+    "region-102",
+]
 
-async def scan_port(session, port, progress_bar):
-    url = f"http://{BASE_URL}.seetacloud.com:{port}"
+
+async def scan_port(session, server, port, batch_progress_bar):
+    url = f"http://{server}.seetacloud.com:{port}"
+    # url = f"http://localhost:{port}"
+
     try:
         async with session.get(url) as response:
             if 200 <= response.status < 300:
                 html = await response.text()
-                pattern = re.compile(r'(?<=")[^"]*\.safetensors[\s\[\]a-z0-9]*(?=")')
-                result = pattern.findall(html)
-                temp = []
-                for item in result:
-                    if item not in temp and 'lora/' not in item and 'Lora/' not in item:
-                        temp.append(item)
                 if 'Stable' in html:
+                    pattern = re.compile(r'(?<=")[^"]*\.safetensors[\s\[\]a-z0-9]*(?=")')
+                    result = pattern.findall(html)
+                    temp = []
+                    for item in result:
+                        if item not in temp and 'lora/' not in item and 'Lora/' not in item:
+                            temp.append(item)
                     online.append({"url": url, "models": temp})
-    except (aiohttp.ClientError, asyncio.TimeoutError):
+    except aiohttp.ClientError:
+        pass
+    except asyncio.TimeoutError:
         pass
     except Exception:
         pass
-    progress_bar.update(1)
+    batch_progress_bar.update(1)
 
 
 async def main():
+    timeout = aiohttp.ClientTimeout(sock_read=20)
     ports_to_scan = range(10000, 65536)
-    total_tasks = len(ports_to_scan)
-    progress_bar = tqdm(total=total_tasks, desc="扫描完的端口数", unit="端口")
-    timeout = aiohttp.ClientTimeout(total=60 * 60)
+    batch_size = 3000
+    total_batches = (len(ports_to_scan) - 1) // batch_size + 1
+    total_progress_bar = tqdm(total=len(ports_to_scan) * len(servers), desc="Overall Progress", unit="port",
+                              leave=False)
 
     async with aiohttp.ClientSession(timeout=timeout) as session:
-        tasks = [scan_port(session, port, progress_bar) for port in ports_to_scan]
-        await asyncio.gather(*tasks)
+        for server in servers:
+            for batch in range(total_batches):
+                start_idx = batch * batch_size
+                end_idx = min((batch + 1) * batch_size, len(ports_to_scan))
 
-    progress_bar.close()
+                batch_ports = ports_to_scan[start_idx:end_idx]
+                batch_progress_bar = tqdm(total=len(batch_ports),
+                                          desc=f"Scanning {server} Ports - Batch {batch + 1}/{total_batches}",
+                                          unit="port",
+                                          position=0, leave=True)
 
-    file_path = pathlib.Path(f'./{BASE_URL} scan_result-{datetime.now().strftime("%Y_%m_%d_%H:%M")}.json')
+                tasks = [scan_port(session, server, port, batch_progress_bar) for port in batch_ports]
+                await asyncio.gather(*tasks)
+
+                batch_progress_bar.close()
+                total_progress_bar.update(len(batch_ports))
+
+                sleep_time = 6 + batch % 3
+                await asyncio.sleep(sleep_time)
+
+                if end_idx >= 55536:
+                    break
+
+    total_progress_bar.close()
+
+    file_path = pathlib.Path(f'./{servers[0]} scan_result-{datetime.now().strftime("%Y_%m_%d_%H:%M")}.json')
 
     with file_path.open('w', encoding='u8') as fp:
         json.dump(online, fp, ensure_ascii=False)
 
 
 if __name__ == "__main__":
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(main())
-    loop.close()
-    # asyncio.run(main())
+    # loop = asyncio.get_event_loop()
+    # loop.run_until_complete(main())
+    # loop.close()
+    asyncio.run(main())
