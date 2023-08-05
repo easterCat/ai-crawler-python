@@ -7,28 +7,18 @@ from datetime import datetime
 import aiohttp
 from tqdm import tqdm
 
-# BASE_URL = 'region-3'
-# BASE_URL = 'region-4'
-# BASE_URL = 'region-8'
-# BASE_URL = 'region-9'
-# BASE_URL = 'region-31'
-# BASE_URL = 'region-41'
-# BASE_URL = 'region-42'
-# BASE_URL = 'region-101'
-# BASE_URL = 'region-102'
-
 online = []
 
 servers = [
-    # "region-3",
-    # "region-4",
-    # "region-8",
-    # "region-9",
-    # "region-31",
-    # "region-41",
-    # "region-42",
+    "region-3",
+    "region-4",
+    "region-8",
+    "region-9",
+    "region-31",
+    "region-41",
+    "region-42",
     "region-101",
-    # "region-102",
+    "region-102",
 ]
 
 
@@ -91,10 +81,10 @@ async def main():
 
     total_progress_bar.close()
 
-    file_path = pathlib.Path(f'./global scan_result-{datetime.now().strftime("%Y_%m_%d_%H:%M")}.json')
+    file_path = pathlib.Path(f'./global_scan_result_{datetime.now()}.json')
 
     if len(servers) == 1:
-        file_path = pathlib.Path(f'./{servers[0]} scan_result-{datetime.now().strftime("%Y_%m_%d_%H:%M")}.json')
+        file_path = pathlib.Path(f'./{servers[0]}_scan_result_{datetime.now().strftime("%Y_%m_%d_%H:%M")}.json')
 
     with file_path.open('w', encoding='u8') as fp:
         json.dump(online, fp, ensure_ascii=False)
