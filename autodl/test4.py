@@ -18,6 +18,8 @@ async def scan_port(session, url):
                 html = await response.text()
                 if "cuteyuki" in html:
                     print(f'{url} 包含cuteyuki')
+                if "chill" in html:
+                    print(f'{url} 包含chillout')
                 else:
                     print(url)
                 total += 1
