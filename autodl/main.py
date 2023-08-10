@@ -22,6 +22,9 @@ servers = [
 ]
 
 
+# servers = ["region-{}".format(item) for item in range(1, 200)]
+
+
 async def scan_port(session, server, port, batch_progress_bar):
     url = f"http://{server}.seetacloud.com:{port}"
     # url = f"http://localhost:{port}"

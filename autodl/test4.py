@@ -10,19 +10,37 @@ jsons = os.listdir('.')
 requests_urls = []
 
 
+# async def scan_port(session, url):
+#     global total
+#     try:
+#         async with session.get(url) as response:
+#             if 200 <= response.status < 300:
+#                 html = await response.text()
+#                 if "cuteyuki" in html:
+#                     print(f'{url} 包含cuteyuki')
+#                 if "chill" in html:
+#                     print(f'{url} 包含chillout')
+#                 else:
+#                     print(url)
+#                 total += 1
+#     except Exception:
+#         pass
+
+
 async def scan_port(session, url):
     global total
+    api = url + '/sdapi/v1/txt2img'
     try:
-        async with session.get(url) as response:
+        headers = {'Content-Type': 'application/json'}
+        async with session.post(api, data=json.dumps({
+            "prompt": "loli"
+        }), headers=headers) as response:
             if 200 <= response.status < 300:
-                html = await response.text()
-                if "cuteyuki" in html:
-                    print(f'{url} 包含cuteyuki')
-                if "chill" in html:
-                    print(f'{url} 包含chillout')
-                else:
+                html_json = await response.json()
+                images = html_json.get("images", [])
+                if images[0] is not None:
                     print(url)
-                total += 1
+                    total += 1
     except Exception:
         pass
 

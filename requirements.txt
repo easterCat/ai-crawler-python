@@ -3,3 +3,5 @@ aiohttp~=3.8.4
 aiodns~=3.0.0
 rich~=13.4.2
 tqdm~=4.65.0
+
+Flask~=2.3.2
