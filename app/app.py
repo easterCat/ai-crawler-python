@@ -2,6 +2,7 @@ import asyncio
 import json
 import os
 
+import aiofiles
 import aiohttp
 from flask import Flask, render_template
 
@@ -11,33 +12,17 @@ total = 0
 
 
 @app.route('/')
-def render_html():
-    data = []
-    directory = os.path.join(os.path.dirname(__file__), '../autodl')
-    for filename in os.listdir(directory):
-        if filename.endswith('.json'):
-            file_path = os.path.join(directory, filename)
-            with open(file_path) as json_file:
-                file_data = json.load(json_file)
-                for item in file_data:
-                    data.append(item)
+async def render_html():
+    data = await read_json_files()
     # 渲染模板并返回HTML响应
     return render_template('template.html', data={'list': data, 'total': len(data), 'allow': total})
 
 
 @app.route("/test")
 async def test_html():
-    data = []
-    directory = os.path.join(os.path.dirname(__file__), '../autodl')
-    for filename in os.listdir(directory):
-        if filename.endswith('.json'):
-            file_path = os.path.join(directory, filename)
-            with open(file_path) as json_file:
-                file_data = json.load(json_file)
-                for item in file_data:
-                    data.append(item)
+    data = await read_json_files()
 
-    timeout = aiohttp.ClientTimeout(sock_read=20)
+    timeout = aiohttp.ClientTimeout(sock_read=60)
 
     async with aiohttp.ClientSession(timeout=timeout) as session:
         print('-----------当前可用域名------------')
@@ -52,13 +37,25 @@ async def test_html():
     return render_template('template.html', data={'list': result, 'total': len(result), 'allow': total})
 
 
+async def read_json_files():
+    data = []
+    directory = os.path.join(os.path.dirname(__file__), '../autodl')
+    for filename in os.listdir(directory):
+        if filename.endswith('.json'):
+            file_path = os.path.join(directory, filename)
+            async with aiofiles.open(file_path, 'r') as json_file:
+                file_data = json.loads(await json_file.read())
+                data.extend(file_data)
+    return data
+
+
 async def scan_port(session, item):
     global total
     api = item['url'] + '/sdapi/v1/txt2img'
     try:
         headers = {'Content-Type': 'application/json'}
         async with session.post(api, data=json.dumps({
-            "prompt": "1girl,loli,black bodysuit,see-through,very long hair,low twintails,spread legs,",
+            "prompt": "1girl,loli,black bodysuit,see-through,covered navel,spread legs,",
             "negative_prompt": "(worst quality:1.3),(low quality:1.3),(normal quality:1.3),",
             # "height": 768
         }), headers=headers) as response:
