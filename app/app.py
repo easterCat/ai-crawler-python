@@ -21,7 +21,6 @@ async def render_html():
 @app.route("/test")
 async def test_html():
     data = await read_json_files()
-
     timeout = aiohttp.ClientTimeout(sock_read=60)
 
     async with aiohttp.ClientSession(timeout=timeout) as session:
@@ -43,7 +42,7 @@ async def read_json_files():
     for filename in os.listdir(directory):
         if filename.endswith('.json'):
             file_path = os.path.join(directory, filename)
-            async with aiofiles.open(file_path, 'r') as json_file:
+            async with aiofiles.open(file_path, 'r', encoding='utf-8') as json_file:
                 file_data = json.loads(await json_file.read())
                 data.extend(file_data)
     return data

@@ -50,7 +50,7 @@ async def main():
     for json_file in jsons:
         file_type = mimetypes.guess_type(json_file)
         if file_type[0] == 'application/json':
-            with open(f"./{json_file}", 'r') as f:
+            with open(f"./{json_file}", 'r', encoding='utf-8') as f:
                 f_data = json.load(f)
                 for item in f_data:
                     requests_url = ''

@@ -2,7 +2,7 @@ import asyncio
 import json
 import pathlib
 import re
-from datetime import datetime
+import time
 
 import aiohttp
 from tqdm import tqdm
@@ -84,10 +84,10 @@ async def main():
 
     total_progress_bar.close()
 
-    file_path = pathlib.Path(f'./global_scan_result_{datetime.now()}.json')
+    file_path = pathlib.Path(f'./global_scan_result_{time.time()}.json')
 
     if len(servers) == 1:
-        file_path = pathlib.Path(f'./{servers[0]}_scan_result_{datetime.now().strftime("%Y_%m_%d_%H:%M")}.json')
+        file_path = pathlib.Path(f'./{servers[0]}_scan_result_{time.time()}.json')
 
     with file_path.open('w', encoding='u8') as fp:
         json.dump(online, fp, ensure_ascii=False)

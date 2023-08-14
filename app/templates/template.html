@@ -3,122 +3,134 @@
 
 <head>
     <title>Flask Template</title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
-          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap-theme.min.css"
-          integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"
-            integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
-            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <!-- CSS部分 -->
     <style>
         .modal {
-    display: block;
-    position: fixed;
-    z-index: 9999;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.9);
-}
+            display: block;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
 
-.modal-content {
-    display: block;
-    margin: 10% auto;
-    max-width: 800px;
-    max-height: 80vh;
-}
+        .modal-content {
+            display: block;
+            margin: 10% auto;
+            max-width: 800px;
+            max-height: 80vh;
+        }
 
-.modal-image {
-    display: block;
-    width: 100%;
-    height: auto;
-}
+        .modal-image {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
 
-#backToTopBtn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 10px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
+        #backToTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .copy-btn {
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .image.is-256x256 {
+            height: 256px;
+            width: 256px;
+        }
     </style>
 </head>
 
 <body>
-<h1>
-    <span>Data from json:</span> <span> 总计 : {{data.total}} </span> <span> 可用 : {{data.allow}} </span>
-    <button type="button" class="btn btn-primary"><a href="/test" style="color:white">验证全部地址</a></button>
-</h1>
-<details>
-    <summary>正面</summary>
-    (((((loli,little girl,child face,baby face))))),~~~,((((soft breasts,naturally saggy breasts,naturally sagging
-    breasts,large breasts,big breasts,huge breasts,oversized breasts,gigantic breasts,enormous breasts,breasts apart,see
-    through,pantyhose,black
-    pantyhose)))),~~~,(((nipples,small child,small girl,mini girl,petite girl,petite child,slim waist,narrow
-    waist,short,short legs,nsfw,makeup,red lips))),~~~,((breasts out,bare breasts,exposed breasts,naked
-    breasts)),~~~,(best quality,masterpiece,raw
-    photo,extremely detailed cg unity 8k wallpaper,highly detailed,finely detail,hyper detail,dramatic light,ultra
-    detailed,best illumination,intricate details,detailed hands,detailed fingers,depth of field,best shadow,detailed
-    light,cinematic lighting,colorful,highres,absurdres,high
-    contrast,realistic,photo realistic,real,extremely detailed background,face lighting,light on face,an extremely
-    delicate and beautiful,beautiful detailed face,finely detailed beautiful eyes,beautiful detailed glow,very skinny
-    slender body,naturally
-    hydrated delicate skin,high gloss sweaty skin,extremely detailed hair,beautiful detailed nose,beautiful detailed red
-    lips,bright eyes),~~~,1girl,solo,black hair,very long hair,(twintails,low twintails),red eyes,big ass,mini skirt,Red
-    bow headband,black
-    gloves,elbow gloves,high platform heels,red lace,sheer clothes,revealing clothes,in Gothic castle,The Alchemy
-    Room,Alchemical reagent,Test tube,grimoire,candle,Cathedral glass,red rose,rose tattoo,throne,sitting,spread
-    legs,pussy,covered pussy,pussy
-    hair,pubic hair,
-</details>
-<details>
-    <summary>负面</summary>
-    <p id="textToCopy">
-        EasyNegative,EasyNegativeV2,bad-artist-anime,bad-artist,bad-hands-5,bad-image-v2-39000,bad_prompt_version2,ng_deepnegative_v1_75t,verybadimagenegative_v1.3,sketch,duplicate,ugly,text,error,logo,monochrome,worst
-        face,(bad and mutated
-        hands:1.3),(worst quality:1.3),(low quality:1.3),(normal quality:1.3),(blurry:1.3),horror,geometry,(missing
-        fingers),multiple limbs,bad anatomy,(interlocked fingers:1.2),Ugly Fingers,(extra digit,extra hands,extra
-        fingers,extra legs,extra arms),fewer
-        digits,(deformed fingers:1.2),(long fingers:1.2),signature,watermark,username,multiple panels,
-    </p>
-    <button onclick="copyText('textToCopy')">复制</button>
-</details>
-<div class="content">
-    <button id="backToTopBtn" onclick="scrollToTop()">返回顶部</button>
-    <table class="table table-striped">
-        <!-- On rows -->
-        <thead>
-        <tr class="active">
-            <th>url</th>
-            <th>models</th>
-            <th>images</th>
-        </tr>
-        </thead>
-        {% for item in data.list %}
-        <tbody>
-        <tr>
-            <td class="">{% if item.images %} <a href="{{item.url}}" target="_blank">{{ item.url }}</a>
-                {% else %} <span>{{ item.url }}</span>
-                {% endif %}
-            <td class="">{{ item.models }}</td>
-            <td class="">{% if item.images %}
-                <img class="img-rounded" width="250" src="data:image/jpeg;base64,{{ item.images[0] }}" alt="Image"
-                     onclick="showImage(this)">{% endif %}
-            </td>
-        </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+<div class="content p-4">
+    <h1 class="title">
+        <span>Data from json:</span>
+        <span> 总计 : {{data.total}} </span>
+        <span> 可用 : {{data.allow}} </span>
+        <button type="button" class="button is-dark">
+            <a href="/test" style="color:white">验证全部地址</a>
+        </button>
+    </h1>
+    <details>
+        <summary>正面</summary>
+        <p>
+            (((((loli,little girl,child face,baby face))))),~~~,((((soft breasts,naturally saggy breasts,naturally
+            sagging breasts,large breasts,big breasts,huge breasts,oversized breasts,gigantic breasts,enormous
+            breasts,breasts apart,see through,pantyhose,black pantyhose)))),~~~,(((nipples,small child,small girl,mini
+            girl,petite girl,petite child,slim waist,narrow waist,short,short legs,nsfw,makeup,red lips))),~~~,((breasts
+            out,bare breasts,exposed breasts,naked breasts)),~~~,(best quality,masterpiece,raw photo,extremely detailed
+            cg unity 8k wallpaper,highly detailed,finely detail,hyper detail,dramatic light,ultra detailed,best
+            illumination,intricate details,detailed hands,detailed fingers,depth of field,best shadow,detailed
+            light,cinematic lighting,colorful,highres,absurdres,high contrast,realistic,photo realistic,real,extremely
+            detailed background,face lighting,light on face,an extremely delicate and beautiful,beautiful detailed
+            face,finely detailed beautiful eyes,beautiful detailed glow,very skinny slender body,naturally hydrated
+            delicate skin,high gloss sweaty skin,extremely detailed hair,beautiful detailed nose,beautiful detailed red
+            lips,bright eyes),~~~,1girl,solo,black hair,very long hair,(twintails,low twintails),red eyes,big
+            ass,miniskirt,Redbow headband,blackgloves,elbow gloves,high platform heels,red lace,sheer clothes,revealing
+            clothes,in Gothic castle,TheAlchemyRoom,Alchemical reagent,Test tube,grimoire,candle,Cathedral glass,red
+            rose,rose tattoo,throne,sitting,spreadlegs,pussy,covered pussy,pussyhair,pubic hair,
+        </p>
+    </details>
+    <details>
+        <summary>负面</summary>
+        <p id="textToCopy">
+            EasyNegative,EasyNegativeV2,bad-artist-anime,bad-artist,bad-hands-5,bad-image-v2-39000,bad_prompt_version2,ng_deepnegative_v1_75t,verybadimagenegative_v1.3,sketch,duplicate,ugly,text,error,logo,monochrome,worst
+            face,(bad and mutated hands:1.3),(worst quality:1.3),(low quality:1.3),(normal
+            quality:1.3),(blurry:1.3),horror,geometry,(missing fingers),multiple limbs,bad anatomy,(interlocked
+            fingers:1.2),Ugly Fingers,(extra digit,extra hands,extra fingers,extra legs,extra arms),fewer
+            digits,(deformed fingers:1.2),(long fingers:1.2),signature,watermark,username,multiple panels,
+        </p>
+        <button class="copy-btn" onclick="copyText('textToCopy')">复制</button>
+    </details>
+    <div class="content mt-6">
+        <button id="backToTopBtn" onclick="scrollToTop()">返回顶部</button>
+        <table class="table is-bordered is-hoverable">
+            <!-- On rows -->
+            <thead>
+            <tr class="active">
+                <th>url</th>
+                <th>models</th>
+                <th>images</th>
+            </tr>
+            </thead>
+            {% for item in data.list %}
+            <tbody>
+            <tr>
+                <td class="">{% if item.images %} <a href="{{item.url}}" target="_blank">{{ item.url }}</a>
+                    {% else %} <span>{{ item.url }}</span>
+                    {% endif %}
+                <td class="">{{ item.models }}</td>
+                <td class="">{% if item.images %}
+                    <figure class="image is-256x256">
+                        <img
+                                src="data:image/jpeg;base64,{{ item.images[0] }}" alt="Image"
+                                onclick="showImage(this)">
+                    </figure>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </div>
 </body>
 <!-- JavaScript部分 -->
@@ -143,28 +155,23 @@
         });
     }
 
-     function copyText(id) {
-            var text = document.getElementById(id).innerText;
-
-            // 创建一个临时的textarea元素
-            var tempTextArea = document.createElement("textarea");
-            tempTextArea.value = text;
-            document.body.appendChild(tempTextArea);
-
-            // 选择临时textarea中的文本
-            tempTextArea.select();
-            tempTextArea.setSelectionRange(0, 99999); // 兼容移动设备
-
-            // 复制选定的文本到剪贴板
-            document.execCommand("copy");
-
-            // 移除临时textarea元素
-            document.body.removeChild(tempTextArea);
-
-            // 按钮文本变为已复制
-            var button = document.querySelector("button");
-            button.innerHTML = "已复制";
-        }
+    function copyText(id) {
+        var text = document.getElementById(id).innerText;
+        // 创建一个临时的textarea元素
+        var tempTextArea = document.createElement("textarea");
+        tempTextArea.value = text;
+        document.body.appendChild(tempTextArea);
+        // 选择临时textarea中的文本
+        tempTextArea.select();
+        tempTextArea.setSelectionRange(0, 99999); // 兼容移动设备
+        // 复制选定的文本到剪贴板
+        document.execCommand("copy");
+        // 移除临时textarea元素
+        document.body.removeChild(tempTextArea);
+        // 按钮文本变为已复制
+        var button = document.querySelector(".copy-btn");
+        button.innerHTML = "已复制";
+    }
 </script>
 
 </html>
