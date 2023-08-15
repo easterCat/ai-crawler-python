@@ -15,24 +15,11 @@
             max-width: 100%;
             margin: 10px;
         }
-        
-        #backToTopBtn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            padding: 10px;
-            background-color: #333;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
     </style>
 </head>
 
 <body>
 <div class="p-3">
-    <button id="backToTopBtn" onclick="scrollToTop()">返回顶部</button>
     <h1 class="title">图形绘制</h1>
     <form id="myForm" action="/draw" method="POST">
 
@@ -40,7 +27,7 @@
             <label class="label">prompt</label>
             <div class="control">
             <textarea class="textarea is-primary is-small" id="textarea1" name="prompt" rows="4" cols="200"
-                      placeholder="loli,little loli,petite,short,young,bodysuit,see through,covered nipples,"></textarea>
+                      placeholder="loli,little loli,pettie,black bodysuit,see-through,covered nipples,"></textarea>
             </div>
         </div>
         <div class="field">
@@ -104,14 +91,6 @@
         document.getElementById('textarea7').value = '30';
         form.action = '/draw?url=' + url || '';
     }
-
-    function scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth", // 可以使用平滑滚动效果
-        });
-    }
-
 </script>
 
 </html>

@@ -118,7 +118,7 @@ async def scan_port(session, item):
     try:
         headers = {'Content-Type': 'application/json'}
         async with session.post(api, data=json.dumps({
-            "prompt": "loli,little loli,petite,short,young,bodysuit,see through,covered nipples,",
+            "prompt": "loli,little loli,petite,short,young,,black bodysuit,see-through,covered nipples,",
             "negative_prompt": "(worst quality:1.3),(low quality:1.3),(normal quality:1.3),",
             # "height": 768
         }), headers=headers) as response:
