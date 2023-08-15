@@ -27,7 +27,7 @@
             <label class="label">prompt</label>
             <div class="control">
             <textarea class="textarea is-primary is-small" id="textarea1" name="prompt" rows="4" cols="200"
-                      placeholder="loli,little loli,pettie,black bodysuit,see-through,covered nipples,"></textarea>
+                      placeholder="(loli,little loli),pettie,black bodysuit,see-through,covered nipples,"></textarea>
             </div>
         </div>
         <div class="field">
@@ -82,7 +82,7 @@
         var urlParams = new URLSearchParams(window.location.search);
         var url = urlParams.get('url');
         var form = document.getElementById('myForm');
-        document.getElementById('textarea1').value = 'loli,little loli,petite,shore, young,black bodysuit,see-through,covered nipples,';
+        document.getElementById('textarea1').value = '(loli,little loli),petite,shore, young,black bodysuit,see-through,covered nipples,';
         document.getElementById('textarea2').value = '(worst quality:1.3),(low quality:1.3),(normal quality:1.3),';
         document.getElementById('textarea3').value = url || '';
         document.getElementById('textarea4').value = '12';
