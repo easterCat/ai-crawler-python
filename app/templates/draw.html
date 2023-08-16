@@ -4,6 +4,7 @@
 <head>
     <title>图形绘制</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
         .image-container {
             display: flex;
@@ -14,8 +15,9 @@
         .image-container img {
             max-width: 100%;
             margin: 10px;
+            filter: blur(0px);
         }
-        
+
         #backToTopBtn {
             position: fixed;
             bottom: 20px;
@@ -35,75 +37,146 @@
     <button id="backToTopBtn" onclick="scrollToTop()">返回顶部</button>
     <h1 class="title">图形绘制</h1>
     <form id="myForm" action="/draw" method="POST">
-
-        <div class="field">
-            <label class="label">prompt</label>
-            <div class="control">
-            <textarea class="textarea is-primary is-small" id="textarea1" name="prompt" rows="4" cols="200"
-                      placeholder="(loli,little loli),petite,short,young,bodysuit,see through,covered nipples,"></textarea>
+        <div class="field is-horizontal">
+            <div class="field-label is-normal">
+                <label class="label">Department</label>
+            </div>
+            <div class="field-body">
+                <div class="field is-narrow">
+                    <div class="control">
+                        <div class="select is-fullwidth">
+                            <select id="mySelect">{% for model in data.models %} {% if data.cur_model == model.title %}
+                                <option selected>{{model.title}}</option>
+                                {% else %}
+                                <option>{{model.title}}</option>
+                                {% endif %} {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="field">
-            <label class="label">negative_prompt</label>
-            <div class="control">
-            <textarea class="textarea is-primary is-small" id="textarea2" name="negative_prompt" rows="4" cols="200"
-                      placeholder="(worst quality:1.3),(low quality:1.3),(normal quality:1.3),"></textarea>
+        <div class="field is-horizontal">
+            <div class="field-label is-normal">
+                <label class="label">prompt</label>
+            </div>
+            <div class="field-body">
+                <div class="field">
+                    <div class="control">
+                        <textarea class="textarea is-primary is-small" id="textarea1" name="prompt" rows="3"
+                                  placeholder="(loli:1.5,little loli),petite,short,young,bodysuit,see through,covered nipples,"></textarea>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="field">
-            <label class="label">url</label>
-            <div class="control">
-                <textarea class="textarea is-primary is-small" id="textarea3" name="url" rows="2" cols="200"></textarea>
+        <div class="field is-horizontal">
+            <div class="field-label is-normal">
+                <label class="label">negative_prompt</label>
+            </div>
+            <div class="field-body">
+                <div class="field">
+                    <div class="control">
+                        <textarea class="textarea is-primary is-small" id="textarea2" name="negative_prompt" rows="3"
+                                  placeholder="(worst quality:1.3),(low quality:1.3),(normal quality:1.3),"></textarea>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="field">
-            <label class="label">数量</label>
-            <div class="control">
-                <input class="input is-primary is-small" id="textarea4" type="text" name="n_iter"></input>
+        <div class="field is-horizontal">
+            <div class="field-label is-normal">
+                <label class="label">url</label>
+            </div>
+            <div class="field-body">
+                <div class="field">
+                    <div class="control">
+                        <textarea class="textarea is-primary is-small" id="textarea3" name="url" rows="1"
+                                  cols="200"></textarea>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="field">
-            <label class="label">宽</label>
-            <div class="control">
-                <input class="input is-primary is-small" id="textarea5" type="text" name="width"></input>
+        <div class="field is-horizontal">
+            <div class="field-label is-normal">
+                <label class="label">From</label>
+            </div>
+            <div class="field-body">
+                <div class="field">
+                    <p class="control is-expanded ">
+                        <input class="input is-primary is-small" id="textarea4" type="text" name="n_iter"></input>
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control is-expanded ">
+                        <input class="input is-primary is-small" id="textarea5" type="text" name="width"></input>
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control is-expanded ">
+                        <input class="input is-primary is-small" id="textarea6" type="text" name="height"></input>
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control is-expanded ">
+                        <input class="input is-primary is-small" id="textarea7" type="text" name="steps"></input>
+                    </p>
+                </div>
             </div>
         </div>
-        <div class="field">
-            <label class="label">高</label>
-            <div class="control">
-                <input class="input is-primary is-small" id="textarea6" type="text" name="height"></input>
+        <div class="field is-horizontal">
+            <div class="field-label">
+                <!-- Left empty for spacing -->
+            </div>
+            <div class="field-body">
+                <div class="field">
+                    <div class="control">
+                        <input class="button is-primary" type="submit" value="绘制图形">
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="field">
-            <label class="label">步数</label>
-            <div class="control">
-                <input class="input is-primary is-small" id="textarea7" type="text" name="steps"></input>
-            </div>
-        </div>
-        <input class="button" type="submit" value="绘制图形">
     </form>
-    <h1 class="title mt-3">绘制结果</h1>
-    <div class="image-container">
-        {% for image in data.images %}
-        <img width="600" src="data:image/jpeg;base64,{{ image }}" alt="图像">
-        {% endfor %}
+    <h1 class="title mt-3">绘制结果 <span>
+        <button class="button is-small" onclick="toggleBlur(0)">No Blur</button>
+        <button class="button is-small" onclick="toggleBlur(3)">Low Blur</button>
+        <button class="button is-small" onclick="toggleBlur(6)">High Blur</button>
+    </span></h1>
+    <div class="image-container">{% for image in data.images %}
+        <img width="600" src="data:image/jpeg;base64,{{ image }}" alt="图像">{% endfor %}
     </div>
 </div>
 </body>
 <script>
-    window.onload = function() {
-        var urlParams = new URLSearchParams(window.location.search);
-        var url = urlParams.get('url');
-        var form = document.getElementById('myForm');
-        document.getElementById('textarea1').value = '(loli,little loli),petite,short,young,bodysuit,see through,covered nipples,';
+    var urlParams = new URLSearchParams(window.location.search);
+    var url = urlParams.get('url');
+    $(document).ready(function() {
+        document.getElementById('textarea1').value = '(loli:1.5,little loli),petite,short,young,bodysuit,see through,covered nipples,';
         document.getElementById('textarea2').value = '(worst quality:1.3),(low quality:1.3),(normal quality:1.3),';
         document.getElementById('textarea3').value = url || '';
         document.getElementById('textarea4').value = '12';
         document.getElementById('textarea5').value = '600';
         document.getElementById('textarea6').value = '800';
         document.getElementById('textarea7').value = '30';
-        form.action = '/draw?url=' + url || '';
-    }
+        document.getElementById('myForm').action = '/draw?url=' + url || '';
+        $("#mySelect").change(function() {
+            var selectedOption = $(this).val();
+            console.log(selectedOption)
+            $.ajax({
+                url: "/change_model",
+                type: "POST",
+                data: {
+                    model_name: selectedOption,
+                    url: url
+                },
+                success: function(response) {
+                    console.log(response);
+                    alert('切换成功')
+                },
+                error: function(xhr, status, error) {
+                    console.log(error);
+                }
+            });
+        });
+    });
 
     function scrollToTop() {
         window.scrollTo({
@@ -112,6 +185,12 @@
         });
     }
 
+     function toggleBlur(blurAmount) {
+        var image = document.getElementsByTagName('img');
+        img.forEach(i=>{
+          i.style.filter = 'blur(' + blurAmount + 'px)';
+        })
+     }
 </script>
 
 </html>
