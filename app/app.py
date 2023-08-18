@@ -193,7 +193,7 @@ async def scan_port(session, item):
                 {
                     "width": 512,
                     "height": 768,
-                    "prompt": "1loli,(loli:1.3),petite,skinny,ribs,long hair,low twintails,black bodysuit,black leotard,(see through:1.2),covered nipples,covered navel,",
+                    "prompt": "(loli:1.3),petite,skinny,ribs,long hair,low twintails,black bodystocking,armor,(see through:1.2),covered_erect_nipples,covered_nipples,covered_navel,",
                     "negative_prompt": "sketch,duplicate,ugly,text,error,logo,monochrome,worstface,(bad and mutated hands:1.3),(worst quality:1.3),(low quality:1.3),(normal quality:1.3),(blurry:1.3),(missing fingers),multiple limbs,badanatomy,(interlocked fingers),Ugly Fingers,extra digit,extra hands,extrafingers,extra legs,extra arms,fewer digits,(deformed fingers),(longfingers),signature,watermark,username,multiple panels,",
                 }
             ),
