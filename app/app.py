@@ -188,16 +188,17 @@ async def scan_port(session, item):
     try:
         headers = {"Content-Type": "application/json"}
         async with session.post(
-            api,
-            data=json.dumps(
-                {
-                    "width": 512,
-                    "height": 768,
-                    "prompt": "(loli:1.3),petite,skinny,ribs,long hair,floating_hair,low twintails,large_breasts,black bodystocking,torn_bodystocking,see through,nipples,covered_erect_nipples,covered_nipples,navel,covered_navel,",
-                    "negative_prompt": "sketch,duplicate,ugly,text,error,logo,monochrome,worstface,(bad and mutated hands:1.3),(worst quality:1.3),(low quality:1.3),(normal quality:1.3),(blurry:1.3),(missing fingers),multiple limbs,badanatomy,(interlocked fingers),Ugly Fingers,extra digit,extra hands,extrafingers,extra legs,extra arms,fewer digits,(deformed fingers),(longfingers),signature,watermark,username,multiple panels,",
-                }
-            ),
-            headers=headers,
+                api,
+                data=json.dumps(
+                    {
+                        "n_iter": 1,
+                        "width": 512,
+                        "height": 768,
+                        "prompt": "best quality,highly detailed,masterpiece,ultra-detailed,(loli:1.5),(little loli:1.3),child face,large breasts,petite,skinny,ribs,short,long hair,low twintails,black bodysuit,(see-through:1.4),(covered_nipples:1.2),covered_navel,",
+                        "negative_prompt": "sketch,duplicate,ugly,text,error,logo,monochrome,worst face,(bad and mutated hands:1.3),(worst quality:1.3),(low quality:1.3),(normal quality:1.3),(blurry:1.3),(missing fingers),multiple limbs,bad anatomy,(interlocked fingers),Ugly Fingers,extra digit,extra hands,extra fingers,extra legs,extra arms,fewer digits,(deformed fingers),(long fingers),signature,watermark,username,multiple panels,",
+                    }
+                ),
+                headers=headers,
         ) as response:
             if 200 <= response.status < 300:
                 html_json = await response.json()
