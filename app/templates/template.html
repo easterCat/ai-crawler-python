@@ -121,6 +121,7 @@
                 </tr>
                 </thead>
                 {% for item in data.list %}
+                {% if item.images %}
                 <tbody>
                 <tr>
                     <td>
@@ -130,11 +131,7 @@
                     </td>
 
                     <td class="">
-                        {% if item.images %}
                         <a href="{{item.url}}" target="_blank">{{ item.url }}</a>
-                        {% else %}
-                        <span>{{ item.url }}</span>
-                        {% endif %}
                     </td>
 
                     <td class="">{{ item.models }}</td>
@@ -151,6 +148,7 @@
                         {% endfor %}
                     </td>
                 </tr>
+                {% endif %}
                 {% endfor %}
                 </tbody>
             </table>

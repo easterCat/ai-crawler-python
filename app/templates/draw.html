@@ -34,7 +34,7 @@
 </head>
 
 <body>
-<div class="p-3">
+<div class="p-3 content">
     <button id="backToTopBtn" onclick="scrollToTop()">返回顶部</button>
     <h1 class="title">
         图形绘制
@@ -51,105 +51,145 @@
 
         </iframe>
     </div>
-    <form id="myForm">
-        <div class="field is-horizontal">
-            <div class="field-label is-normal">
-                <label class="label">Department</label>
-            </div>
-            <div class="field-body">
-                <div class="field is-narrow">
-                    <div class="control">
-                        <div class="select is-fullwidth">
-                            <select id="mySelect">{% for model in data.models %} {% if data.cur_model == model.title %}
-                                <option selected>{{model.title}}</option>
-                                {% else %}
-                                <option>{{model.title}}</option>
-                                {% endif %} {% endfor %}
-                            </select>
+    <div class="box">
+        <form id="myForm">
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">Department</label>
+                </div>
+                <div class="field-body">
+                    <div class="field is-narrow">
+                        <div class="control">
+                            <div class="select is-fullwidth">
+                                <select id="mySelect" name="model">
+                                    {% for model in data.models %}
+                                    {% if data.cur_model_name == model.title %}
+                                    <option selected>{{model.title}}</option>
+                                    {% else %}
+                                    <option>{{model.title}}</option>
+                                    {% endif %}
+                                    {% endfor %}
+                                </select>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="field is-horizontal">
-            <div class="field-label is-normal">
-                <label class="label">prompt</label>
-            </div>
-            <div class="field-body">
-                <div class="field">
-                    <div class="control">
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">prompt</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <div class="control">
                         <textarea class="textarea is-primary is-small" id="textarea1" name="prompt" rows="3"
-                                  placeholder="best quality,highly detailed,masterpiece,ultra-detailed,(loli:1.5),(little loli:1.3),child face,large_breasts,petite,skinny,ribs,black bodysuit,(see-through:1.3),covered_nipples,covered_erect_nipples,covered_breasts,covered_navel,"></textarea>
+                                  placeholder="best quality,masterpiece,(Preschooler:1.5),(toddler:1.5),(loli:1.5),(little loli:1.5),(Child:1.5),large_breasts,petite,skinny,ribs,black bodysuit,(see through:1.4),covered_nipples,covered_erect_nipples,covered_breasts,covered_navel,"></textarea>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="field is-horizontal">
-            <div class="field-label is-normal">
-                <label class="label">negative_prompt</label>
-            </div>
-            <div class="field-body">
-                <div class="field">
-                    <div class="control">
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">negative_prompt</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <div class="control">
                         <textarea class="textarea is-primary is-small" id="textarea2" name="negative_prompt" rows="3"
                                   placeholder="sketch,duplicate,ugly,text,error,logo,monochrome,worst face,(bad and mutated hands:1.3),(worst quality:1.3),(low quality:1.3),(normal quality:1.3),(blurry:1.3),(missing fingers),multiple limbs,bad anatomy,(interlocked fingers),Ugly Fingers,extra digit,extra hands,extra fingers,extra legs,extra arms,fewer digits,(deformed fingers),(long fingers),signature,watermark,username,multiple panels,"></textarea>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="field is-horizontal">
-            <div class="field-label is-normal">
-                <label class="label">url</label>
-            </div>
-            <div class="field-body">
-                <div class="field">
-                    <div class="control">
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">url</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <div class="control">
                         <textarea class="textarea is-primary is-small" id="textarea3" name="url" rows="1"
                                   cols="200"></textarea>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="field is-horizontal">
-            <div class="field-label is-normal">
-                <label class="label">From</label>
-            </div>
-            <div class="field-body">
-                <div class="field">
-                    <p class="control is-expanded ">
-                        <input class="input is-primary is-small" id="textarea4" type="text" name="n_iter"></input>
-                    </p>
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">From</label>
                 </div>
-                <div class="field">
-                    <p class="control is-expanded ">
-                        <input class="input is-primary is-small" id="textarea5" type="text" name="width"></input>
-                    </p>
-                </div>
-                <div class="field">
-                    <p class="control is-expanded ">
-                        <input class="input is-primary is-small" id="textarea6" type="text" name="height"></input>
-                    </p>
-                </div>
-                <div class="field">
-                    <p class="control is-expanded ">
-                        <input class="input is-primary is-small" id="textarea7" type="text" name="steps"></input>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="field is-horizontal">
-            <div class="field-label">
-                <!-- Left empty for spacing -->
-            </div>
-            <div class="field-body">
-                <div class="field">
-                    <div class="control">
-                        <input id="SubmitDrawInfo" class="button is-primary" type="submit" value="绘制图形">
+                <div class="field-body">
+                    <div class="field">
+                        <p class="control is-expanded ">
+                            <input class="input is-primary is-small" id="textarea4" type="text" name="n_iter"></input>
+                        </p>
+                    </div>
+                    <div class="field">
+                        <p class="control is-expanded ">
+                            <input class="input is-primary is-small" id="textarea8" type="text"
+                                   name="batch_size"></input>
+                        </p>
+                    </div>
+                    <div class="field">
+                        <p class="control is-expanded ">
+                            <input class="input is-primary is-small" id="textarea5" type="text" name="width"></input>
+                        </p>
+                    </div>
+                    <div class="field">
+                        <p class="control is-expanded ">
+                            <input class="input is-primary is-small" id="textarea6" type="text" name="height"></input>
+                        </p>
+                    </div>
+                    <div class="field">
+                        <p class="control is-expanded ">
+                            <input class="input is-primary is-small" id="textarea7" type="text" name="steps"></input>
+                        </p>
+                    </div>
+                    <div class="field">
+                        <p class="control is-expanded ">
+                            <input class="input is-primary is-small" id="textarea10" type="text"
+                                   name="denoising_strength"></input>
+                        </p>
                     </div>
                 </div>
             </div>
-        </div>
-    </form>
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">image</label>
+                </div>
+                <div class="field-body">
+                    <div class="file is-info has-name">
+                        <label class="file-label">
+                            <input id="UploadImage" class="file-input" type="file" name="image" accept="image/*">
+                            <span class="file-cta">
+                          <span class="file-label">
+                            选择图片…
+                          </span>
+                        </span>
+                            <span class="file-name">
+                          没得图片哦!!!
+                        </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="field is-horizontal">
+                <div class="field-label">
+                    <!-- Left empty for spacing -->
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            <input id="SubmitDrawInfo" class="button is-primary" type="submit" value="文生图"
+                                   onclick="txt2img()">
+                            <input id="SubmitDrawInfo2" class="button is-info" type="submit" value="图生图"
+                                   onclick="img2img()">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
     <h1 class="title mt-3">
         绘制结果
         <span>
@@ -158,7 +198,7 @@
             <button class="button" onclick="toggleBlur(6)">High Blur</button>
         </span>
     </h1>
-    <div id="ImageContainer" class="image-container">
+    <div id="ImageContainer" class="box image-container">
         {% for image in data.images %}
         <img width="600" src="data:image/jpeg;base64,{{ image }}" alt="图像">
         {% endfor %}
@@ -169,27 +209,28 @@
     var urlParams = new URLSearchParams(window.location.search);
     var url = urlParams.get('url');
     $(document).ready(function() {
-        document.getElementById('textarea1').value = 'best quality,highly detailed,masterpiece,ultra-detailed,(loli:1.5),(little loli:1.3),child face,large_breasts,petite,skinny,ribs,black bodysuit,(see-through:1.3),covered_nipples,covered_erect_nipples,covered_breasts,covered_navel,';
+        document.getElementById('textarea1').value = 'best quality,masterpiece,(Preschooler:1.5),(toddler:1.5),(loli:1.5),(little loli:1.5),(Child:1.5),large_breasts,petite,skinny,ribs,black bodysuit,(see through:1.4),covered_nipples,covered_erect_nipples,covered_breasts,covered_navel,';
         document.getElementById('textarea2').value = 'sketch,duplicate,ugly,text,error,logo,monochrome,worst face,(bad and mutated hands:1.3),(worst quality:1.3),(low quality:1.3),(normal quality:1.3),(blurry:1.3),(missing fingers),multiple limbs,bad anatomy,(interlocked fingers),Ugly Fingers,extra digit,extra hands,extra fingers,extra legs,extra arms,fewer digits,(deformed fingers),(long fingers),signature,watermark,username,multiple panels,';
         document.getElementById('textarea3').value = url || '';
         document.getElementById('textarea4').value = '12';
+        document.getElementById('textarea8').value = '1';
         document.getElementById('textarea5').value = '600';
         document.getElementById('textarea6').value = '800';
         document.getElementById('textarea7').value = '30';
-        // document.getElementById('myForm').action = '/draw?url=' + url || '';
+        document.getElementById('textarea10').value = '0.5';
         document.getElementById('AddNewTab').href = window.location;
+
         $("#mySelect").change(function() {
             var selectedOption = $(this).val();
             console.log(selectedOption)
             $.ajax({
-                url: "/change_model",
+                url: "/update_model",
                 type: "POST",
                 data: {
                     model_name: selectedOption,
                     url: url
                 },
                 success: function(response) {
-                    console.log(response);
                     alert('切换成功')
                 },
                 error: function(xhr, status, error) {
@@ -198,17 +239,45 @@
             });
         });
 
+        $("#UploadImage").change(function(e) {
+            console.log(e.target.files)
+            const file = e.target.files[0]
+            $(".file-name").text(`${file.name} ${file.type}`)
+            var reader = new FileReader()
+            reader.onload = function() {
+                var image = new Image()
+                image.onload = function() {
+                    var width = image.width;
+                    var height = image.height;
+                    var whRatio = width / height;
+                    console.log(width);
+                    console.log(height);
+                    console.log(whRatio);
+                    var w = 0;
+                    var h = 0;
+                    if(whRatio >= 1) {
+                        h = 600;
+                        w = parseInt(600 * whRatio)
+                    }else{
+                        w = 600;
+                        h = parseInt(600 / whRatio)
+                    }
+                    document.getElementById('textarea5').value = w + '';
+                    document.getElementById('textarea6').value = h + '';
+                }
+                image.src = reader.result;
+            }
+            reader.readAsDataURL(file);
+        })
+    });
 
-        var form = document.getElementById('myForm');
-        var submitBtn = document.getElementById("SubmitDrawInfo")
-        var imageContainer = document.getElementById("ImageContainer")
-        form.addEventListener('submit', function(event) {
-            event.preventDefault(); 
-            var formData = new FormData(form);
+    function txt2img(){
+            var formData = new FormData(document.getElementById("myForm"));
+            // var model = document.getElementById("mySelect").value
+            // formData.append('model', model)
             var headers = new Headers();
             headers.append('X-Requested-With', 'XMLHttpRequest');
-            submitBtn.value = '图片绘制中......'
-            submitBtn.disabled = true;
+            loading()
             fetch('/draw?url=' + url || '', {
                 method: 'POST',
                 headers: headers,
@@ -221,8 +290,8 @@
                 throw new Error('请求失败: ' + response.status);
             })
             .then(function(data) {
-                submitBtn.value = '绘制图形'
-                submitBtn.disabled = false;
+                finished()
+                var imageContainer = document.getElementById("ImageContainer")
                 imageContainer.innerHTML = '';
                 data.images.forEach((item,index)=>{
                     var img = document.createElement('img');
@@ -231,12 +300,62 @@
                 })
             })
             .catch(function(error) {
-                submitBtn.value = '绘制图形'
-                submitBtn.disabled = false;
+                finished()
                 console.error(error);
             });
-        });
-    });
+        }
+
+        function img2img(){
+            var formData = new FormData(document.getElementById("myForm"));
+            // var model = document.getElementById("mySelect").value
+            // formData.append('model', model)
+            var headers = new Headers();
+            headers.append('X-Requested-With', 'XMLHttpRequest');
+            loading()
+            fetch('/img2img?url=' + url || '', {
+                method: 'POST',
+                headers: headers,
+                body: formData
+            })
+            .then(function(response) {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw new Error('请求失败: ' + response.status);
+            })
+            .then(function(data) {
+                finished()
+                var imageContainer = document.getElementById("ImageContainer")
+                imageContainer.innerHTML = '';
+                data.images.forEach((item,index)=>{
+                    var img = document.createElement('img');
+                    img.src = `data:image/jpeg;base64,${item}`;
+                    imageContainer.appendChild(img)
+                })
+            })
+            .catch(function(error) {
+                finished()
+                console.error(error);
+            });
+        }
+
+    function loading(){
+        var submitBtn = document.getElementById("SubmitDrawInfo")
+        var submitBtn2 = document.getElementById("SubmitDrawInfo2")
+        submitBtn.value = '生成中......'
+        submitBtn.disabled = true;
+        submitBtn2.value = '生成中......'
+        submitBtn2.disabled = true;
+    }
+
+    function finished(){
+        var submitBtn = document.getElementById("SubmitDrawInfo")
+        var submitBtn2 = document.getElementById("SubmitDrawInfo2")
+        submitBtn.value = '文生图'
+        submitBtn.disabled = false;
+        submitBtn2.value = '图生图'
+        submitBtn2.disabled = false;
+    }
 
     function scrollToTop() {
         window.scrollTo({
