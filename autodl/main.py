@@ -9,33 +9,17 @@ from tqdm import tqdm
 
 online = []
 
-# servers = [
-#     "region-3",
-#     "region-4",
-#     "region-8",
-#     "region-9",
-#     "region-31",
-#     "region-41",
-#     "region-42",
-#     "region-101",
-#     "region-102",
-# ]
-
 servers = [
-    "region-1",
-    "region-2",
-    "region-5",
-    "region-6",
-    "region-7",
-    "region-10",
-    "region-11",
-    "region-32",
-    "region-43",
-    "region-44",
-    "region-100",
-    "region-103",
+    "region-3",
+    "region-4",
+    "region-8",
+    "region-9",
+    "region-31",
+    "region-41",
+    "region-42",
+    "region-101",
+    "region-102",
 ]
-
 
 # servers = ["region-{}".format(item) for item in range(1, 50)]
 # servers = ["region-{}".format(item) for item in range(50, 100)]

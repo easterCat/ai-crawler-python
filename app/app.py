@@ -32,8 +32,8 @@ def draw():
     opt_json = opt_response.json()
     cur_model = opt_json["sd_model_checkpoint"]
     cur_hash = opt_json["sd_checkpoint_hash"][0:10]
-    cur_model_name = ''
-    if '[' in cur_model and ']' in cur_model:
+    cur_model_name = ""
+    if "[" in cur_model and "]" in cur_model:
         cur_model_name = f"{cur_model}"
     else:
         cur_model_name = f"{cur_model} [{cur_hash}]"
@@ -71,12 +71,12 @@ def draw():
             "cfg_scale": 8,  # 关键词相关性
             "width": int(width) if width else 600,  # 宽度
             "height": int(height) if height else 800,  # 高度
-            "restore_faces": 'false',  # 脸部修复
-            "tiling": 'false',  # 可平铺
+            "restore_faces": "false",  # 脸部修复
+            "tiling": "false",  # 可平铺
             "override_settings": {
                 "sd_model_checkpoint": model
             },  # 一般用于修改本次的生成图片的stable diffusion模型，用法需保持一致
-            "sampler_index": "Euler a"  # 采样方法
+            "sampler_index": "Euler a",  # 采样方法
         }
 
         print("----------------文生图的信息----------------")
@@ -130,7 +130,7 @@ def draw():
             )
 
 
-@app.route("/img2img", methods=['POST'])
+@app.route("/img2img", methods=["POST"])
 def img2img():
     url = request.args.get("url")
     prompt = request.form["prompt"]
@@ -142,11 +142,11 @@ def img2img():
     steps = request.form["steps"]
     denoising_strength = request.form["denoising_strength"]
     model = request.form["model"]
-    file = request.files['image']
+    file = request.files["image"]
 
     if file:
         file_data = file.read()
-        encoded_file = base64.b64encode(file_data).decode('utf-8')
+        encoded_file = base64.b64encode(file_data).decode("utf-8")
 
         headers = {"Content-Type": "application/json"}
         request_json = {
@@ -162,20 +162,22 @@ def img2img():
             "cfg_scale": 8,  # 关键词相关性
             "width": int(width) if width else 600,  # 宽度
             "height": int(height) if height else 800,  # 高度
-            "restore_faces": 'false',  # 脸部修复
-            "tiling": 'false',  # 可平铺
+            "restore_faces": "false",  # 脸部修复
+            "tiling": "false",  # 可平铺
             "eta": 0,
             "script_args": [],
             "sampler_index": "Euler a",  # 采样方法
             "init_images": [encoded_file],
             # "mask": encoded_file,
             "resize_mode": 1,
-            "denoising_strength": float(denoising_strength) if denoising_strength else 0.5,
+            "denoising_strength": float(denoising_strength)
+            if denoising_strength
+            else 0.5,
             # "mask_blur": 10,
             "inpainting_fill": 1,
-            "inpaint_full_res": 'true',
+            "inpaint_full_res": "true",
             "inpaint_full_res_padding": 32,
-            "inpainting_mask_invert": 1
+            "inpainting_mask_invert": 1,
         }
 
         print("----------------图生图的信息----------------")
@@ -206,7 +208,9 @@ def update_model():
     url = request.form.get("url")
     option_payload = {"sd_model_checkpoint": model_name}
     headers = {"Content-Type": "application/json"}
-    response = requests.post(url + "/sdapi/v1/options", json=option_payload, headers=headers)
+    response = requests.post(
+        url + "/sdapi/v1/options", json=option_payload, headers=headers
+    )
 
     if response.status_code == 200:
         return Response("success")
@@ -271,17 +275,17 @@ async def scan_port(session, item):
     try:
         headers = {"Content-Type": "application/json"}
         async with session.post(
-                api,
-                data=json.dumps(
-                    {
-                        "n_iter": 1,
-                        "width": 512,
-                        "height": 768,
-                        "prompt": "best quality,masterpiece,(Preschooler:1.5),(toddler:1.5),(loli:1.5),(little loli:1.5),(Child:1.5),large_breasts,petite,skinny,ribs,black bodysuit,(see through:1.4),covered_nipples,covered_erect_nipples,covered_breasts,covered_navel,",
-                        "negative_prompt": "sketch,duplicate,ugly,text,error,logo,monochrome,worst face,(bad and mutated hands:1.3),(worst quality:1.3),(low quality:1.3),(normal quality:1.3),(blurry:1.3),(missing fingers),multiple limbs,bad anatomy,(interlocked fingers),Ugly Fingers,extra digit,extra hands,extra fingers,extra legs,extra arms,fewer digits,(deformed fingers),(long fingers),signature,watermark,username,multiple panels,",
-                    }
-                ),
-                headers=headers,
+            api,
+            data=json.dumps(
+                {
+                    "n_iter": 1,
+                    "width": 512,
+                    "height": 768,
+                    "prompt": "best quality,masterpiece,(Preschooler:1.5),(toddler:1.5),(loli:1.5),(little loli:1.5),(Child:1.5),large_breasts,petite,skinny,ribs,black bodysuit,(see through:1.4),covered_nipples,covered_erect_nipples,covered_breasts,covered_navel,",
+                    "negative_prompt": "sketch,duplicate,ugly,text,error,logo,monochrome,worst face,(bad and mutated hands:1.3),(worst quality:1.3),(low quality:1.3),(normal quality:1.3),(blurry:1.3),(missing fingers),multiple limbs,bad anatomy,(interlocked fingers),Ugly Fingers,extra digit,extra hands,extra fingers,extra legs,extra arms,fewer digits,(deformed fingers),(long fingers),signature,watermark,username,multiple panels,",
+                }
+            ),
+            headers=headers,
         ) as response:
             if 200 <= response.status < 300:
                 html_json = await response.json()
