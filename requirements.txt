@@ -6,3 +6,4 @@ nest_asyncio==1.5.6
 Requests==2.31.0
 rich==13.5.2
 tqdm==4.65.0
+waitress==2.1.2
