@@ -9,7 +9,10 @@ import requests
 from flask import Flask, jsonify, render_template, request, Response
 from waitress import serve
 
+from utils.logger import MyLogger
+
 app = Flask(__name__)
+log = MyLogger(__name__)
 
 result_urls = None
 total = 0
@@ -43,7 +46,7 @@ def draw():
     else:
         cur_model_name = f"{cur_model} [{cur_hash}]"
 
-    print(f"当前的模型：{cur_model_name}")
+    log.info(f"当前的模型：{cur_model_name}")
 
     if request.method == "GET":
         return render_template(
@@ -117,7 +120,7 @@ def draw():
                     },
                 )
         except Exception as e:
-            print(e)
+            log.error(e)
             pass
 
         if is_ajax_request:
@@ -176,9 +179,7 @@ def img2img():
             "init_images": [encoded_file],
             # "mask": encoded_file,
             "resize_mode": 1,
-            "denoising_strength": float(denoising_strength)
-            if denoising_strength
-            else 0.5,
+            "denoising_strength": float(denoising_strength) if denoising_strength else 0.5,
             # "mask_blur": 10,
             "inpainting_fill": 1,
             "inpaint_full_res": "true",
@@ -204,7 +205,7 @@ def img2img():
             response.mimetype = "application/json"
             return response
         except Exception as e:
-            print(e)
+            log.error(e)
             response = jsonify({"images": []})
             response.mimetype = "application/json"
             return response
@@ -238,20 +239,20 @@ async def test_html():
     #     return render_template('template.html', data={'list': [], 'total': 0, 'allow': 0})
 
     if result_urls is None:
-        print("当前没有验证,重新获取喽!!!!")
+        log.info("当前没有验证,重新获取喽!!!!")
         data = await read_json_files()
         timeout = aiohttp.ClientTimeout(sock_read=60)
 
         async with aiohttp.ClientSession(timeout=timeout) as session:
-            print("-----------当前可用域名------------")
+            log.info("-----------当前可用域名------------")
             tasks = []
             for item in data:
                 task = asyncio.create_task(scan_port(session, item))
                 tasks.append(task)
             result_urls = await asyncio.gather(*tasks)
-            print(f"-----------结束 {total}/{len(data)}------------")
+            log.info(f"-----------结束 {total}/{len(data)}------------")
     else:
-        print("有緩存，省事了")
+        log.info("有緩存，省事了")
 
     is_ajax_request = request.headers.get("X-Requested-With") == "XMLHttpRequest"
 
@@ -287,24 +288,24 @@ async def scan_port(session, item):
     try:
         headers = {"Content-Type": "application/json"}
         async with session.post(
-            api,
-            data=json.dumps(
-                {
-                    "n_iter": 1,
-                    "width": 512,
-                    "height": 768,
-                    "prompt": "best quality,masterpiece,(Preschooler:1.5),(toddler:1.5),(loli:1.5),(little loli:1.5),(Child:1.5),(1girl:1.3),solo,saggy breasts,breasts apart,large_breasts,petite,skinny,ribs,black bodysuit,see through,covered_nipples,covered_erect_nipples,covered_breasts,covered_navel,",
-                    "negative_prompt": "sketch,duplicate,ugly,text,error,logo,monochrome,worst face,(bad and mutated hands:1.3),(worst quality:1.3),(low quality:1.3),(normal quality:1.3),(blurry:1.3),(missing fingers),multiple limbs,bad anatomy,(interlocked fingers),Ugly Fingers,extra digit,extra hands,extra fingers,extra legs,extra arms,fewer digits,(deformed fingers),(long fingers),signature,watermark,username,multiple panels,",
-                }
-            ),
-            headers=headers,
+                api,
+                data=json.dumps(
+                    {
+                        "n_iter": 1,
+                        "width": 512,
+                        "height": 768,
+                        "prompt": "best quality,masterpiece,(Preschooler:1.5),(toddler:1.5),(loli:1.5),(little loli:1.5),(Child:1.5),(1girl:1.3),solo,saggy breasts,breasts apart,large_breasts,petite,skinny,ribs,narrow waist,black bodysuit,see-through,covered_nipples,covered_erect_nipples,covered_breasts,covered_navel,",
+                        "negative_prompt": "sketch,duplicate,ugly,text,error,logo,monochrome,worst face,(bad and mutated hands:1.3),(worst quality:1.3),(low quality:1.3),(normal quality:1.3),(blurry:1.3),(missing fingers),multiple limbs,bad anatomy,(interlocked fingers),Ugly Fingers,extra digit,extra hands,extra fingers,extra legs,extra arms,fewer digits,(deformed fingers),(long fingers),signature,watermark,username,multiple panels,",
+                    }
+                ),
+                headers=headers,
         ) as response:
             if 200 <= response.status < 300:
                 html_json = await response.json()
                 images = html_json.get("images", [])
                 if images[0] is not None:
                     total += 1
-                    print(item["url"])
+                    log.info(item["url"])
                 item["images"] = images
                 return item
             else:
@@ -316,5 +317,5 @@ async def scan_port(session, item):
 
 if __name__ == "__main__":
     # app.run(port=9999)
-    print("Server running at http://0.0.0.0:9999")
+    log.info("Server running at http://0.0.0.0:9999")
     serve(app, host="0.0.0.0", port=9999)
