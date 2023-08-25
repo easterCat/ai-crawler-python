@@ -13,7 +13,7 @@ class MyLogger:
             datefmt='%Y-%m-%d %H:%M:%S',
             log_colors={
                 'DEBUG': 'cyan',
-                'INFO': 'green',
+                'INFO': 'blue',
                 'WARNING': 'yellow',
                 'ERROR': 'red',
                 'CRITICAL': 'bold_red',

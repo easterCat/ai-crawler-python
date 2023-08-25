@@ -5,14 +5,14 @@ import os
 
 import aiofiles
 import aiohttp
-import requests
 from flask import Flask, jsonify, render_template, request, Response
-from waitress import serve
 
+from utils.http import MyHttp
 from utils.logger import MyLogger
 
 app = Flask(__name__)
 log = MyLogger(__name__)
+http = MyHttp()
 
 result_urls = None
 total = 0
@@ -29,10 +29,10 @@ async def render_html():
 @app.route("/draw", methods=["GET", "POST"])
 def draw():
     url = request.args.get("url")
-    model_response = requests.get(url + "/sdapi/v1/sd-models")
+    model_response = http.get(url + "/sdapi/v1/sd-models")
     models_json = model_response.json()
 
-    opt_response = requests.get(url + "/sdapi/v1/options")
+    opt_response = http.get(url + "/sdapi/v1/options")
     opt_json = opt_response.json()
     cur_hash = opt_json["sd_checkpoint_hash"][0:10]
 
@@ -68,7 +68,6 @@ def draw():
         steps = request.form["steps"]
         model = request.form["model"]
 
-        headers = {"Content-Type": "application/json"}
         request_json = {
             "denoising_strength": 0,
             "prompt": prompt,
@@ -99,9 +98,7 @@ def draw():
         is_ajax_request = request.headers.get("X-Requested-With") == "XMLHttpRequest"
 
         try:
-            response = requests.post(
-                url + "/sdapi/v1/txt2img", json=request_json, headers=headers
-            )
+            response = http.post(url + "/sdapi/v1/txt2img", request_json)
             json_data = response.json()
             images = json_data.get("images", [])
 
@@ -157,7 +154,6 @@ def img2img():
         file_data = file.read()
         encoded_file = base64.b64encode(file_data).decode("utf-8")
 
-        headers = {"Content-Type": "application/json"}
         request_json = {
             "prompt": prompt,
             "negative_prompt": negative_prompt,
@@ -196,9 +192,7 @@ def img2img():
         print("----------------开始生成,等待中----------------")
 
         try:
-            response = requests.post(
-                url + "/sdapi/v1/img2img", json=request_json, headers=headers
-            )
+            response = http.post(url + "/sdapi/v1/img2img", request_json)
             json_data = response.json()
             images = json_data.get("images", [])
             response = jsonify({"images": images})
@@ -220,10 +214,7 @@ def update_model():
     model_name = request.form.get("model_name")
     url = request.form.get("url")
     option_payload = {"sd_model_checkpoint": model_name}
-    headers = {"Content-Type": "application/json"}
-    response = requests.post(
-        url + "/sdapi/v1/options", json=option_payload, headers=headers
-    )
+    response = http.post(url + "/sdapi/v1/options", option_payload)
 
     if response.status_code == 200:
         return Response("success")
@@ -286,7 +277,6 @@ async def scan_port(session, item):
     global total
     api = item["url"] + "/sdapi/v1/txt2img"
     try:
-        headers = {"Content-Type": "application/json"}
         async with session.post(
                 api,
                 data=json.dumps(
@@ -294,11 +284,11 @@ async def scan_port(session, item):
                         "n_iter": 1,
                         "width": 512,
                         "height": 768,
-                        "prompt": "best quality,masterpiece,(Preschooler:1.5),(toddler:1.5),(loli:1.5),(little loli:1.5),(Child:1.5),(1girl:1.3),solo,saggy breasts,breasts apart,large_breasts,petite,skinny,ribs,narrow waist,black bodysuit,see-through,covered_nipples,covered_erect_nipples,covered_breasts,covered_navel,",
+                        "prompt": "best quality,masterpiece,(child:1.5),(loli:1.5),(little girl:1.5),(1girl:1.3),solo,sagging_breasts,breasts_apart,large_breasts,petite,skinny,ribs,narrow_waist,black bodysuit,see-through,covered_nipples,covered_erect_nipples,covered_breasts,covered_navel,",
                         "negative_prompt": "sketch,duplicate,ugly,text,error,logo,monochrome,worst face,(bad and mutated hands:1.3),(worst quality:1.3),(low quality:1.3),(normal quality:1.3),(blurry:1.3),(missing fingers),multiple limbs,bad anatomy,(interlocked fingers),Ugly Fingers,extra digit,extra hands,extra fingers,extra legs,extra arms,fewer digits,(deformed fingers),(long fingers),signature,watermark,username,multiple panels,",
                     }
                 ),
-                headers=headers,
+                headers={"Content-Type": "application/json"},
         ) as response:
             if 200 <= response.status < 300:
                 html_json = await response.json()
@@ -317,5 +307,7 @@ async def scan_port(session, item):
 
 if __name__ == "__main__":
     # app.run(port=9999)
-    log.info("Server running at http://0.0.0.0:9999")
-    serve(app, host="0.0.0.0", port=9999)
+    from waitress import serve
+
+    log.info("Server running at http://localhost:9999")
+    serve(app, host="localhost", port=9999, threads=100)

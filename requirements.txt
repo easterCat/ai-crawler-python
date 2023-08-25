@@ -7,3 +7,6 @@ Requests==2.31.0
 rich==13.5.2
 tqdm==4.65.0
 waitress==2.1.2
+
+colorlog~=6.7.0
+psutil~=5.9.5
