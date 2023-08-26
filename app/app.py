@@ -11,7 +11,7 @@ from utils.http import MyHttp
 from utils.logger import MyLogger
 
 app = Flask(__name__)
-log = MyLogger(__name__)
+logger = MyLogger("logs")
 http = MyHttp()
 
 result_urls = None
@@ -46,7 +46,7 @@ def draw():
     else:
         cur_model_name = f"{cur_model} [{cur_hash}]"
 
-    log.info(f"当前的模型：{cur_model_name}")
+    logger.info(f"当前的模型：{cur_model_name}")
 
     if request.method == "GET":
         return render_template(
@@ -58,82 +58,82 @@ def draw():
                 "cur_model_name": cur_model_name,
             },
         )
-    else:
-        prompt = request.form["prompt"]
-        negative_prompt = request.form["negative_prompt"]
-        n_iter = request.form["n_iter"]
-        batch_size = request.form["batch_size"]
-        width = request.form["width"]
-        height = request.form["height"]
-        steps = request.form["steps"]
-        model = request.form["model"]
 
-        request_json = {
-            "denoising_strength": 0,
-            "prompt": prompt,
-            "negative_prompt": negative_prompt,
-            "seed": -1,  # 种子，随机数
-            "batch_size": int(batch_size) if batch_size else 1,  # 每次张数
-            "n_iter": int(n_iter) if n_iter else 12,  # 生成批次
-            "steps": int(steps) if steps else 30,  # 生成步数
-            "cfg_scale": 8,  # 关键词相关性
-            "width": int(width) if width else 600,  # 宽度
-            "height": int(height) if height else 800,  # 高度
-            "restore_faces": "false",  # 脸部修复
-            "tiling": "false",  # 可平铺
-            "override_settings": {
-                "sd_model_checkpoint": model
-            },  # 一般用于修改本次的生成图片的stable diffusion模型，用法需保持一致
-            "sampler_index": "Euler a",  # 采样方法
-        }
+    prompt = request.form["prompt"]
+    negative_prompt = request.form["negative_prompt"]
+    n_iter = request.form["n_iter"]
+    batch_size = request.form["batch_size"]
+    width = request.form["width"]
+    height = request.form["height"]
+    steps = request.form["steps"]
+    model = request.form["model"]
 
-        print("----------------文生图的信息----------------")
-        print(f"请求接口: {url}")
-        print(f"使用模型: {model}")
-        print(f"正面词条: {prompt}")
-        print(f"负面词条: {negative_prompt}")
-        print(f"生成数量: {n_iter}")
-        print("----------------开始生成,等待中----------------")
+    request_json = {
+        "denoising_strength": 0,
+        "prompt": prompt,
+        "negative_prompt": negative_prompt,
+        "seed": -1,  # 种子，随机数
+        "batch_size": int(batch_size) if batch_size else 1,  # 每次张数
+        "n_iter": int(n_iter) if n_iter else 12,  # 生成批次
+        "steps": int(steps) if steps else 30,  # 生成步数
+        "cfg_scale": 8,  # 关键词相关性
+        "width": int(width) if width else 600,  # 宽度
+        "height": int(height) if height else 800,  # 高度
+        "restore_faces": "false",  # 脸部修复
+        "tiling": "false",  # 可平铺
+        "override_settings": {
+            "sd_model_checkpoint": model
+        },  # 一般用于修改本次的生成图片的stable diffusion模型，用法需保持一致
+        "sampler_index": "Euler a",  # 采样方法
+    }
 
-        is_ajax_request = request.headers.get("X-Requested-With") == "XMLHttpRequest"
+    print("----------------文生图的信息----------------")
+    print(f"请求接口: {url}")
+    print(f"使用模型: {model}")
+    print(f"正面词条: {prompt}")
+    print(f"负面词条: {negative_prompt}")
+    print(f"生成数量: {n_iter}")
+    print("----------------开始生成,等待中----------------")
 
-        try:
-            response = http.post(url + "/sdapi/v1/txt2img", request_json)
-            json_data = response.json()
-            images = json_data.get("images", [])
+    is_ajax_request = request.headers.get("X-Requested-With") == "XMLHttpRequest"
 
-            if is_ajax_request:
-                response = jsonify({"images": images})
-                response.mimetype = "application/json"
-                return response
-            else:
-                return render_template(
-                    "draw.html",
-                    data={
-                        "images": images,
-                        "prompt": prompt,
-                        "models": models_json,
-                        "cur_model_name": cur_model_name,
-                    },
-                )
-        except Exception as e:
-            log.error(e)
-            pass
+    try:
+        response = http.post(url + "/sdapi/v1/txt2img", request_json)
+        json_data = response.json()
+        images = json_data.get("images", [])
 
         if is_ajax_request:
-            response = jsonify({"images": []})
+            response = jsonify({"images": images})
             response.mimetype = "application/json"
             return response
         else:
             return render_template(
                 "draw.html",
                 data={
-                    "images": [],
-                    "prompt": "",
+                    "images": images,
+                    "prompt": prompt,
                     "models": models_json,
                     "cur_model_name": cur_model_name,
                 },
             )
+    except Exception as e:
+        logger.error(e)
+        pass
+
+    if is_ajax_request:
+        response = jsonify({"images": []})
+        response.mimetype = "application/json"
+        return response
+    else:
+        return render_template(
+            "draw.html",
+            data={
+                "images": [],
+                "prompt": "",
+                "models": models_json,
+                "cur_model_name": cur_model_name,
+            },
+        )
 
 
 @app.route("/img2img", methods=["POST"])
@@ -199,7 +199,7 @@ def img2img():
             response.mimetype = "application/json"
             return response
         except Exception as e:
-            log.error(e)
+            logger.error(e)
             response = jsonify({"images": []})
             response.mimetype = "application/json"
             return response
@@ -230,20 +230,20 @@ async def test_html():
     #     return render_template('template.html', data={'list': [], 'total': 0, 'allow': 0})
 
     if result_urls is None:
-        log.info("当前没有验证,重新获取喽!!!!")
+        logger.info("当前没有验证,重新获取喽!!!!")
         data = await read_json_files()
         timeout = aiohttp.ClientTimeout(sock_read=60)
 
         async with aiohttp.ClientSession(timeout=timeout) as session:
-            log.info("-----------当前可用域名------------")
+            logger.info("-----------当前可用域名------------")
             tasks = []
             for item in data:
                 task = asyncio.create_task(scan_port(session, item))
                 tasks.append(task)
             result_urls = await asyncio.gather(*tasks)
-            log.info(f"-----------结束 {total}/{len(data)}------------")
+            logger.info(f"-----------结束 {total}/{len(data)}------------")
     else:
-        log.info("有緩存，省事了")
+        logger.info("有緩存，省事了")
 
     is_ajax_request = request.headers.get("X-Requested-With") == "XMLHttpRequest"
 
@@ -295,7 +295,7 @@ async def scan_port(session, item):
                 images = html_json.get("images", [])
                 if images[0] is not None:
                     total += 1
-                    log.info(item["url"])
+                    logger.info(item["url"])
                 item["images"] = images
                 return item
             else:
@@ -309,5 +309,6 @@ if __name__ == "__main__":
     # app.run(port=9999)
     from waitress import serve
 
-    log.info("Server running at http://localhost:9999")
+    MyLogger.clean_logs("logs", 3)
+    logger.info("Server running at http://localhost:9999")
     serve(app, host="localhost", port=9999, threads=100)
