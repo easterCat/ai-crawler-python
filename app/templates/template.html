@@ -1,66 +1,126 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>Flask Template</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
-        <style>
-            .modal {
-                display: block;
-                position: fixed;
-                z-index: 9999;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                overflow: auto;
-                background-color: rgba(0, 0, 0, 0.9);
-            }
 
-            .modal-content {
-                display: block;
-                margin: 10% auto;
-                max-width: 800px;
-                max-height: 80vh;
-            }
+<head>
+    <meta charset="UTF-8" />
+    <title>Flask Template</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <style>
+        .modal {
+            display: block;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
 
-            .modal-image {
-                display: block;
-                width: 100%;
-                height: auto;
-            }
+        .modal-content {
+            display: block;
+            margin: 10% auto;
+            max-width: 800px;
+            max-height: 80vh;
+        }
 
-            #backToTopBtn {
-                position: fixed;
-                z-index: 9999;
-                bottom: 20px;
-                right: 20px;
-                padding: 10px;
-                background-color: #333;
-                color: #fff;
-                border: none;
-                border-radius: 4px;
-                cursor: pointer;
-            }
+        .modal-image {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
 
-            .copy-btn {
-                padding: 10px;
-                background-color: #333;
-                color: #fff;
-                border: none;
-                border-radius: 4px;
-                cursor: pointer;
-            }
+        #backToTopBtn {
+            position: fixed;
+            z-index: 9999;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
 
-            .image.is-256x256 {
-                height: auto;
-                width: 256px;
-            }
-        </style>
-    </head>
+        .copy-btn {
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
 
-    <body>
-        <div class="content p-4">
+        .image.is-256x256 {
+            height: auto;
+            width: 256px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <nav class="navbar is-dark">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="https://bulma.io">
+                    <img src="https://bulma.io/images/bulma-logo-white.png"
+                        alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
+                </a>
+
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                    data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item">
+                        Home
+                    </a>
+                    <a class="navbar-item">
+                        Documentation
+                    </a>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">
+                            More
+                        </a>
+                        <div class="navbar-dropdown">
+                            <a class="navbar-item">
+                                About
+                            </a>
+                            <a class="navbar-item">
+                                Jobs
+                            </a>
+                            <a class="navbar-item">
+                                Contact
+                            </a>
+                            <hr class="navbar-divider">
+                            <a class="navbar-item">
+                                Report an issue
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <a class="button is-primary">
+                                <strong>Sign up</strong>
+                            </a>
+                            <a class="button is-light">
+                                Log in
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="container is-fluid p-5">
             <h1 class="title">
                 <span>Data from json:</span>
                 <span> 总计 : {{data.total}} </span>
@@ -115,8 +175,9 @@
                         <!-- On rows -->
                         <thead>
                             <tr class="active">
-                                <th></th>
+                                <th>index</th>
                                 <th>url</th>
+                                <th>cur_model</th>
                                 <th>models</th>
                                 <th>images</th>
                             </tr>
@@ -125,7 +186,7 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <button>
+                                    <button class="button is-primary">
                                         <a href="/draw?url={{item.url}}" target="_blank">Draw</a>
                                     </button>
                                 </td>
@@ -134,16 +195,15 @@
                                     <a href="{{item.url}}" target="_blank">{{ item.url }}</a>
                                 </td>
 
+                                <td class="">{{ item.model_name }}</td>
+
                                 <td class="">{{ item.models }}</td>
 
                                 <td class="">
                                     {% for img in item.images %}
                                     <figure class="image is-256x256">
-                                        <img
-                                            src="data:image/jpeg;base64,{{ img }}"
-                                            alt="Image"
-                                            onclick="showImage(this)"
-                                        />
+                                        <img src="data:image/jpeg;base64,{{ img }}" alt="Image"
+                                            onclick="showImage(this)" />
                                     </figure>
                                     {% endfor %}
                                 </td>
@@ -154,39 +214,41 @@
                 </div>
             </div>
         </div>
-    </body>
-    <script>
-        function showImage(element) {
-            var modal = document.createElement("div");
-            modal.className = "modal";
-            var modalContent = document.createElement("img");
-            modalContent.className = "modal-content";
-            modalContent.src = element.src;
-            modal.appendChild(modalContent);
-            document.body.appendChild(modal);
-            modal.addEventListener("click", function () {
-                document.body.removeChild(modal);
-            });
-        }
+    </div>
+</body>
+<script>
+    function showImage(element) {
+        var modal = document.createElement("div");
+        modal.className = "modal";
+        var modalContent = document.createElement("img");
+        modalContent.className = "modal-content";
+        modalContent.src = element.src;
+        modal.appendChild(modalContent);
+        document.body.appendChild(modal);
+        modal.addEventListener("click", function () {
+            document.body.removeChild(modal);
+        });
+    }
 
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth", // 可以使用平滑滚动效果
-            });
-        }
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth", // 可以使用平滑滚动效果
+        });
+    }
 
-        function copyText(id) {
-            var text = document.getElementById(id).innerText;
-            var tempTextArea = document.createElement("textarea");
-            tempTextArea.value = text;
-            document.body.appendChild(tempTextArea);
-            tempTextArea.select();
-            tempTextArea.setSelectionRange(0, 99999); // 兼容移动设备
-            document.execCommand("copy");
-            document.body.removeChild(tempTextArea);
-            var button = document.querySelector(".copy-btn");
-            button.innerHTML = "已复制";
-        }
-    </script>
+    function copyText(id) {
+        var text = document.getElementById(id).innerText;
+        var tempTextArea = document.createElement("textarea");
+        tempTextArea.value = text;
+        document.body.appendChild(tempTextArea);
+        tempTextArea.select();
+        tempTextArea.setSelectionRange(0, 99999); // 兼容移动设备
+        document.execCommand("copy");
+        document.body.removeChild(tempTextArea);
+        var button = document.querySelector(".copy-btn");
+        button.innerHTML = "已复制";
+    }
+</script>
+
 </html>

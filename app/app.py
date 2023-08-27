@@ -11,7 +11,7 @@ from utils.http import MyHttp
 from utils.logger import MyLogger
 
 app = Flask(__name__)
-logger = MyLogger("logs")
+logger = MyLogger("app/logs")
 http = MyHttp()
 
 result_urls = None
@@ -175,7 +175,9 @@ def img2img():
             "init_images": [encoded_file],
             # "mask": encoded_file,
             "resize_mode": 1,
-            "denoising_strength": float(denoising_strength) if denoising_strength else 0.5,
+            "denoising_strength": float(denoising_strength)
+            if denoising_strength
+            else 0.5,
             # "mask_blur": 10,
             "inpainting_fill": 1,
             "inpaint_full_res": "true",
@@ -267,9 +269,13 @@ async def read_json_files():
                 file_data = json.loads(await json_file.read())
                 data.extend(file_data)
     unique_list = []
+    visited_urls = set()
     for d in data:
-        if d not in unique_list:
+        url = d["url"]
+        if url not in visited_urls:
             unique_list.append(d)
+            visited_urls.add(url)
+    logger.info(f"总长度{len(data)} 去重后长度{len(unique_list)}")
     return unique_list
 
 
@@ -278,17 +284,17 @@ async def scan_port(session, item):
     api = item["url"] + "/sdapi/v1/txt2img"
     try:
         async with session.post(
-                api,
-                data=json.dumps(
-                    {
-                        "n_iter": 1,
-                        "width": 512,
-                        "height": 768,
-                        "prompt": "best quality,masterpiece,(child:1.5),(loli:1.5),(little girl:1.5),(1girl:1.3),solo,sagging_breasts,breasts_apart,large_breasts,petite,skinny,ribs,narrow_waist,black bodysuit,see-through,covered_nipples,covered_erect_nipples,covered_breasts,covered_navel,",
-                        "negative_prompt": "sketch,duplicate,ugly,text,error,logo,monochrome,worst face,(bad and mutated hands:1.3),(worst quality:1.3),(low quality:1.3),(normal quality:1.3),(blurry:1.3),(missing fingers),multiple limbs,bad anatomy,(interlocked fingers),Ugly Fingers,extra digit,extra hands,extra fingers,extra legs,extra arms,fewer digits,(deformed fingers),(long fingers),signature,watermark,username,multiple panels,",
-                    }
-                ),
-                headers={"Content-Type": "application/json"},
+            api,
+            data=json.dumps(
+                {
+                    "n_iter": 1,
+                    "width": 512,
+                    "height": 768,
+                    "prompt": "best quality,masterpiece,(loli:1.5),(little girl:1.5),(1girl:1.3),(child:1.3),solo,sagging_breasts,breasts_apart,large_breasts,petite,skinny,ribs,narrow_waist,black_bodysuit,see-through,covered_erect_nipples,covered_navel,",
+                    "negative_prompt": "sketch,duplicate,ugly,text,error,logo,monochrome,worst face,(bad and mutated hands:1.3),(worst quality:1.3),(low quality:1.3),(normal quality:1.3),(blurry:1.3),(missing fingers),multiple limbs,bad anatomy,(interlocked fingers),Ugly Fingers,extra digit,extra hands,extra fingers,extra legs,extra arms,fewer digits,(deformed fingers),(long fingers),signature,watermark,username,multiple panels,",
+                }
+            ),
+            headers={"Content-Type": "application/json"},
         ) as response:
             if 200 <= response.status < 300:
                 html_json = await response.json()
@@ -297,6 +303,14 @@ async def scan_port(session, item):
                     total += 1
                     logger.info(item["url"])
                 item["images"] = images
+                # info = html_json.get("info", "")
+                # infotexts = info.get("infotexts", "")
+                # match = re.search(r"Model: (\w+)", infotexts)
+                # if match:
+                #     model_name = match.group(1)
+                #     item["model_name"] = model_name
+                # else:
+                #     item["model_name"] = ""
                 return item
             else:
                 return item
