@@ -276,8 +276,9 @@
             const file = e.target.files[0];
             handleFile(file);
         })
-        var throttleInput = throttle(function () {
-            prompt = $(this).val();
+        var throttleInput = throttle(() => {
+            prompt = $("#textarea1").val();
+            console.log('prompt :>> ', prompt);
             promptList = prompt.replace("，", ",").split(",")
             adjustPromptList()
         }, 1500);
@@ -289,13 +290,12 @@
     function throttle(func, delay) {
         var timerId = null;
         var lastExecTime = 0;
-        console.log(111)
         return function (...args) {
             var now = Date.now();
             var elapsed = now - lastExecTime;
             if (!timerId) {
                 lastExecTime = now;
-                timerId = setTimeout(function () {
+                timerId = setTimeout(() => {
                     func.apply(this, args);
                     timerId = null;
                 }, delay)
@@ -303,7 +303,7 @@
                 clearTimeout(timerId);
                 timerId = null;
                 lastExecTime = now;
-                timerId = setTimeout(function () {
+                timerId = setTimeout(() => {
                     func.apply(this, args);
                     timerId = null;
                 }, delay)
@@ -325,13 +325,7 @@
     function adjustPromptList() {
         $(".prompt-list").empty();
         for (var i = 0; i < promptList.length; i++) {
-            $(".prompt-list").append(` < div class = "control" > < div class = "tags has-addons" > < a href = "https://gelbooru.com/index.php?page=post&s=list&tags=${promptList[i]}"
-            class = "tag is-link is-large"
-            target = "_blank" > $ {
-                promptList[i]
-            } < /a>
-                        <a class="tag is-delete is-large" onclick="removePrompt('${promptList[i]}')"></a > < /div>
-                </div > `)
+            $(".prompt-list").append(`<div class="control"><div class="tags has-addons"><a href="https://gelbooru.com/index.php?page=post&s=list&tags=${promptList[i]}" class="tag is-link is-large" target="_blank"> ${promptList[i]}</a><a class="tag is-delete is-large" onclick="removePrompt('${promptList[i]}')"></a></div></div>`)
         }
     }
 
@@ -392,9 +386,7 @@
         var formData = new FormData(document.getElementById("myForm"));
         if (globalFile) formData.set("image", globalFile);
         for (var pair of formData.entries()) {
-            console.log(`$ {
-            pair[0]
-        } == > `, pair[1]);
+            console.log(`${pair[0]}==>`, pair[1]);
         }
         return formData;
     }
@@ -407,10 +399,7 @@
         } else {
             data.images.forEach(function (item, index) {
                 var img = document.createElement('img');
-                img.src = `data: image / jpeg;
-            base64, $ {
-                item
-            }`;
+                img.src = `data:image/jpeg;base64,${item}`;
                 imageContainer.appendChild(img)
             })
         }
@@ -443,7 +432,7 @@
 
     function toggleBlur(blurAmount) {
         var image = document.getElementsByTagName('img');
-        img.forEach(i = > {
+        img.forEach(function (i) {
             i.style.filter = 'blur(' + blurAmount + 'px)';
         })
     }
@@ -469,12 +458,7 @@
 
     function handleFile(file) {
         globalFile = file;
-        $(".file-name-text").text(`$ {
-            file.name
-        }
-        $ {
-            file.type
-        }`)
+        $(".file-name-text").text(`${file.name} ${file.type}`)
         var reader = new FileReader()
         reader.onload = function () {
             var image = new Image()
@@ -482,9 +466,6 @@
                 var width = image.width;
                 var height = image.height;
                 var whRatio = width / height;
-                // console.log(width);
-                // console.log(height);
-                // console.log(whRatio);
                 var w = 0;
                 var h = 0;
                 if (whRatio >= 1) {
