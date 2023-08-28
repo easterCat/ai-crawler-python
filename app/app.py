@@ -290,7 +290,7 @@ async def scan_port(session, item):
                     "n_iter": 1,
                     "width": 512,
                     "height": 768,
-                    "prompt": "best quality,masterpiece,(1girl:1.4),(loli:1.3),(solo:1.3),(toddler:1.2),(child:1.2),little girl,petite,sagging_breasts,breasts_apart,large_breasts,black_bodysuit,see-through,covered_erect_nipples,covered_navel,",
+                    "prompt": "best quality,masterpiece,(loli:1.5),(little girl:1.5),(toddler:1.3),(child:1.3),(1girl:1.2),(solo:1.2),petite,sagging_breasts,breasts_apart,large_breasts,black_bodysuit,see-through,covered_erect_nipples,covered_navel,",
                     "negative_prompt": "sketch,duplicate,ugly,text,error,logo,monochrome,worst face,(bad and mutated hands:1.3),(worst quality:1.3),(low quality:1.3),(normal quality:1.3),(blurry:1.3),(missing fingers),multiple limbs,bad anatomy,(interlocked fingers),Ugly Fingers,extra digit,extra hands,extra fingers,extra legs,extra arms,fewer digits,(deformed fingers),(long fingers),signature,watermark,username,multiple panels,",
                 }
             ),
