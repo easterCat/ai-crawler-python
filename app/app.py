@@ -136,6 +136,28 @@ def draw():
         )
 
 
+@app.route("/cur_model")
+def get_cur_model():
+    url = request.args.get("url")
+    opt_response = http.get(url + "/sdapi/v1/options")
+    opt_json = opt_response.json()
+    cur_hash = opt_json["sd_checkpoint_hash"][0:10]
+
+    if "sd_model_checkpoint" in opt_json:
+        cur_model = opt_json["sd_model_checkpoint"]
+    else:
+        cur_model = ""
+
+    if "[" in cur_model and "]" in cur_model:
+        cur_model_name = f"{cur_model}"
+    else:
+        cur_model_name = f"{cur_model} [{cur_hash}]"
+
+    response = jsonify({"cur_model": cur_model_name})
+    response.mimetype = "application/json"
+    return response
+
+
 @app.route("/img2img", methods=["POST"])
 def img2img():
     url = request.args.get("url")
@@ -290,7 +312,7 @@ async def scan_port(session, item):
                     "n_iter": 1,
                     "width": 512,
                     "height": 768,
-                    "prompt": "best quality,masterpiece,(loli:1.5),(little girl:1.5),(toddler:1.3),(child:1.3),(1girl:1.2),(solo:1.2),petite,sagging_breasts,breasts_apart,large_breasts,black_bodysuit,see-through,covered_erect_nipples,covered_navel,",
+                    "prompt": "masterpiece,best quality,highres,absurdres,extremely detailed,ultra-detailed,Depth of field,finely detail,best shadow,detailed light,cinematic lighting,an extremely delicate and beautiful,beautiful detailed eyes,an extremely delicate and beautiful girl,extremely detailed CG unity 8k wallpaper,extremely detailed CG,extremely_detailed_eyes_and_face,((((loli)))),((((little girl)))),((toddler)),((child)),1girl,solo,petite,skinny,ribs,breasts,sagging_breasts,breasts_apart,black_bodysuit,black_leotard,bodystocking,(see-through),nipples,covered_nipples,covered_erect_nipples,navel,covered_navel,",
                     "negative_prompt": "sketch,duplicate,ugly,text,error,logo,monochrome,worst face,(bad and mutated hands:1.3),(worst quality:1.3),(low quality:1.3),(normal quality:1.3),(blurry:1.3),(missing fingers),multiple limbs,bad anatomy,(interlocked fingers),Ugly Fingers,extra digit,extra hands,extra fingers,extra legs,extra arms,fewer digits,(deformed fingers),(long fingers),signature,watermark,username,multiple panels,",
                 }
             ),

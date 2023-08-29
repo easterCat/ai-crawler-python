@@ -36,6 +36,11 @@
         .file-name {
             max-width: 100%;
         }
+
+        textarea,
+        input {
+            font-size: 16px !important;
+        }
     </style>
 </head>
 
@@ -241,7 +246,7 @@
     var urlParams = new URLSearchParams(window.location.search);
     var url = urlParams.get('url');
     var globalFile = null;
-    var prompt = 'best quality,masterpiece,(loli:1.5),(little girl:1.5),(toddler:1.3),(child:1.3),(1girl:1.2),(solo:1.2),petite,sagging_breasts,breasts_apart,large_breasts,black_bodysuit,see-through,covered_erect_nipples,covered_navel,'
+    var prompt = 'masterpiece,best quality,highres,absurdres,extremely detailed,ultra-detailed,Depth of field,finely detail,best shadow,detailed light,cinematic lighting,an extremely delicate and beautiful,beautiful detailed eyes,an extremely delicate and beautiful girl,extremely detailed CG unity 8k wallpaper,extremely detailed CG,extremely_detailed_eyes_and_face,((((loli)))),((((little girl)))),((toddler)),((child)),1girl,solo,petite,skinny,ribs,breasts,sagging_breasts,breasts_apart,black_bodysuit,black_leotard,bodystocking,(see-through),nipples,covered_nipples,covered_erect_nipples,navel,covered_navel,'
     var promptList = prompt.replace("，", ",").split(",");
     var reqTime = 0
 
@@ -258,7 +263,6 @@
         document.getElementById('AddNewTab').href = window.location;
         $("#mySelect").change(function () {
             var selectedOption = $(this).val();
-            console.log(selectedOption)
             $.ajax({
                 url: "/update_model",
                 type: "POST",
@@ -287,6 +291,26 @@
         $("#textarea1").on("input", throttleInput);
         adjustPromptList();
         initDrop();
+
+        setInterval(() => {
+            $.ajax({
+                url: "/cur_model",
+                type: "GET",
+                data: {
+                    url: url
+                },
+                success: function (response) {
+                    $("#mySelect option").prop("selected", false);
+                    var option = $("#mySelect option").filter(function () {
+                        return $(this).text() === response.cur_model;
+                    });
+                    option.prop("selected", true);
+                },
+                error: function (xhr, status, error) {
+                    console.log(error);
+                }
+            });
+        }, 1000 * 60 * 5);
     });
 
     function throttle(func, delay) {
@@ -313,6 +337,13 @@
         }
     }
 
+    function adjustPromptList() {
+        $(".prompt-list").empty();
+        for (var i = 0; i < promptList.length; i++) {
+            $(".prompt-list").append(`<div class="control"><div class="tags has-addons"><a href="https://gelbooru.com/index.php?page=post&s=list&tags=${promptList[i]}" class="tag is-link is-large" target="_blank"> ${promptList[i]}</a><a class="tag fas fa-trash is-large" onclick="removePrompt('${promptList[i]}')"></a><a class="tag fas fa-plus is-large" onclick="addTagLevel('${promptList[i]}')"></a><a class="tag fas fa-minus is-large" onclick="minusTagLevel('${promptList[i]}')"></a></div></div>`)
+        }
+    }
+
     function removePrompt(value) {
         var index = promptList.findIndex(function (i) { return i === value });
         promptList.splice(index, 1);
@@ -324,11 +355,23 @@
         }
     }
 
-    function adjustPromptList() {
-        $(".prompt-list").empty();
-        for (var i = 0; i < promptList.length; i++) {
-            $(".prompt-list").append(`<div class="control"><div class="tags has-addons"><a href="https://gelbooru.com/index.php?page=post&s=list&tags=${promptList[i]}" class="tag is-link is-large" target="_blank"> ${promptList[i]}</a><a class="tag is-delete is-large" onclick="removePrompt('${promptList[i]}')"></a></div></div>`)
-        }
+    function addTagLevel(value) {
+        var index = promptList.findIndex(function (i) { return i === value });
+        var result = `(${promptList[index]})`;
+        promptList[index] = result;
+        prompt = promptList.join(",");
+        document.getElementById('textarea1').value = prompt;
+        $(".prompt-list .has-addons").eq(index).html(`<a href="https://gelbooru.com/index.php?page=post&s=list&tags=${result}" class="tag is-link is-large" target="_blank"> ${result}</a><a class="tag fas fa-trash is-large" onclick="removePrompt('${result}')"></a><a class="tag fas fa-plus is-large" onclick="addTagLevel('${result}')"></a><a class="tag fas fa-minus is-large" onclick="minusTagLevel('${result}')"></a>`);
+    }
+
+    function minusTagLevel(value) {
+        if (!value.includes("(")) return removePrompt(value)
+        var index = promptList.findIndex(function (i) { return i === value });
+        var result = promptList[index].replace("(", "").replace(")", "");
+        promptList[index] = result;
+        prompt = promptList.join(",");
+        document.getElementById('textarea1').value = prompt;
+        $(".prompt-list .has-addons").eq(index).html(`<a href="https://gelbooru.com/index.php?page=post&s=list&tags=${result}" class="tag is-link is-large" target="_blank"> ${result}</a><a class="tag fas fa-trash is-large" onclick="removePrompt('${result}')"></a><a class="tag fas fa-plus is-large" onclick="addTagLevel('${result}')"></a><a class="tag fas fa-minus is-large" onclick="minusTagLevel('${result}')"></a>`);
     }
 
     function txt2img(event) {
