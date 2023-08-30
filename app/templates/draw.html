@@ -41,6 +41,10 @@
         input {
             font-size: 16px !important;
         }
+
+        a {
+            color: inherit;
+        }
     </style>
 </head>
 
@@ -50,10 +54,10 @@
         <h1 class="title">
             图形绘制
             <span>
-                <button class="button"><a id="AddNewTab" href="" target="_blank">增生頁面</a></button>
+                <button class="button is-dark"><a id="AddNewTab" href="" target="_blank">增生頁面</a></button>
             </span>
             <span>
-                <button class="button" onclick="showIframe()">魔导书</button>
+                <button class="button is-dark" onclick="showIframe()">魔导书</button>
             </span>
         </h1>
         <div id="IframeCon" class="content" style="display:none">
@@ -92,7 +96,7 @@
                     <div class="field-body">
                         <div class="field">
                             <div class="control">
-                                <textarea class="textarea is-primary is-small" id="textarea1" name="prompt" rows="3"
+                                <textarea class="textarea is-primary is-small" id="textarea1" name="prompt" rows="4"
                                     placeholder="请输入正面标签"></textarea>
                             </div>
                         </div>
@@ -120,7 +124,7 @@
                         <div class="field">
                             <div class="control">
                                 <textarea class="textarea is-primary is-small" id="textarea2" name="negative_prompt"
-                                    rows="3" placeholder="请输入负面标签"></textarea>
+                                    rows="4" placeholder="请输入负面标签"></textarea>
                             </div>
                         </div>
                     </div>
@@ -186,7 +190,7 @@
                         <label class="label">image</label>
                     </div>
                     <div class="field-body">
-                        <div class="file is-info has-name is-boxed">
+                        <div class="file is-dark has-name is-boxed">
                             <label class="file-label">
                                 <input id="UploadImage" class="file-input" type="file" name="image" accept="image/*">
                                 <span class="file-cta">
@@ -216,9 +220,9 @@
                     <div class="field-body">
                         <div class="field">
                             <div class="control">
-                                <input id="SubmitDrawInfo" class="button is-primary" type="submit" value="文生图"
+                                <input id="SubmitDrawInfo" class="button is-dark" type="submit" value="文生图"
                                     onclick="txt2img(event)">
-                                <input id="SubmitDrawInfo2" class="button is-info" type="submit" value="图生图"
+                                <input id="SubmitDrawInfo2" class="button is-dark" type="submit" value="图生图"
                                     onclick="img2img(event)">
                                 <span class="req-time ml-2" style="line-height:40px"></span>
                             </div>
@@ -230,9 +234,9 @@
         <h1 class="title mt-3">
             绘制结果
             <span>
-                <button class="button" onclick="toggleBlur(0)">No Blur</button>
-                <button class="button" onclick="toggleBlur(3)">Low Blur</button>
-                <button class="button" onclick="toggleBlur(6)">High Blur</button>
+                <button class="button is-dark" onclick="toggleBlur(0)">No Blur</button>
+                <button class="button is-dark" onclick="toggleBlur(3)">Low Blur</button>
+                <button class="button is-dark" onclick="toggleBlur(6)">High Blur</button>
             </span>
         </h1>
         <div id="ImageContainer" class="box image-container">
@@ -246,7 +250,7 @@
     var urlParams = new URLSearchParams(window.location.search);
     var url = urlParams.get('url');
     var globalFile = null;
-    var prompt = 'masterpiece,best quality,highres,absurdres,extremely detailed,ultra-detailed,Depth of field,finely detail,best shadow,detailed light,cinematic lighting,an extremely delicate and beautiful,beautiful detailed eyes,an extremely delicate and beautiful girl,extremely detailed CG unity 8k wallpaper,extremely detailed CG,extremely_detailed_eyes_and_face,(((((loli))))),(((((little girl))))),(((toddler))),(((child))),1girl,solo,very_long_hair,petite,skinny,ribs,breasts,large_breasts,sagging_breasts,breasts_apart,bodysuit,black_bodysuit,bodysuit_under_clothes,black_leotard,bodystocking,skin_tight,(see-through),nipples,dark_nipples,black_nipples,erect_nipples,huge_nipples,large_nipples,puffy_nipples,covered_nipples,covered_erect_nipples,navel,covered_navel,cleft_of_venus,cameltoe,clitoris,covered_clitoris,'
+    var prompt = 'masterpiece,best quality,highres,absurdres,extremely detailed,ultra-detailed,finely detail,best shadow,detailed light,cinematic lighting,beautiful detailed eyes,(((((loli))))),(((((toddler))))),(((((child))))),(((1girl))),(((solo))),very_long_hair,small girl,little girl,little loli,young girl,petite girl,skinny,ribs,breasts,sagging_breasts,breasts_apart,bodysuit,black_bodysuit,black_leotard,bodystocking,skin_tight,(((see-through))),nipples,erect_nipples,covered_nipples,covered_erect_nipples,navel,covered_navel,cleft_of_venus,cameltoe,clitoris,covered_clitoris,'
     var promptList = prompt.replace("，", ",").split(",");
     var reqTime = 0
 
@@ -340,7 +344,7 @@
     function adjustPromptList() {
         $(".prompt-list").empty();
         for (var i = 0; i < promptList.length; i++) {
-            $(".prompt-list").append(`<div class="control"><div class="tags has-addons"><a href="https://gelbooru.com/index.php?page=post&s=list&tags=${promptList[i]}" class="tag is-link is-medium" target="_blank"> ${promptList[i]}</a><a class="tag fas fa-trash is-medium" onclick="removePrompt('${promptList[i]}')"></a><a class="tag fas fa-plus is-medium" onclick="addTagLevel('${promptList[i]}')"></a><a class="tag fas fa-minus is-medium" onclick="minusTagLevel('${promptList[i]}')"></a></div></div>`)
+            $(".prompt-list").append(`<div class="control"><div class="tags has-addons"><a class="tag fas fa-trash is-medium" onclick="removePrompt('${promptList[i]}')"></a><a href="https://gelbooru.com/index.php?page=post&s=list&tags=${promptList[i]}" class="tag is-dark is-medium" target="_blank"> ${promptList[i]}</a><a class="tag fas fa-plus is-medium" onclick="addTagLevel('${promptList[i]}')"></a><a class="tag fas fa-minus is-medium" onclick="minusTagLevel('${promptList[i]}')"></a></div></div>`)
         }
     }
 
@@ -361,7 +365,7 @@
         promptList[index] = result;
         prompt = promptList.join(",");
         document.getElementById('textarea1').value = prompt;
-        $(".prompt-list .has-addons").eq(index).html(`<a href="https://gelbooru.com/index.php?page=post&s=list&tags=${result}" class="tag is-link is-medium" target="_blank"> ${result}</a><a class="tag fas fa-trash is-medium" onclick="removePrompt('${result}')"></a><a class="tag fas fa-plus is-medium" onclick="addTagLevel('${result}')"></a><a class="tag fas fa-minus is-medium" onclick="minusTagLevel('${result}')"></a>`);
+        $(".prompt-list .has-addons").eq(index).html(`<a class="tag fas fa-trash is-medium" onclick="removePrompt('${result}')"></a><a href="https://gelbooru.com/index.php?page=post&s=list&tags=${result}" class="tag is-dark is-medium" target="_blank"> ${result}</a><a class="tag fas fa-plus is-medium" onclick="addTagLevel('${result}')"></a><a class="tag fas fa-minus is-medium" onclick="minusTagLevel('${result}')"></a>`);
     }
 
     function minusTagLevel(value) {
@@ -371,7 +375,7 @@
         promptList[index] = result;
         prompt = promptList.join(",");
         document.getElementById('textarea1').value = prompt;
-        $(".prompt-list .has-addons").eq(index).html(`<a href="https://gelbooru.com/index.php?page=post&s=list&tags=${result}" class="tag is-link is-medium" target="_blank"> ${result}</a><a class="tag fas fa-trash is-medium" onclick="removePrompt('${result}')"></a><a class="tag fas fa-plus is-medium" onclick="addTagLevel('${result}')"></a><a class="tag fas fa-minus is-medium" onclick="minusTagLevel('${result}')"></a>`);
+        $(".prompt-list .has-addons").eq(index).html(`<a class="tag fas fa-trash is-medium" onclick="removePrompt('${result}')"></a><a href="https://gelbooru.com/index.php?page=post&s=list&tags=${result}" class="tag is-dark is-medium" target="_blank"> ${result}</a><a class="tag fas fa-plus is-medium" onclick="addTagLevel('${result}')"></a><a class="tag fas fa-minus is-medium" onclick="minusTagLevel('${result}')"></a>`);
     }
 
     function txt2img(event) {

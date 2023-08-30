@@ -153,6 +153,7 @@ def get_cur_model():
     else:
         cur_model_name = f"{cur_model} [{cur_hash}]"
 
+    logger.info(f"当前的模型：{cur_model_name}")
     response = jsonify({"cur_model": cur_model_name})
     response.mimetype = "application/json"
     return response
@@ -250,9 +251,6 @@ def update_model():
 async def test_html():
     global result_urls
 
-    # if request.method == 'GET':
-    #     return render_template('template.html', data={'list': [], 'total': 0, 'allow': 0})
-
     if result_urls is None:
         logger.info("当前没有验证,重新获取喽!!!!")
         data = await read_json_files()
@@ -312,7 +310,7 @@ async def scan_port(session, item):
                     "n_iter": 1,
                     "width": 512,
                     "height": 768,
-                    "prompt": "masterpiece,best quality,highres,absurdres,extremely detailed,ultra-detailed,Depth of field,finely detail,best shadow,detailed light,cinematic lighting,an extremely delicate and beautiful,beautiful detailed eyes,an extremely delicate and beautiful girl,extremely detailed CG unity 8k wallpaper,extremely detailed CG,extremely_detailed_eyes_and_face,(((((loli))))),(((((little girl))))),(((toddler))),(((child))),1girl,solo,very_long_hair,petite,skinny,ribs,breasts,large_breasts,sagging_breasts,breasts_apart,bodysuit,black_bodysuit,bodysuit_under_clothes,black_leotard,bodystocking,skin_tight,(see-through),nipples,dark_nipples,black_nipples,erect_nipples,huge_nipples,large_nipples,puffy_nipples,covered_nipples,covered_erect_nipples,navel,covered_navel,cleft_of_venus,cameltoe,clitoris,covered_clitoris,",
+                    "prompt": "masterpiece,best quality,highres,absurdres,extremely detailed,ultra-detailed,finely detail,best shadow,detailed light,cinematic lighting,beautiful detailed eyes,(((((loli))))),(((((toddler))))),(((((child))))),(((1girl))),(((solo))),very_long_hair,small girl,little girl,little loli,young girl,petite girl,skinny,ribs,breasts,sagging_breasts,breasts_apart,bodysuit,black_bodysuit,black_leotard,bodystocking,skin_tight,(((see-through))),nipples,erect_nipples,covered_nipples,covered_erect_nipples,navel,covered_navel,cleft_of_venus,cameltoe,clitoris,covered_clitoris,",
                     "negative_prompt": "sketch,duplicate,ugly,text,error,logo,monochrome,worst face,(bad and mutated hands:1.3),(worst quality:1.3),(low quality:1.3),(normal quality:1.3),(blurry:1.3),(missing fingers),multiple limbs,bad anatomy,(interlocked fingers),Ugly Fingers,extra digit,extra hands,extra fingers,extra legs,extra arms,fewer digits,(deformed fingers),(long fingers),signature,watermark,username,multiple panels,",
                 }
             ),
@@ -325,14 +323,6 @@ async def scan_port(session, item):
                     total += 1
                     logger.info(item["url"])
                 item["images"] = images
-                # info = html_json.get("info", "")
-                # infotexts = info.get("infotexts", "")
-                # match = re.search(r"Model: (\w+)", infotexts)
-                # if match:
-                #     model_name = match.group(1)
-                #     item["model_name"] = model_name
-                # else:
-                #     item["model_name"] = ""
                 return item
             else:
                 return item
