@@ -150,7 +150,8 @@
                                 <th>images</th>
                             </tr>
                         </thead>
-                        {% for item in data.list %} {% if item.images %}
+                        {% for item in data.list %}
+                        {% if item.images %}
                         <tbody>
                             <tr>
                                 <td>
@@ -167,7 +168,8 @@
 
                                 <td class="">{{ item.models }}</td>
 
-                                <td class="">
+                                <td class=""
+                                    style="display: flex; flex-wrap: wrap; width: {{ 680 if item.images|length > 2 else 340 }}px;">
                                     {% for img in item.images %}
                                     <figure class="image is-256x256">
                                         <img src="data:image/jpeg;base64,{{ img }}" alt="Image"
@@ -176,7 +178,8 @@
                                     {% endfor %}
                                 </td>
                             </tr>
-                            {% endif %} {% endfor %}
+                            {% endif %}
+                            {% endfor %}
                         </tbody>
                     </table>
                 </div>

