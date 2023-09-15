@@ -322,7 +322,7 @@ async def scan_port(session, item):
             api,
             data=json.dumps(
                 {
-                    "n_iter": 4,
+                    "n_iter": 2,
                     "width": 512,
                     "height": 768,
                     "prompt": "masterpiece,best quality,highres,absurdres,extremely detailed,ultra-detailed,finely detail,detailed light,beautiful detailed eyes,(((((loli))))),(((((toddler))))),(((((child))))),(((1girl))),(((solo))),very_long_hair,small girl,little girl,little loli,young girl,petite girl,skinny,ribs,breasts,sagging_breasts,breasts_apart,bodysuit,black_bodysuit,leotard,black_leotard,bodystocking,skin_tight,(((see-through))),nipples,covered_nipples,erect_nipples,covered_erect_nipples,navel,covered_navel,cleft_of_venus,cameltoe,clitoris,covered_clitoris,pubic hair,",
