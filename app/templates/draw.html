@@ -247,10 +247,11 @@
     </div>
 </body>
 <script>
+    var originalTitle = document.title; // 保存原始标题
     var urlParams = new URLSearchParams(window.location.search);
     var url = urlParams.get('url');
     var globalFile = null;
-    var prompt = 'masterpiece,best quality,highres,absurdres,extremely detailed,ultra-detailed,finely detail,detailed light,beautiful detailed eyes,(((((loli))))),(((((toddler))))),(((((child))))),(((1girl))),(((solo))),very_long_hair,small girl,little girl,little loli,young girl,petite girl,skinny,ribs,breasts,sagging_breasts,breasts_apart,bodysuit,black_bodysuit,leotard,black_leotard,bodystocking,skin_tight,(((see-through))),nipples,covered_nipples,erect_nipples,covered_erect_nipples,navel,covered_navel,cleft_of_venus,cameltoe,clitoris,covered_clitoris,pubic hair,'
+    var prompt = 'masterpiece,best quality,highres,absurdres,extremely detailed,ultra-detailed,finely detail,detailed light,(((((loli))))),(((((toddler))))),(((((child))))),(((1girl))),(((solo))),small girl,little girl,little loli,young girl,petite girl,skinny,ribs,breasts,sagging_breasts,breasts_apart,bodysuit,black_bodysuit,leotard,black_leotard,bodystocking,skin_tight,(((see-through))),nipples,covered_nipples,erect_nipples,covered_erect_nipples,navel,covered_navel,cleft_of_venus,cameltoe,clitoris,covered_clitoris,pubic hair,'
     var promptList = prompt.replace("，", ",").split(",");
     var reqTime = 0
 
@@ -315,7 +316,18 @@
                 }
             });
         }, 1000 * 60 * 5);
+
+        // 监听 visibilitychange 事件
+        document.addEventListener('visibilitychange', handleVisibilityChange);
     });
+    
+    // 处理 visibilitychange 事件的回调函数
+    function handleVisibilityChange() {
+        if (document.visibilityState === 'visible') {
+            // 网页变为可见状态，恢复原始标题
+            document.title = originalTitle;
+        }
+    }
 
     function throttle(func, delay) {
         var timerId = null;
@@ -471,6 +483,7 @@
     }
 
     function btnLoading() {
+        document.title = '生成中......';
         var submitBtn = document.getElementById("SubmitDrawInfo")
         var submitBtn2 = document.getElementById("SubmitDrawInfo2")
         submitBtn.value = '生成中......'
@@ -480,6 +493,7 @@
     }
 
     function finished() {
+        document.title = '绘图成功，数据已返回';
         var submitBtn = document.getElementById("SubmitDrawInfo")
         var submitBtn2 = document.getElementById("SubmitDrawInfo2")
         submitBtn.value = '文生图'
