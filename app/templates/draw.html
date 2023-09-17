@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>图形绘制</title>
+    <title>绘画</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -52,7 +52,7 @@
     <div class="p-3 content">
         <button id="backToTopBtn" onclick="scrollToTop()">返回顶部</button>
         <h1 class="title">
-            图形绘制
+            绘画
             <span>
                 <button class="button is-dark"><a id="AddNewTab" href="" target="_blank">增生頁面</a></button>
             </span>
@@ -326,6 +326,11 @@
         if (document.visibilityState === 'visible') {
             // 网页变为可见状态，恢复原始标题
             document.title = originalTitle;
+        }else{
+            var submitBtn = document.getElementById("SubmitDrawInfo")
+            if(submitBtn.value === 'Drawing...'){
+                document.title = 'Drawing...';
+            }
         }
     }
 
@@ -483,17 +488,17 @@
     }
 
     function btnLoading() {
-        document.title = '生成中......';
+        document.title = 'Drawing...';
         var submitBtn = document.getElementById("SubmitDrawInfo")
         var submitBtn2 = document.getElementById("SubmitDrawInfo2")
-        submitBtn.value = '生成中......'
+        submitBtn.value = 'Drawing...'
         submitBtn.disabled = true;
-        submitBtn2.value = '生成中......'
+        submitBtn2.value = 'Drawing...'
         submitBtn2.disabled = true;
     }
 
     function finished() {
-        document.title = '绘图成功，数据已返回';
+        document.title = '请求成功';
         var submitBtn = document.getElementById("SubmitDrawInfo")
         var submitBtn2 = document.getElementById("SubmitDrawInfo2")
         submitBtn.value = '文生图'
