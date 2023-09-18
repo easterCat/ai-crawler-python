@@ -50,10 +50,12 @@ async def scan_port(session, server, port, batch_progress_bar):
                             temp.append(item)
                     online.append({"url": url, "models": temp})
     except aiohttp.ClientError as e:
-        raise e
-    except asyncio.TimeoutError:
         pass
-    except Exception:
+    except asyncio.TimeoutError as e:
+        print(e)
+        pass
+    except Exception as e:
+        print(e)
         pass
     batch_progress_bar.update(1)
 
@@ -91,10 +93,7 @@ async def main():
                     for port in batch_ports
                 ]
 
-                try:
-                    await asyncio.gather(*tasks, return_exceptions=True)
-                except Exception:
-                    break
+                await asyncio.gather(*tasks)
 
                 batch_progress_bar.close()
                 total_progress_bar.update(len(batch_ports))
