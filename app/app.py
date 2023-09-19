@@ -265,8 +265,9 @@ def update_model():
 @app.route("/test", methods=["GET", "POST"])
 async def test_html():
     global result_urls
+    status = request.args.get('status')
 
-    if result_urls is None:
+    if result_urls is None or status == 'refresh':
         logger.info("当前没有验证,重新获取喽!!!!")
         data = await read_json_files()
         timeout = aiohttp.ClientTimeout(sock_read=60)
@@ -322,10 +323,10 @@ async def scan_port(session, item):
             api,
             data=json.dumps(
                 {
-                    "n_iter": 2,
+                    "n_iter": 4,
                     "width": 512,
                     "height": 768,
-                    "prompt": "masterpiece,best quality,highres,absurdres,extremely detailed,ultra-detailed,finely detail,detailed light,detailed face,(((((loli))))),(((((toddler))))),(((((child))))),(((1girl))),(((solo))),small girl,little girl,little loli,young girl,petite girl,skinny,ribs,breasts,sagging_breasts,breasts_apart,bodysuit,black_bodysuit,leotard,black_leotard,bodystocking,skin_tight,(((see-through))),nipples,covered_nipples,erect_nipples,covered_erect_nipples,huge_nipples,large_nipples,dark_nipples,black_nipples,protruding nipples,navel,covered_navel,cleft_of_venus,cameltoe,clitoris,covered_clitoris,pubic hair,",
+                    "prompt": "masterpiece,best quality,highres,absurdres,extremely detailed,ultra-detailed,finely detail,detailed light,detailed face,(((((loli))))),(((((toddler))))),(((((child))))),(((1girl))),(((solo))),small girl,little girl,little loli,young girl,petite girl,skinny,ribs,breasts,huge_breasts,sagging_breasts,breasts_apart,bodysuit,black_bodysuit,leotard,black_leotard,bodystocking,skin_tight,(((see-through))),nipples,covered_nipples,erect_nipples,covered_erect_nipples,huge_nipples,large_nipples,dark_nipples,black_nipples,protruding nipples,navel,covered_navel,cleft_of_venus,cameltoe,clitoris,covered_clitoris,pubic hair,",
                     "negative_prompt": "sketch,duplicate,ugly,text,error,logo,monochrome,worst face,(bad and mutated hands:1.3),(worst quality:1.3),(low quality:1.3),(normal quality:1.3),(blurry:1.3),(missing fingers),multiple limbs,bad anatomy,(interlocked fingers),Ugly Fingers,extra digit,extra hands,extra fingers,extra legs,extra arms,fewer digits,(deformed fingers),(long fingers),signature,watermark,username,multiple panels,",
                 }
             ),
