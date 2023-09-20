@@ -17,17 +17,39 @@ http = MyHttp()
 result_urls = None
 total = 0
 
+p1 = "(masterpiece),(best quality),highres,absurdres,extremely detailed,ultra-detailed,finely detail,detailed light,detailed face,"
+p2 = "((((loli)))),((((toddler)))),((((child)))),"
+p3 = "(((1girl))),(((solo))),"
+p4 = "small girl,little girl,little loli,young girl,petite girl,"
+p5 = "very long hair,low twintails,skinny,ribs,"
+p6 = "breasts,sagging_breasts,breasts_apart,"
+p7 = "bodysuit,leotard,bodystocking,skin_tight,((see-through)),"
+p8 = "red_bodysuit,red_leotard,"
+p9 = "nipples,covered_nipples,erect_nipples,covered_erect_nipples,huge_nipples,large_nipples,dark_nipples,black_nipples,protruding nipples,"
+p10 = "navel,covered_navel,"
+p11 = "cleft_of_venus,cameltoe,clitoris,covered_clitoris,pubic hair,very pussy hair,"
+p12 = "((china clothes,elaborate and detailed and beautiful and intricate dark qipao clothes))"
+global_prompt = f"{p1}{p2}{p3}{p4}{p5}{p6}{p7}{p9}{p10}{p11}{p12}"
+
 
 @app.route("/")
 async def render_html():
+    global global_prompt
     data = await read_json_files()
     return render_template(
-        "template.html", data={"list": data, "total": len(data), "allow": total}
+        "template.html",
+        data={
+            "list": data,
+            "total": len(data),
+            "allow": total,
+            "global_prompt": global_prompt,
+        },
     )
 
 
 @app.route("/draw", methods=["GET", "POST"])
 def draw():
+    global global_prompt
     url = request.args.get("url")
     model_response = http.get(url + "/sdapi/v1/sd-models")
     if model_response:
@@ -45,6 +67,7 @@ def draw():
                 "prompt": "",
                 "models": models_json,
                 "cur_model_name": "",
+                "global_prompt": global_prompt,
             },
         )
 
@@ -71,6 +94,7 @@ def draw():
                 "prompt": "",
                 "models": models_json,
                 "cur_model_name": cur_model_name,
+                "global_prompt": global_prompt,
             },
         )
 
@@ -129,6 +153,7 @@ def draw():
                     "prompt": prompt,
                     "models": models_json,
                     "cur_model_name": cur_model_name,
+                    "global_prompt": global_prompt,
                 },
             )
     except Exception as e:
@@ -147,6 +172,7 @@ def draw():
                 "prompt": "",
                 "models": models_json,
                 "cur_model_name": cur_model_name,
+                "global_prompt": global_prompt,
             },
         )
 
@@ -265,9 +291,12 @@ def update_model():
 @app.route("/test", methods=["GET", "POST"])
 async def test_html():
     global result_urls
-    status = request.args.get('status')
+    global total
+    global global_prompt
+    total = 0
+    status = request.args.get("status")
 
-    if result_urls is None or status == 'refresh':
+    if result_urls is None or status == "refresh":
         logger.info("当前没有验证,重新获取喽!!!!")
         data = await read_json_files()
         timeout = aiohttp.ClientTimeout(sock_read=60)
@@ -291,7 +320,12 @@ async def test_html():
     else:
         return render_template(
             "template.html",
-            data={"list": result_urls, "total": len(result_urls), "allow": total},
+            data={
+                "list": result_urls,
+                "total": len(result_urls),
+                "allow": total,
+                "global_prompt": global_prompt,
+            },
         )
 
 
@@ -317,6 +351,7 @@ async def read_json_files():
 
 async def scan_port(session, item):
     global total
+    global global_prompt
     api = item["url"] + "/sdapi/v1/txt2img"
     try:
         async with session.post(
@@ -326,7 +361,7 @@ async def scan_port(session, item):
                     "n_iter": 4,
                     "width": 512,
                     "height": 768,
-                    "prompt": "masterpiece,best quality,highres,absurdres,extremely detailed,ultra-detailed,finely detail,detailed light,detailed face,(((((loli))))),(((((toddler))))),(((((child))))),(((1girl))),(((solo))),small girl,little girl,little loli,young girl,petite girl,very long hair,low twintails,skinny,ribs,breasts,huge_breasts,((sagging_breasts)),breasts_apart,bodysuit,black_bodysuit,leotard,black_leotard,bodystocking,skin_tight,(((see-through))),nipples,covered_nipples,erect_nipples,covered_erect_nipples,huge_nipples,large_nipples,dark_nipples,black_nipples,protruding nipples,navel,covered_navel,cleft_of_venus,cameltoe,clitoris,covered_clitoris,pubic hair,",
+                    "prompt": global_prompt,
                     "negative_prompt": "sketch,duplicate,ugly,text,error,logo,monochrome,worst face,(bad and mutated hands:1.3),(worst quality:1.3),(low quality:1.3),(normal quality:1.3),(blurry:1.3),(missing fingers),multiple limbs,bad anatomy,(interlocked fingers),Ugly Fingers,extra digit,extra hands,extra fingers,extra legs,extra arms,fewer digits,(deformed fingers),(long fingers),signature,watermark,username,multiple panels,",
                 }
             ),

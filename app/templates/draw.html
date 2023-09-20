@@ -252,7 +252,7 @@
     var urlParams = new URLSearchParams(window.location.search);
     var url = urlParams.get('url');
     var globalFile = null;
-    var prompt = 'masterpiece,best quality,highres,absurdres,extremely detailed,ultra-detailed,finely detail,detailed light,detailed face,(((((loli))))),(((((toddler))))),(((((child))))),(((1girl))),(((solo))),small girl,little girl,little loli,young girl,petite girl,very long hair,low twintails,skinny,ribs,breasts,huge_breasts,((sagging_breasts)),breasts_apart,bodysuit,black_bodysuit,leotard,black_leotard,bodystocking,skin_tight,(((see-through))),nipples,covered_nipples,erect_nipples,covered_erect_nipples,huge_nipples,large_nipples,dark_nipples,black_nipples,protruding nipples,navel,covered_navel,cleft_of_venus,cameltoe,clitoris,covered_clitoris,pubic hair,'
+    var prompt = "{{data.global_prompt}}";
     var promptList = prompt.replace("，", ",").split(",");
     var promptList = splitTextWithParentheses(prompt);
     var reqTime = 0
