@@ -18,18 +18,18 @@ result_urls = None
 total = 0
 
 p1 = "(masterpiece),(best quality),highres,absurdres,extremely detailed,ultra-detailed,finely detail,detailed light,detailed face,"
-p2 = "((((loli)))),((((toddler)))),((((child)))),"
-p3 = "(((1girl))),(((solo))),"
-p4 = "small girl,little girl,little loli,young girl,petite girl,"
-p5 = "very long hair,low twintails,skinny,ribs,"
-p6 = "breasts,sagging_breasts,breasts_apart,"
-p7 = "bodysuit,leotard,bodystocking,skin_tight,((see-through)),"
-p8 = "red_bodysuit,red_leotard,"
-p9 = "nipples,covered_nipples,erect_nipples,covered_erect_nipples,huge_nipples,large_nipples,dark_nipples,black_nipples,protruding nipples,"
-p10 = "navel,covered_navel,"
+p2 = "(loli:1.6),(toddler:1.6),(child:1.6),"
+p3 = "(1girl:1.4),(solo:1.4),"
+p4 = "small girl,little girl,little loli,"
+p5 = "very long hair,low twintails,"
+p6 = "breasts,(huge_breasts:1.2),(sagging_breasts:1.2),(breasts_apart:1.2),"
+p7 = "bodysuit,leotard,bodystocking,skin_tight,(see-through:1.2),"
+p8 = "black_bodysuit,black_leotard,"
+p9 = "covered_nipples,covered_erect_nipples,"
+p10 = "covered_navel,"
 p11 = "cleft_of_venus,cameltoe,clitoris,covered_clitoris,pubic hair,very pussy hair,"
-p12 = "((china clothes,elaborate and detailed and beautiful and intricate dark qipao clothes))"
-global_prompt = f"{p1}{p2}{p3}{p4}{p5}{p6}{p7}{p9}{p10}{p11}{p12}"
+p12 = "((elaborate and detailed and beautiful and intricate armor,knight,garter belts,))"
+global_prompt = f"{p1}{p2}{p3}{p4}{p5}{p6}{p7}{p8}{p9}{p10}{p11}{p12}"
 
 
 @app.route("/")

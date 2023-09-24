@@ -3,10 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <title>Flask Template</title>
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
-        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
         <style>
             .modal {
                 display: block;
@@ -24,7 +21,7 @@
 
             .modal-content {
                 display: block;
-                margin: 10% auto;
+                margin: 2% auto;
                 max-width: 800px;
                 max-height: 90vh;
             }
@@ -59,7 +56,7 @@
 
             .image.is-256x256 {
                 height: auto;
-                width: 256px;
+                width: 512px;
             }
         </style>
     </head>
@@ -126,9 +123,7 @@
                         <a href="/test" style="color: white">验证全部地址</a>
                     </button>
                     <button type="button" class="button is-dark">
-                        <a href="/test?status=refresh" style="color: white"
-                            >强制刷新</a
-                        >
+                        <a href="/test?status=refresh" style="color: white">强制刷新</a>
                     </button>
                 </h1>
                 <details>
@@ -138,29 +133,20 @@
                 <details>
                     <summary>负面</summary>
                     <p id="textToCopy">
-                        sketch,duplicate,ugly,text,error,logo,monochrome,worst
-                        face,(bad and mutated hands:1.3),(worst
-                        quality:1.3),(low quality:1.3),(normal
-                        quality:1.3),(blurry:1.3),horror,geometry,(missing
-                        fingers),multiple limbs,bad anatomy,(interlocked
-                        fingers:1.2),Ugly Fingers,(extra digit,extra hands,extra
-                        fingers,extra legs,extra arms),fewer digits,(deformed
-                        fingers:1.2),(long
-                        fingers:1.2),signature,watermark,username,multiple
+                        sketch,duplicate,ugly,text,error,logo,monochrome,worst face,(bad and mutated
+                        hands:1.3),(worst quality:1.3),(low quality:1.3),(normal
+                        quality:1.3),(blurry:1.3),horror,geometry,(missing fingers),multiple
+                        limbs,bad anatomy,(interlocked fingers:1.2),Ugly Fingers,(extra digit,extra
+                        hands,extra fingers,extra legs,extra arms),fewer digits,(deformed
+                        fingers:1.2),(long fingers:1.2),signature,watermark,username,multiple
                         panels,
                     </p>
-                    <button class="copy-btn" onclick="copyText('textToCopy')">
-                        复制
-                    </button>
+                    <button class="copy-btn" onclick="copyText('textToCopy')">复制</button>
                 </details>
                 <div class="content mt-5">
-                    <button id="backToTopBtn" onclick="scrollToTop()">
-                        返回顶部
-                    </button>
+                    <button id="backToTopBtn" onclick="scrollToTop()">返回顶部</button>
                     <div class="table-container">
-                        <table
-                            class="table is-bordered is-hoverable is-fullwidth"
-                        >
+                        <table class="table is-bordered is-hoverable is-fullwidth">
                             <!-- On rows -->
                             <thead>
                                 <tr class="active">
@@ -176,18 +162,14 @@
                                 <tr>
                                     <td>
                                         <button class="button is-primary">
-                                            <a
-                                                href="/draw?url={{item.url}}"
-                                                target="_blank"
+                                            <a href="/draw?url={{item.url}}" target="_blank"
                                                 >Draw</a
                                             >
                                         </button>
                                     </td>
 
                                     <td class="">
-                                        <a href="{{item.url}}" target="_blank"
-                                            >{{ item.url }}</a
-                                        >
+                                        <a href="{{item.url}}" target="_blank">{{ item.url }}</a>
                                     </td>
 
                                     <td class="">{{ item.model_name }}</td>
@@ -196,7 +178,7 @@
 
                                     <td
                                         class=""
-                                        style="display: flex; flex-wrap: wrap; width: {{ 680 if item.images|length >= 2 else 340 }}px;"
+                                        style="display: flex; flex-wrap: wrap; width: 680px"
                                     >
                                         {% for img in item.images %}
                                         <figure class="image is-256x256">
