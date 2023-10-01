@@ -18,18 +18,19 @@ result_urls = None
 total = 0
 
 p1 = "(masterpiece),(best quality),highres,absurdres,extremely detailed,ultra-detailed,finely detail,detailed light,detailed face,"
-p2 = "(loli:1.6),(toddler:1.6),(child:1.6),"
-p3 = "(1girl:1.4),(solo:1.4),"
-p4 = "small girl,little girl,little loli,"
+p2 = "(loli:1.5),(toddler:1.5),(child:1.5),"
+p3 = "(1girl:1.3),(solo:1.3),"
+p4 = "small girl,little girl,little loli,child face,baby face,"
 p5 = "very long hair,low twintails,"
-p6 = "breasts,(huge_breasts:1.2),(sagging_breasts:1.2),(breasts_apart:1.2),"
+p6 = "(natural breasts:1.3),(soft breasts:1.3),(huge_breasts:1.3),(sagging_breasts:1.3),(breasts_apart:1.3),"
 p7 = "bodysuit,leotard,bodystocking,skin_tight,(see-through:1.2),"
 p8 = "black_bodysuit,black_leotard,"
 p9 = "covered_nipples,covered_erect_nipples,"
 p10 = "covered_navel,"
 p11 = "cleft_of_venus,cameltoe,clitoris,covered_clitoris,pubic hair,very pussy hair,"
-p12 = "((elaborate and detailed and beautiful and intricate armor,knight,garter belts,))"
-global_prompt = f"{p1}{p2}{p3}{p4}{p5}{p6}{p7}{p8}{p9}{p10}{p11}{p12}"
+p12 = "(elaborate and detailed and beautiful and intricate clothes,garter belts,lying on the bed)"
+# global_prompt = f"{p1}{p2}{p3}{p4}{p5}{p6}{p7}{p9}{p10}{p11}{p12}"
+global_prompt = f"1 small girl,loli,child,solo,long hair,see-through clothes,chimera,see-through,covered nipples,garter belt,stockings,baby-faced,flat-chested,petite,short,skinny,ribbed,nsfw."
 
 
 @app.route("/")
@@ -359,8 +360,8 @@ async def scan_port(session, item):
             data=json.dumps(
                 {
                     "n_iter": 4,
-                    "width": 512,
-                    "height": 768,
+                    "width": 768,
+                    "height": 1024,
                     "prompt": global_prompt,
                     "negative_prompt": "sketch,duplicate,ugly,text,error,logo,monochrome,worst face,(bad and mutated hands:1.3),(worst quality:1.3),(low quality:1.3),(normal quality:1.3),(blurry:1.3),(missing fingers),multiple limbs,bad anatomy,(interlocked fingers),Ugly Fingers,extra digit,extra hands,extra fingers,extra legs,extra arms,fewer digits,(deformed fingers),(long fingers),signature,watermark,username,multiple panels,",
                 }

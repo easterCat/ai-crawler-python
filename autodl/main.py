@@ -29,7 +29,6 @@ servers = [
 
 async def scan_port(session, server, port, batch_progress_bar):
     url = f"http://{server}.seetacloud.com:{port}"
-    # url = f"http://localhost:{port}"
 
     try:
         async with session.get(url) as response:
@@ -52,19 +51,18 @@ async def scan_port(session, server, port, batch_progress_bar):
     except aiohttp.ClientError as e:
         pass
     except asyncio.TimeoutError as e:
-        print(e)
         pass
     except Exception as e:
-        print(e)
         pass
     batch_progress_bar.update(1)
 
 
 async def main():
-    timeout = aiohttp.ClientTimeout(sock_read=15)
+    timeout = aiohttp.ClientTimeout(total=20)
     ports_to_scan = range(10000, 65536)
     batch_size = 3000
     total_batches = (len(ports_to_scan) - 1) // batch_size + 1
+    min_speed = 100  # 每秒最低请求速度
     total_progress_bar = tqdm(
         total=len(ports_to_scan) * len(servers),
         desc="Overall Progress",
@@ -92,13 +90,12 @@ async def main():
                     scan_port(session, server, port, batch_progress_bar)
                     for port in batch_ports
                 ]
-
                 await asyncio.gather(*tasks)
 
                 batch_progress_bar.close()
                 total_progress_bar.update(len(batch_ports))
 
-                sleep_time = 5 + batch % 3
+                sleep_time = 3 + batch % 3
                 await asyncio.sleep(sleep_time)
 
                 if end_idx >= 55536:
