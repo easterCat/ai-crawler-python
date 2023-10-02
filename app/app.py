@@ -18,7 +18,7 @@ result_urls = None
 total = 0
 
 p1 = "(masterpiece),(best quality),"
-p2 = "highres,absurdres,extremely detailed,ultra-detailed,finely detail,detailed light,detailed face,"
+p2 = "highres,absurdres,extremely detailed,ultra-detailed,finely detail,fine detail,detailed light,detailed face,dainty,perfect face,pretty face, lush detail,highly detailed face and eyes,"
 p3 = "(loli:1.5),(toddler:1.5),(child:1.5),"
 p4 = "(1girl:1.3),(solo:1.3),"
 p5 = "small girl,little girl,little loli,"
@@ -27,12 +27,12 @@ p7 = "very long hair,low twintails,"
 p8 = "(natural breasts:1.3),(soft breasts:1.3),(huge_breasts:1.3),(sagging_breasts:1.3),(breasts_apart:1.3),"
 p9 = "bodysuit,leotard,bodystocking,skin_tight,(see-through:1.3),"
 p10 = "black_bodysuit,black_leotard,"
-p11 = "covered_nipples,covered_erect_nipples,"
+p11 = "(covered_nipples),(covered_erect_nipples),"
 p12 = "covered_navel,"
 p13 = "cleft_of_venus,cameltoe,clitoris,covered_clitoris,pubic hair,very pussy hair,"
 p14 = "nsfw,"
-p15 = "garter belts,armor,"
-global_prompt = f"{p4}{p6}{p9}{p10}{p11}{p12}{p15}"
+p15 = "mavis dracula, smile, looking at viewer, arms behind back, black dress, striped thighhighs"
+global_prompt = f"{p4}{p6}{p9}{p11}{p12}{p15}"
 negative_prompt = "sketch,duplicate,ugly,text,error,logo,monochrome,worst face,(bad and mutated hands:1.5),(worst quality:1.8),(low quality:1.8),(normal quality:1.8),(blurry:1.3),(missing fingers),multiple limbs,bad anatomy,(interlocked fingers),Ugly Fingers,extra digit,extra hands,extra fingers,extra legs,extra arms,fewer digits,(deformed fingers),(long fingers),signature,watermark,username,multiple panels,"
 
 
