@@ -17,25 +17,29 @@ http = MyHttp()
 result_urls = None
 total = 0
 
-p1 = "(masterpiece),(best quality),highres,absurdres,extremely detailed,ultra-detailed,finely detail,detailed light,detailed face,"
-p2 = "(loli:1.5),(toddler:1.5),(child:1.5),"
-p3 = "(1girl:1.3),(solo:1.3),"
-p4 = "small girl,little girl,little loli,child face,baby face,"
-p5 = "very long hair,low twintails,"
-p6 = "(natural breasts:1.3),(soft breasts:1.3),(huge_breasts:1.3),(sagging_breasts:1.3),(breasts_apart:1.3),"
-p7 = "bodysuit,leotard,bodystocking,skin_tight,(see-through:1.2),"
-p8 = "black_bodysuit,black_leotard,"
-p9 = "covered_nipples,covered_erect_nipples,"
-p10 = "covered_navel,"
-p11 = "cleft_of_venus,cameltoe,clitoris,covered_clitoris,pubic hair,very pussy hair,"
-p12 = "(elaborate and detailed and beautiful and intricate clothes,garter belts,lying on the bed)"
-# global_prompt = f"{p1}{p2}{p3}{p4}{p5}{p6}{p7}{p9}{p10}{p11}{p12}"
-global_prompt = f"1 small girl,loli,child,solo,long hair,see-through clothes,chimera,see-through,covered nipples,garter belt,stockings,baby-faced,flat-chested,petite,short,skinny,ribbed,nsfw."
+p1 = "(masterpiece),(best quality),"
+p2 = "highres,absurdres,extremely detailed,ultra-detailed,finely detail,detailed light,detailed face,"
+p3 = "(loli:1.5),(toddler:1.5),(child:1.5),"
+p4 = "(1girl:1.3),(solo:1.3),"
+p5 = "small girl,little girl,little loli,"
+p6 = "(child face:1.3),(baby face:1.3),"
+p7 = "very long hair,low twintails,"
+p8 = "(natural breasts:1.3),(soft breasts:1.3),(huge_breasts:1.3),(sagging_breasts:1.3),(breasts_apart:1.3),"
+p9 = "bodysuit,leotard,bodystocking,skin_tight,(see-through:1.3),"
+p10 = "black_bodysuit,black_leotard,"
+p11 = "covered_nipples,covered_erect_nipples,"
+p12 = "covered_navel,"
+p13 = "cleft_of_venus,cameltoe,clitoris,covered_clitoris,pubic hair,very pussy hair,"
+p14 = "nsfw,"
+p15 = "garter belts,armor,"
+global_prompt = f"{p4}{p6}{p9}{p10}{p11}{p12}{p15}"
+negative_prompt = "sketch,duplicate,ugly,text,error,logo,monochrome,worst face,(bad and mutated hands:1.5),(worst quality:1.8),(low quality:1.8),(normal quality:1.8),(blurry:1.3),(missing fingers),multiple limbs,bad anatomy,(interlocked fingers),Ugly Fingers,extra digit,extra hands,extra fingers,extra legs,extra arms,fewer digits,(deformed fingers),(long fingers),signature,watermark,username,multiple panels,"
 
 
 @app.route("/")
 async def render_html():
     global global_prompt
+    global negative_prompt
     data = await read_json_files()
     return render_template(
         "template.html",
@@ -44,6 +48,7 @@ async def render_html():
             "total": len(data),
             "allow": total,
             "global_prompt": global_prompt,
+            "negative_prompt": negative_prompt,
         },
     )
 
@@ -51,6 +56,7 @@ async def render_html():
 @app.route("/draw", methods=["GET", "POST"])
 def draw():
     global global_prompt
+    global negative_prompt
     url = request.args.get("url")
     model_response = http.get(url + "/sdapi/v1/sd-models")
     if model_response:
@@ -69,6 +75,7 @@ def draw():
                 "models": models_json,
                 "cur_model_name": "",
                 "global_prompt": global_prompt,
+                "negative_prompt": negative_prompt,
             },
         )
 
@@ -96,6 +103,7 @@ def draw():
                 "models": models_json,
                 "cur_model_name": cur_model_name,
                 "global_prompt": global_prompt,
+                "negative_prompt": negative_prompt,
             },
         )
 
@@ -155,6 +163,7 @@ def draw():
                     "models": models_json,
                     "cur_model_name": cur_model_name,
                     "global_prompt": global_prompt,
+                    "negative_prompt": negative_prompt,
                 },
             )
     except Exception as e:
@@ -174,6 +183,7 @@ def draw():
                 "models": models_json,
                 "cur_model_name": cur_model_name,
                 "global_prompt": global_prompt,
+                "negative_prompt": negative_prompt,
             },
         )
 
@@ -294,6 +304,7 @@ async def test_html():
     global result_urls
     global total
     global global_prompt
+    global negative_prompt
     total = 0
     status = request.args.get("status")
 
@@ -326,6 +337,7 @@ async def test_html():
                 "total": len(result_urls),
                 "allow": total,
                 "global_prompt": global_prompt,
+                "negative_prompt": negative_prompt,
             },
         )
 
@@ -360,10 +372,10 @@ async def scan_port(session, item):
             data=json.dumps(
                 {
                     "n_iter": 4,
-                    "width": 768,
-                    "height": 1024,
+                    "width": 600,
+                    "height": 800,
                     "prompt": global_prompt,
-                    "negative_prompt": "sketch,duplicate,ugly,text,error,logo,monochrome,worst face,(bad and mutated hands:1.3),(worst quality:1.3),(low quality:1.3),(normal quality:1.3),(blurry:1.3),(missing fingers),multiple limbs,bad anatomy,(interlocked fingers),Ugly Fingers,extra digit,extra hands,extra fingers,extra legs,extra arms,fewer digits,(deformed fingers),(long fingers),signature,watermark,username,multiple panels,",
+                    "negative_prompt": negative_prompt,
                 }
             ),
             headers={"Content-Type": "application/json"},
