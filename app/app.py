@@ -28,13 +28,13 @@ p8 = "(natural breasts:1.3),(soft breasts:1.3),(huge_breasts:1.3),(sagging_breas
 p9 = "bodysuit,leotard,bodystocking,Zentai,Unitard,skin_tight,(see-through:1.4),"
 p10 = "black_bodysuit,black_leotard,"
 p11 = "(covered_nipples:1.2),(covered_erect_nipples:1.2),"
-p12 = "(covered_navel),(covered body)"
+p12 = "(covered_navel),(covered body),(covered breasts)"
 p13 = "cleft_of_venus,cameltoe,clitoris,covered_clitoris,pubic hair,very pussy hair,"
 p14 = "Petite,Short body,Thin,Bony,Emaciated,Gaunt,Slim,Slender,Narrow waist,Ribs,skinny,"
 p15 = "nsfw,"
 p16 = "Exquisite and magnificent armor, armor dress, waist armor, shoulder armor, arm armor, hand armor, wings, Valkyrie, warrior, knight, priestess, samurai, detailed background, complex background, breast focus, upper body,"
 # 正面
-global_prompt = f"{p1}{p2}{p3}{p4}{p5}{p6}{p7}{p8}{p9}{p11}{p12}{p15}{p16}"
+global_prompt = f"{p1}{p2}{p3}{p4}{p5}{p6}{p7}{p8}{p9}{p11}{p12}{p14}{p16}"
 # 负面
 negative_prompt = "sketch,duplicate,ugly,text,error,logo,monochrome,worst face,(bad and mutated hands:1.5),(worst quality:1.8),(low quality:1.8),(normal quality:1.8),(blurry:1.3),(missing fingers),multiple limbs,bad anatomy,(interlocked fingers),Ugly Fingers,extra digit,extra hands,extra fingers,extra legs,extra arms,fewer digits,(deformed fingers),(long fingers),signature,watermark,username,multiple panels,"
 
