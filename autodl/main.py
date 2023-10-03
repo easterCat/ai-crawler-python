@@ -17,15 +17,12 @@ servers = [
     "region-31",
     "region-41",
     "region-42",
+    "region-45",
     "region-101",
     "region-102",
 ]
 
-# servers = ["region-{}".format(item) for item in range(1, 50)]
-# servers = ["region-{}".format(item) for item in range(50, 100)]
-# servers = ["region-{}".format(item) for item in range(100, 150)]
-# servers = ["region-{}".format(item) for item in range(150, 200)]
-
+# servers = ["region-{}".format(item) for item in range(1, 102)]
 
 async def scan_port(session, server, port, batch_progress_bar):
     url = f"http://{server}.seetacloud.com:{port}"
@@ -60,7 +57,7 @@ async def scan_port(session, server, port, batch_progress_bar):
 async def main():
     timeout = aiohttp.ClientTimeout(total=20)
     ports_to_scan = range(10000, 65536)
-    batch_size = 3000
+    batch_size = 5200
     total_batches = (len(ports_to_scan) - 1) // batch_size + 1
     min_speed = 100  # 每秒最低请求速度
     total_progress_bar = tqdm(
@@ -103,7 +100,7 @@ async def main():
 
     total_progress_bar.close()
 
-    file_path = pathlib.Path(f"./global_scan_result_{time.time()}.json")
+    file_path = pathlib.Path(f"./autodl/global_scan_result_{time.time()}.json")
 
     if len(servers) == 1:
         file_path = pathlib.Path(f"./{servers[0]}_scan_result_{time.time()}.json")
