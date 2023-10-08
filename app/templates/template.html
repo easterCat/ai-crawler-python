@@ -62,8 +62,9 @@
             }
 
             .image.is-256x256 {
+                flex: 1;
                 height: auto;
-                width: 600px;
+                /* width: 600px; */
             }
         </style>
     </head>
@@ -150,10 +151,10 @@
                             <thead>
                                 <tr class="active">
                                     <th>index</th>
-                                    <th>url</th>
-                                    <th>cur_model</th>
-                                    <th>models</th>
+                                    <!-- <th>url</th>
+                                    <th>cur_model</th> -->
                                     <th>images</th>
+                                    <!-- <th>models</th> -->
                                 </tr>
                             </thead>
                             {% for item in data.list %} {% if item.images %}
@@ -166,16 +167,21 @@
                                             >
                                         </button>
                                     </td>
-
+                                    <!-- 
                                     <td class="">
                                         <a href="{{item.url}}" target="_blank">{{ item.url }}</a>
                                     </td>
 
-                                    <td class="">{{ item.model_name }}</td>
+                                    <td class="">{{ item.model_name }}</td> -->
 
                                     <td
                                         class=""
-                                        style="display: flex; flex-wrap: wrap; width: 688px"
+                                        style="
+                                            display: flex;
+                                            justify-content: space-around;
+                                            flex-wrap: wrap;
+                                            width: 100%;
+                                        "
                                     >
                                         {% for img in item.images %}
                                         <figure class="image is-256x256">
@@ -188,7 +194,7 @@
                                         {% endfor %}
                                     </td>
 
-                                    <td class="">{{ item.models }}</td>
+                                    <!-- <td class="">{{ item.models }}</td> -->
                                 </tr>
                                 {% endif %} {% endfor %}
                             </tbody>

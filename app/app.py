@@ -19,18 +19,18 @@ total = 0
 
 p1 = "(masterpiece),(best quality),"
 p2 = "highres,absurdres,extremely detailed,ultra-detailed,finely detail,fine detail,detailed light,dainty,hyper detailed,intricate details,"
-p3 = "(loli:1.5),(child:1.5),(toddler:1.5),(Preschooler:1.5),small girl,little girl,young girl,child face,"
+p3 = "(loli:1.5),(child:1.5),(toddler:1.5),(Preschooler:1.5),(small girl:1.3),(little girl:1.3),(young girl:1.3),(child face:1.3),"
 p4 = "(1girl:1.5),(solo:1.3),"
 p5 = "white hair,very long hair,low twintails,"
-p6 = "natural breasts,soft breasts,huge_breasts,sagging_breasts,breasts_apart"
-p7 = "(see-through:1.4),covered_nipples,covered_erect_nipples,covered_navel,"
+p6 = "natural breasts,soft breasts,huge_breasts,sagging_breasts,saggy_breasts,breasts_apart,large breasts,plump breasts,perfect breasts,beautiful breasts,"
+p7 = "(see-through:1.4),(covered_nipples:1.1),(covered_erect_nipples:1.3),covered_navel,"
 p8 = "bodysuit,leotard,bodystocking,skin_tight,"
 p9 = "cleft_of_venus,cameltoe,clitoris,covered_clitoris,very pubic hair,very pussy hair,"
 p10 = "Petite,Short body,Thin,Bony,Slim,Slender,Narrow waist,Ribs,skinny,flat chest,small_breasts,"
 p11 = "nsfw,"
-p12 = "armor, knight, rogue, paladin, warrior, berserker, ranger, cleric, musketeer, valkyrie, paladin, armor, light, shadow, valley, landscape,"
+p12 = "armor, "
 # 正面
-global_prompt = f"{p1}{p2}{p3}{p4}{p5}{p7}{p8}{p9}{p10}{p11}{p12}"
+global_prompt = f"{p1}{p2}{p3}{p4}{p5}{p6}{p7}{p8}{p9}{p12}"
 # 负面
 negative_prompt = "sketch,duplicate,ugly,text,error,logo,monochrome,worst face,(bad and mutated hands:1.5),(worst quality:1.8),(low quality:1.8),(normal quality:1.8),(blurry:1.3),(missing fingers),multiple limbs,bad anatomy,(interlocked fingers),Ugly Fingers,extra digit,extra hands,extra fingers,extra legs,extra arms,fewer digits,(deformed fingers),(long fingers),signature,watermark,username,multiple panels,"
 
