@@ -22,15 +22,17 @@ p2 = "highres,absurdres,extremely detailed,ultra-detailed,finely detail,fine det
 p3 = "(loli:1.5),(child:1.5),(toddler:1.5),(Preschooler:1.5),(small girl:1.3),(little girl:1.3),(young girl:1.3),(child face:1.3),"
 p4 = "(1girl:1.5),(solo:1.3),"
 p5 = "white hair,very long hair,low twintails,"
-p6 = "natural breasts,soft breasts,huge_breasts,sagging_breasts,saggy_breasts,breasts_apart,large breasts,plump breasts,perfect breasts,beautiful breasts,"
+p61 = "natural breasts,soft breasts,huge_breasts,large breasts,perfect breasts,beautiful breasts,"
+p62 = "breasts_apart,Breasts spread,breast splaying,breast lateral displacement,"
+p63 = "sagging_breasts,saggy_breasts,Drooping breasts,Breast descent,Breast laxity,Breast sag,Breast droopiness,Pendulous breasts,Flaccid breasts,Breast prolapse,Breast looseness,Breast hanging,Breast flattening,Breast lowering,Breast sinking,"
 p7 = "(see-through:1.4),(covered_nipples:1.1),(covered_erect_nipples:1.3),covered_navel,"
-p8 = "bodysuit,leotard,bodystocking,skin_tight,"
+p8 = "bodysuit,leotard,bodystocking,skin_tight,thong leotard,highleg leotard,leotard under clothes,"
 p9 = "cleft_of_venus,cameltoe,clitoris,covered_clitoris,very pubic hair,very pussy hair,"
 p10 = "Petite,Short body,Thin,Bony,Slim,Slender,Narrow waist,Ribs,skinny,flat chest,small_breasts,"
 p11 = "nsfw,"
-p12 = "armor, "
+p12 = "japanese clothes, kimono, "
 # 正面
-global_prompt = f"{p1}{p2}{p3}{p4}{p5}{p6}{p7}{p8}{p9}{p12}"
+global_prompt = f"{p1}{p2}{p3}{p4}{p5}{p61}{p62}{p63}{p7}{p8}{p9}{p12}"
 # 负面
 negative_prompt = "sketch,duplicate,ugly,text,error,logo,monochrome,worst face,(bad and mutated hands:1.5),(worst quality:1.8),(low quality:1.8),(normal quality:1.8),(blurry:1.3),(missing fingers),multiple limbs,bad anatomy,(interlocked fingers),Ugly Fingers,extra digit,extra hands,extra fingers,extra legs,extra arms,fewer digits,(deformed fingers),(long fingers),signature,watermark,username,multiple panels,"
 
