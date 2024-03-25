@@ -9,20 +9,22 @@ from tqdm import tqdm
 
 online = []
 
-servers = [
-    "region-3",
-    "region-4",
-    "region-8",
-    "region-9",
-    "region-31",
-    "region-41",
-    "region-42",
-    "region-45",
-    "region-101",
-    "region-102",
-]
+# servers = [
+#     "region-3",
+#     "region-4",
+#     "region-8",
+#     "region-9",
+#     "region-31",
+#     "region-41",
+#     "region-42",
+#     "region-45",
+#     "region-101",
+#     "region-102",
+# ]
 
-# servers = ["region-{}".format(item) for item in range(1, 102)]
+
+servers = ["region-{}".format(item) for item in range(1, 102)]
+
 
 async def scan_port(session, server, port, batch_progress_bar):
     url = f"http://{server}.seetacloud.com:{port}"
